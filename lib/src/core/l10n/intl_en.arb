@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "locale_code": "en",
+  "@locale_code": {
+    "description": "Code of this locale"
+  }
+}
