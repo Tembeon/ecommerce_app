@@ -17,19 +17,20 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$NavigationState {
   int get index => throw _privateConstructorUsedError;
+  PageController get pageController => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int index) showing,
+    required TResult Function(int index, PageController pageController) showing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int index)? showing,
+    TResult Function(int index, PageController pageController)? showing,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int index)? showing,
+    TResult Function(int index, PageController pageController)? showing,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,7 +61,7 @@ abstract class $NavigationStateCopyWith<$Res> {
   factory $NavigationStateCopyWith(
           NavigationState value, $Res Function(NavigationState) then) =
       _$NavigationStateCopyWithImpl<$Res>;
-  $Res call({int index});
+  $Res call({int index, PageController pageController});
 }
 
 /// @nodoc
@@ -75,12 +76,17 @@ class _$NavigationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? index = freezed,
+    Object? pageController = freezed,
   }) {
     return _then(_value.copyWith(
       index: index == freezed
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
+      pageController: pageController == freezed
+          ? _value.pageController
+          : pageController // ignore: cast_nullable_to_non_nullable
+              as PageController,
     ));
   }
 }
@@ -92,7 +98,7 @@ abstract class _$$_ShowingNavigationStateCopyWith<$Res>
           $Res Function(_$_ShowingNavigationState) then) =
       __$$_ShowingNavigationStateCopyWithImpl<$Res>;
   @override
-  $Res call({int index});
+  $Res call({int index, PageController pageController});
 }
 
 /// @nodoc
@@ -110,12 +116,17 @@ class __$$_ShowingNavigationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? index = freezed,
+    Object? pageController = freezed,
   }) {
     return _then(_$_ShowingNavigationState(
-      index == freezed
+      index: index == freezed
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
+      pageController: pageController == freezed
+          ? _value.pageController
+          : pageController // ignore: cast_nullable_to_non_nullable
+              as PageController,
     ));
   }
 }
@@ -123,14 +134,18 @@ class __$$_ShowingNavigationStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ShowingNavigationState extends _ShowingNavigationState {
-  const _$_ShowingNavigationState(this.index) : super._();
+  const _$_ShowingNavigationState(
+      {required this.index, required this.pageController})
+      : super._();
 
   @override
   final int index;
+  @override
+  final PageController pageController;
 
   @override
   String toString() {
-    return 'NavigationState.showing(index: $index)';
+    return 'NavigationState.showing(index: $index, pageController: $pageController)';
   }
 
   @override
@@ -138,12 +153,16 @@ class _$_ShowingNavigationState extends _ShowingNavigationState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ShowingNavigationState &&
-            const DeepCollectionEquality().equals(other.index, index));
+            const DeepCollectionEquality().equals(other.index, index) &&
+            const DeepCollectionEquality()
+                .equals(other.pageController, pageController));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(index),
+      const DeepCollectionEquality().hash(pageController));
 
   @JsonKey(ignore: true)
   @override
@@ -154,27 +173,27 @@ class _$_ShowingNavigationState extends _ShowingNavigationState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int index) showing,
+    required TResult Function(int index, PageController pageController) showing,
   }) {
-    return showing(index);
+    return showing(index, pageController);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int index)? showing,
+    TResult Function(int index, PageController pageController)? showing,
   }) {
-    return showing?.call(index);
+    return showing?.call(index, pageController);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int index)? showing,
+    TResult Function(int index, PageController pageController)? showing,
     required TResult orElse(),
   }) {
     if (showing != null) {
-      return showing(index);
+      return showing(index, pageController);
     }
     return orElse();
   }
@@ -209,12 +228,16 @@ class _$_ShowingNavigationState extends _ShowingNavigationState {
 }
 
 abstract class _ShowingNavigationState extends NavigationState {
-  const factory _ShowingNavigationState(final int index) =
+  const factory _ShowingNavigationState(
+          {required final int index,
+          required final PageController pageController}) =
       _$_ShowingNavigationState;
   const _ShowingNavigationState._() : super._();
 
   @override
   int get index;
+  @override
+  PageController get pageController;
   @override
   @JsonKey(ignore: true)
   _$$_ShowingNavigationStateCopyWith<_$_ShowingNavigationState> get copyWith =>
