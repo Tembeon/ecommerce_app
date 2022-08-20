@@ -13,7 +13,7 @@ void main() {
     () async {
       setUpBLoC(); // sets observer and transformer
 
-      return runner.run;
+      await runner.run();
     },
     (error, stack) {
       // catch any errors not related to Flutter

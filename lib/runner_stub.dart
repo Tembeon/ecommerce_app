@@ -1,2 +1,2 @@
 /// App started not in IO or html platform
-void run() => throw UnsupportedError('Unknown host platform');
+Future<void> run() async => throw UnsupportedError('Unknown host platform');
