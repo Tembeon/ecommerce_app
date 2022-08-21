@@ -50,6 +50,7 @@ dev_dependencies:
   json_serializable: ^6.3.1
   build_web_compilers: ^3.2.5
   auto_route_generator: ^5.0.0
+  flutter_gen_runner: ^4.3.0
 
   # testing
   bloc_test: ^9.1.0
@@ -64,6 +65,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Mark Pro
+      fonts:
+        - asset: assets/fonts/Mark Pro.ttf
+        - asset: assets/fonts/Mark Pro Bold.ttf
+        - asset: assets/fonts/Mark Pro Heavy.ttf
+        - asset: assets/fonts/Mark Pro Medium.ttf
 
 flutter_intl:
   enabled: true
