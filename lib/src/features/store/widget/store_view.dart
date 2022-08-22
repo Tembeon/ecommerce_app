@@ -4,6 +4,7 @@ import '../model/store_items.dart';
 import 'best_seller.dart';
 import 'categories.dart';
 import 'hot_sales_store.dart';
+import 'search_bar.dart';
 import 'top_bar.dart';
 
 class StoreView extends StatefulWidget {
@@ -27,6 +28,8 @@ class _StoreViewState extends State<StoreView> {
         child: Column(
           children: const <Widget>[
             CategoriesSection(),
+            SizedBox(height: 36.0),
+            SearchBar(),
             HotSalesSection(),
             BestSellerSection(),
           ],
