@@ -165,10 +165,11 @@ class _CategoryItem extends StatelessWidget {
         ),
         Text(
           label,
-          style: const TextStyle(
+          style: TextStyle(
             fontFamily: FontFamily.markPro,
             fontWeight: FontWeight.w500,
             fontSize: 12.0,
+            color: isSelected ? const Color(0xFFFF6E4E) : Colors.black,
           ),
         ),
       ],
