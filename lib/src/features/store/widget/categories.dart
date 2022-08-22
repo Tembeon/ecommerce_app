@@ -83,12 +83,15 @@ class _CategoriesListState extends State<_CategoriesList> {
               itemCount: items.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return _CategoryItem(
-                  key: ValueKey('cat_item_$index'),
-                  itemId: index,
-                  label: items[index],
-                  isSelected: selected == index,
-                  iconData: Icons.add_outlined,
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: _CategoryItem(
+                    key: ValueKey('cat_item_$index'),
+                    itemId: index,
+                    label: items[index],
+                    isSelected: selected == index,
+                    iconData: Icons.add_outlined,
+                  ),
                 );
               },
             ),
@@ -130,70 +133,45 @@ class _CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox.square(
-      dimension: 85,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Material(
-            borderRadius: BorderRadius.circular(20),
-            child: InkWell(
-              onTap: () => context.read<CategoriesBloc>().add(
-                    CategoriesEvent.selectItem(itemId),
-                  ),
-              child: CustomPaint(
-                painter: CirclePainter(
-                  isSelected ? const Color(0xFFFF6E4E) : Colors.white,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Icon(
-                    iconData,
-                    color: isSelected ? Colors.white : Colors.black,
-                    size: 34.0,
+    return Column(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(120),
+          child: Material(
+            child: Ink(
+              width: 70,
+              height: 70,
+              color: isSelected ? const Color(0xFFFF6E4E) : Colors.white,
+              child: InkWell(
+                onTap: () => context
+                    .read<CategoriesBloc>()
+                    .add(CategoriesEvent.selectItem(itemId)),
+                child: Align(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Icon(
+                      iconData,
+                      color: isSelected ? Colors.white : Colors.black,
+                      size: 34.0,
+                    ),
                   ),
                 ),
               ),
             ),
           ),
-          const SizedBox(
-            height: 8,
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        Text(
+          label,
+          style: const TextStyle(
+            fontFamily: FontFamily.markPro,
+            fontWeight: FontWeight.w500,
+            fontSize: 12.0,
           ),
-          Text(
-            label,
-            style: const TextStyle(
-              fontFamily: FontFamily.markPro,
-              fontWeight: FontWeight.w500,
-              fontSize: 12.0,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
-}
-
-/// Drawing a circle with given [color].
-class CirclePainter extends CustomPainter {
-  CirclePainter(Color color) : super() {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 2
-      ..style = PaintingStyle.fill;
-
-    _painter = paint;
-  }
-
-  late Paint _painter;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    canvas.drawOval(
-      Rect.fromLTWH(0, 0, size.width, size.height),
-      _painter,
-    );
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => oldDelegate != this;
 }
