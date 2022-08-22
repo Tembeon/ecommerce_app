@@ -36,6 +36,7 @@ class CategoriesSection extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: 12.0,),
         BlocProvider(
           create: (context) => CategoriesBloc(0),
           child: const _CategoriesList(),
