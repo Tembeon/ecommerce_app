@@ -30,7 +30,10 @@ class _StoreScreenState extends State<StoreScreen>
             failure: (message) => FailureLoading(errorText: message),
             successful: () => const LoadingIndicator(),
             loading: () => const LoadingIndicator(),
-            storeData: (data) => StoreView(storeItems: data),
+            storeData: (data) => MainStore(
+              storeItems: data,
+              child: const StoreView(),
+            ),
           );
         },
         listener: (context, state) {
