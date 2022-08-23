@@ -7,14 +7,17 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: const <Widget>[
-        Expanded(child: _SearchBar()),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.0),
-          child: _QRCodeButton(),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 18.0),
+      child: Row(
+        children: const <Widget>[
+          Expanded(child: _SearchBar()),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            child: _QRCodeButton(),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -17,14 +17,17 @@ class HotSalesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        _HotSalesHeader(),
-        SizedBox(
-          height: 12.0,
-        ),
-        _CarouselView(),
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 18.0),
+      child: Column(
+        children: const [
+          _HotSalesHeader(),
+          SizedBox(
+            height: 12.0,
+          ),
+          _CarouselView(),
+        ],
+      ),
     );
   }
 }
@@ -81,7 +84,7 @@ class _CarouselViewState extends State<_CarouselView> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(viewportFraction: 1);
+    _pageController = PageController(viewportFraction: 1.02);
     items = MainStore.of(context).storeItems.homeStore;
   }
 
@@ -95,10 +98,9 @@ class _CarouselViewState extends State<_CarouselView> {
         itemCount: items.length,
         pageSnapping: true,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: _HotSalesItem(homeStore: items[index]),
-          );
+          return FractionallySizedBox(
+              widthFactor: 1 / _pageController.viewportFraction,
+              child: _HotSalesItem(homeStore: items[index]),);
         },
       ),
     );

@@ -20,23 +20,25 @@ class CategoriesSection extends StatelessWidget {
 
     return Column(
       children: [
-        Row(
-          children: [
-            Text(
-              'Select category',
-              style: theme.textTheme.headline1,
-            ),
-            const Spacer(),
-            TextButton(
-              // ignore: no-empty-block
-              onPressed: () {
-                // open categories list here
-              },
-              child: const Text('view all'),
-            ),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(left: 18, right: 18, bottom: 12.0),
+          child: Row(
+            children: [
+              Text(
+                'Select category',
+                style: theme.textTheme.headline1,
+              ),
+              const Spacer(),
+              TextButton(
+                // ignore: no-empty-block
+                onPressed: () {
+                  // open categories list here
+                },
+                child: const Text('view all'),
+              ),
+            ],
+          ),
         ),
-        const SizedBox(height: 12.0,),
         BlocProvider(
           create: (context) => CategoriesBloc(0),
           child: const _CategoriesList(),
@@ -81,6 +83,7 @@ class _CategoriesListState extends State<_CategoriesList> {
         builder: (context, state) {
           return state.when<Widget>(
             selected: (selected) => ListView.builder(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               itemCount: items.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {

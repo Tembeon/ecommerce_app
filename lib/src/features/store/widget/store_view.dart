@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../model/store_items.dart';
 import 'best_seller.dart';
 import 'categories.dart';
-import 'hot_sales_store.dart';
+import 'hot_sales.dart';
 import 'search_bar.dart';
 import 'top_bar.dart';
 
@@ -65,29 +65,25 @@ class _StoreViewState extends State<StoreView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const TopBar(),
-      body: SafeArea(
-        minimum: const EdgeInsets.symmetric(horizontal: 8.0),
-        bottom: false,
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Column(
-                children: const <Widget>[
-                  CategoriesSection(),
-                  SizedBox(height: 36.0),
-                  SearchBar(),
-                  SizedBox(height: 24.0),
-                  HotSalesSection(),
-                ],
-              ),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: const <Widget>[
+                CategoriesSection(),
+                SizedBox(height: 36.0),
+                SearchBar(),
+                SizedBox(height: 24.0),
+                HotSalesSection(),
+              ],
             ),
-            const SliverToBoxAdapter(child: SizedBox(height: 12)),
-            const SliverToBoxAdapter(child: BestSellerSection()),
-            const BestSalesGridView(),
-            // additional space from bottom for full visible grid items
-            const SliverToBoxAdapter(child: SizedBox(height: 100)),
-          ],
-        ),
+          ),
+          const SliverToBoxAdapter(child: SizedBox(height: 12)),
+          const SliverToBoxAdapter(child: BestSellerSection()),
+          const BestSalesGridView(),
+          // additional space from bottom for full visible grid items
+          const SliverToBoxAdapter(child: SizedBox(height: 100)),
+        ],
       ),
     );
   }
