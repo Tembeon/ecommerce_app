@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/generated/resources/fonts.gen.dart';
@@ -122,7 +123,7 @@ class _BestSalesGridItem extends StatelessWidget {
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(10.0),
-          onTap: () {},
+          onTap: () => context.navigateNamedTo('/details'),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(21.0, 8.0, 8.0, 8.0),
             child: Stack(
