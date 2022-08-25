@@ -23,10 +23,12 @@ class _TopBarState extends State<TopBar> {
         listener: (context, state) {
           state.mapOrNull(
             openFiltersDialog: (state) async {
-              var result = await openFilterDialog(context);
+              await openFilterDialog(context);
 
               if (!mounted) return; // drop result if screen is not mounted
-              context.read<FilterOptionsBloc>().add(const FilterOptionsEvent.saveFilters());
+              context
+                  .read<FilterOptionsBloc>()
+                  .add(const FilterOptionsEvent.saveFilters());
             },
           );
         },
@@ -64,6 +66,4 @@ class _TopBarState extends State<TopBar> {
       ),
     );
   }
-
-
 }
