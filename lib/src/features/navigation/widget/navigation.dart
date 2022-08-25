@@ -25,8 +25,11 @@ class RoundedBottomNavigation extends StatelessWidget {
             ),
           ),
           child: SalomonBottomBar(
-            itemPadding:
-                const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            itemPadding: const EdgeInsets.symmetric(
+              horizontal: 24,
+              vertical: 12,
+            ),
+            selectedColorOpacity: 0.0,
             selectedItemColor: theme.colorScheme.onPrimary,
             unselectedItemColor: theme.colorScheme.onSurface,
             currentIndex: state.getIndex,
