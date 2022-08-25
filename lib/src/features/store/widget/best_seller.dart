@@ -125,53 +125,74 @@ class _BestSalesGridItem extends StatelessWidget {
           onTap: () {},
           child: Padding(
             padding: const EdgeInsets.fromLTRB(21.0, 8.0, 8.0, 8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Stack(
               children: [
-                SizedBox(
-                  height: 160,
-                  width: double.infinity,
-                  child: Ink.image(
-                    image: NetworkImage(item.picture),
-                  ),
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      '\$${item.priceWithoutDiscount}',
-                      style: const TextStyle(
-                        fontFamily: FontFamily.markPro,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w700,
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Material(
+                    clipBehavior: Clip.antiAlias,
+                    borderRadius: BorderRadius.circular(120),
+                    elevation: 4,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        item.isFavorites ?? false
+                            ? Icons.favorite_outlined
+                            : Icons.favorite_border_outlined,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
-                    const SizedBox(
-                      width: 7,
+                  ),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 160,
+                      width: double.infinity,
+                      child: Ink.image(
+                        image: NetworkImage(item.picture),
+                      ),
                     ),
-                    Text(
-                      '\$${item.discountPrice}',
-                      style: const TextStyle(
-                        decoration: TextDecoration.lineThrough,
-                        fontFamily: FontFamily.markPro,
-                        fontSize: 12.0,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xFFCCCCCC),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '\$${item.priceWithoutDiscount}',
+                          style: const TextStyle(
+                            fontFamily: FontFamily.markPro,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 7,
+                        ),
+                        Text(
+                          '\$${item.discountPrice}',
+                          style: const TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                            fontFamily: FontFamily.markPro,
+                            fontSize: 12.0,
+                            fontWeight: FontWeight.w500,
+                            color: Color(0xFFCCCCCC),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Text(
+                        item.title,
+                        style: const TextStyle(
+                          fontFamily: FontFamily.markPro,
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
                   ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: Text(
-                    item.title,
-                    style: const TextStyle(
-                      fontFamily: FontFamily.markPro,
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
                 ),
               ],
             ),
