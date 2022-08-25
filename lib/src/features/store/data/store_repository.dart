@@ -8,23 +8,9 @@ import '../model/store_items.dart';
 abstract class IStoreRepository {
   /// Returns items for main store
   Future<StoreItems> getStoreItems();
-
-  //TODO(tembeon): method should return ItemDetails
-  /// Returns details about selected item
-  Future<Object> getDetailsAboutItem(final int index);
 }
 
-class EcommerceApiRepository extends IStoreRepository {
-  /// Returns ItemDetails for one item.
-  ///
-  /// Will throw [TimeoutException] after 70s or [Exception] if status code
-  /// is not 200.
-  @override
-  Future<Object> getDetailsAboutItem(final int index) {
-    // TODO: implement getDetailsAboutItem
-    throw UnimplementedError();
-  }
-
+class EcommerceApiRepository implements IStoreRepository {
   /// Returns StoreItems for main store page.
   ///
   /// Will throw [TimeoutException] after 70s or [Exception] if status code
@@ -37,7 +23,9 @@ class EcommerceApiRepository extends IStoreRepository {
 
     var response = await http.get(url).timeout(const Duration(seconds: 70));
     if (response.statusCode != 200) {
-      throw Exception('Unexpected response status code: ${response.statusCode}');
+      throw Exception(
+        'Unexpected response status code: ${response.statusCode}',
+      );
     }
 
     return StoreItems.fromJson(jsonDecode(response.body));
