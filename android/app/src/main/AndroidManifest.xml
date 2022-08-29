@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dev.tembeon.test_task_ecommerce">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
         android:label="test_task_ecommerce"
         android:name="${applicationName}"
