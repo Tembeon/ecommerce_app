@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../constants/theme.dart';
 import '../router/router.gr.dart';
@@ -13,6 +14,14 @@ class EcommerceApp extends StatefulWidget {
 
 class _EcommerceAppState extends State<EcommerceApp> {
   final _rootRouter = RootRouter();
+
+  @override
+  void initState() {
+    super.initState();
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {
