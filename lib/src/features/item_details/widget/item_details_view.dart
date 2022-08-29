@@ -18,11 +18,12 @@ class DetailsWithCarousel extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            const SliverToBoxAdapter(
-              child: ToolBar(),
-            ),
+            const SliverToBoxAdapter(child: ToolBar()),
             SliverToBoxAdapter(
-              child: CarouselView(items: models),
+              child: CarouselView(
+                items: models,
+                pageController: PageController(viewportFraction: 0.8),
+              ),
             ),
           ],
         ),
