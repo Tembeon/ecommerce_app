@@ -19,28 +19,26 @@ class ItemDetailsState with _$ItemDetailsState {
 
   const factory ItemDetailsState.loading() = _LoadingItemDetailsState;
 
-  /// Something went wrong while loading data
+  /// Something went wrong while loading data.
   const factory ItemDetailsState.failure({
     @Default('An error has occurred') String message,
   }) = _FailureItemDetailsState;
-
 }
 
 @freezed
 class ItemDetailsEvent with _$ItemDetailsEvent {
   const ItemDetailsEvent._();
 
+  /// Load new data from server.
   const factory ItemDetailsEvent.loadData() = _LoadDataItemDetailsEvent;
-
-
 }
 
 class ItemDetailsBloc extends Bloc<ItemDetailsEvent, ItemDetailsState> {
+  /// Repository for getting data.
   final IDetailsRepository _repository;
 
-  ItemDetailsBloc(
-    IDetailsRepository repository,
-  )   : _repository = repository,
+  ItemDetailsBloc(IDetailsRepository repository)
+      : _repository = repository,
         super(const ItemDetailsState.loading()) {
     on<ItemDetailsEvent>(
       (event, emit) => event.map<Future<void>>(
@@ -68,5 +66,4 @@ class ItemDetailsBloc extends Bloc<ItemDetailsEvent, ItemDetailsState> {
       rethrow;
     }
   }
-
 }
