@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/widget/failure_widget.dart';
+import '../../../core/widget/loading_indicator.dart';
 import '../bloc/item_details_bloc.dart';
 import '../data/details_repository.dart';
 import 'item_details_view.dart';
@@ -30,7 +32,6 @@ class _ItemDetailsStatesState extends State<_ItemDetailsStates> {
   @override
   void initState() {
     super.initState();
-
     context.read<ItemDetailsBloc>().add(const ItemDetailsEvent.loadData());
   }
 
@@ -46,33 +47,6 @@ class _ItemDetailsStatesState extends State<_ItemDetailsStates> {
           ),
         );
       },
-    );
-  }
-}
-
-class LoadingIndicator extends StatelessWidget {
-  const LoadingIndicator({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(),
-    );
-  }
-}
-
-class FailureLoading extends StatelessWidget {
-  const FailureLoading({
-    Key? key,
-    required this.errorText,
-  }) : super(key: key);
-
-  final String errorText;
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(errorText),
     );
   }
 }
