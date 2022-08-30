@@ -46,7 +46,7 @@ class ToolBar extends StatelessWidget {
               color: Theme.of(context).colorScheme.primary,
               child: InkWell(
                 borderRadius: BorderRadius.circular(10),
-                onTap: () {},
+                onTap: () => context.navigateNamedTo('/cart'),
                 child: SizedBox.square(
                   dimension: 46,
                   child: Icon(
