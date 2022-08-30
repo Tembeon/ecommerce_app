@@ -18,6 +18,7 @@ class AppThemes {
           surface: Colors.white30,
         ),
         scaffoldBackgroundColor: const Color(0xFFF8F8F8),
+        useMaterial3: true,
         appBarTheme: const AppBarTheme(
           color: Color(0xFFF8F8F8),
           elevation: 0.0,
