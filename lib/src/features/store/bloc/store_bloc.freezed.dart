@@ -19,7 +19,6 @@ mixin _$StoreState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
-    required TResult Function() successful,
     required TResult Function() loading,
     required TResult Function(StoreItems items) storeData,
   }) =>
@@ -27,7 +26,6 @@ mixin _$StoreState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
-    TResult Function()? successful,
     TResult Function()? loading,
     TResult Function(StoreItems items)? storeData,
   }) =>
@@ -35,7 +33,6 @@ mixin _$StoreState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
-    TResult Function()? successful,
     TResult Function()? loading,
     TResult Function(StoreItems items)? storeData,
     required TResult orElse(),
@@ -44,7 +41,6 @@ mixin _$StoreState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FailureStoreState value) failure,
-    required TResult Function(_SuccessfulStoreState value) successful,
     required TResult Function(_LoadingStoreState value) loading,
     required TResult Function(_StoreDataStoreState value) storeData,
   }) =>
@@ -52,7 +48,6 @@ mixin _$StoreState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
     TResult Function(_LoadingStoreState value)? loading,
     TResult Function(_StoreDataStoreState value)? storeData,
   }) =>
@@ -60,7 +55,6 @@ mixin _$StoreState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
     TResult Function(_LoadingStoreState value)? loading,
     TResult Function(_StoreDataStoreState value)? storeData,
     required TResult orElse(),
@@ -153,7 +147,6 @@ class _$_FailureStoreState extends _FailureStoreState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
-    required TResult Function() successful,
     required TResult Function() loading,
     required TResult Function(StoreItems items) storeData,
   }) {
@@ -164,7 +157,6 @@ class _$_FailureStoreState extends _FailureStoreState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
-    TResult Function()? successful,
     TResult Function()? loading,
     TResult Function(StoreItems items)? storeData,
   }) {
@@ -175,7 +167,6 @@ class _$_FailureStoreState extends _FailureStoreState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
-    TResult Function()? successful,
     TResult Function()? loading,
     TResult Function(StoreItems items)? storeData,
     required TResult orElse(),
@@ -190,7 +181,6 @@ class _$_FailureStoreState extends _FailureStoreState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FailureStoreState value) failure,
-    required TResult Function(_SuccessfulStoreState value) successful,
     required TResult Function(_LoadingStoreState value) loading,
     required TResult Function(_StoreDataStoreState value) storeData,
   }) {
@@ -201,7 +191,6 @@ class _$_FailureStoreState extends _FailureStoreState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
     TResult Function(_LoadingStoreState value)? loading,
     TResult Function(_StoreDataStoreState value)? storeData,
   }) {
@@ -212,7 +201,6 @@ class _$_FailureStoreState extends _FailureStoreState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
     TResult Function(_LoadingStoreState value)? loading,
     TResult Function(_StoreDataStoreState value)? storeData,
     required TResult orElse(),
@@ -233,124 +221,6 @@ abstract class _FailureStoreState extends StoreState {
   @JsonKey(ignore: true)
   _$$_FailureStoreStateCopyWith<_$_FailureStoreState> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_SuccessfulStoreStateCopyWith<$Res> {
-  factory _$$_SuccessfulStoreStateCopyWith(_$_SuccessfulStoreState value,
-          $Res Function(_$_SuccessfulStoreState) then) =
-      __$$_SuccessfulStoreStateCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_SuccessfulStoreStateCopyWithImpl<$Res>
-    extends _$StoreStateCopyWithImpl<$Res>
-    implements _$$_SuccessfulStoreStateCopyWith<$Res> {
-  __$$_SuccessfulStoreStateCopyWithImpl(_$_SuccessfulStoreState _value,
-      $Res Function(_$_SuccessfulStoreState) _then)
-      : super(_value, (v) => _then(v as _$_SuccessfulStoreState));
-
-  @override
-  _$_SuccessfulStoreState get _value => super._value as _$_SuccessfulStoreState;
-}
-
-/// @nodoc
-
-class _$_SuccessfulStoreState extends _SuccessfulStoreState {
-  const _$_SuccessfulStoreState() : super._();
-
-  @override
-  String toString() {
-    return 'StoreState.successful()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SuccessfulStoreState);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String message) failure,
-    required TResult Function() successful,
-    required TResult Function() loading,
-    required TResult Function(StoreItems items) storeData,
-  }) {
-    return successful();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String message)? failure,
-    TResult Function()? successful,
-    TResult Function()? loading,
-    TResult Function(StoreItems items)? storeData,
-  }) {
-    return successful?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String message)? failure,
-    TResult Function()? successful,
-    TResult Function()? loading,
-    TResult Function(StoreItems items)? storeData,
-    required TResult orElse(),
-  }) {
-    if (successful != null) {
-      return successful();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_FailureStoreState value) failure,
-    required TResult Function(_SuccessfulStoreState value) successful,
-    required TResult Function(_LoadingStoreState value) loading,
-    required TResult Function(_StoreDataStoreState value) storeData,
-  }) {
-    return successful(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
-    TResult Function(_LoadingStoreState value)? loading,
-    TResult Function(_StoreDataStoreState value)? storeData,
-  }) {
-    return successful?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
-    TResult Function(_LoadingStoreState value)? loading,
-    TResult Function(_StoreDataStoreState value)? storeData,
-    required TResult orElse(),
-  }) {
-    if (successful != null) {
-      return successful(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SuccessfulStoreState extends StoreState {
-  const factory _SuccessfulStoreState() = _$_SuccessfulStoreState;
-  const _SuccessfulStoreState._() : super._();
 }
 
 /// @nodoc
@@ -395,7 +265,6 @@ class _$_LoadingStoreState extends _LoadingStoreState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
-    required TResult Function() successful,
     required TResult Function() loading,
     required TResult Function(StoreItems items) storeData,
   }) {
@@ -406,7 +275,6 @@ class _$_LoadingStoreState extends _LoadingStoreState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
-    TResult Function()? successful,
     TResult Function()? loading,
     TResult Function(StoreItems items)? storeData,
   }) {
@@ -417,7 +285,6 @@ class _$_LoadingStoreState extends _LoadingStoreState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
-    TResult Function()? successful,
     TResult Function()? loading,
     TResult Function(StoreItems items)? storeData,
     required TResult orElse(),
@@ -432,7 +299,6 @@ class _$_LoadingStoreState extends _LoadingStoreState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FailureStoreState value) failure,
-    required TResult Function(_SuccessfulStoreState value) successful,
     required TResult Function(_LoadingStoreState value) loading,
     required TResult Function(_StoreDataStoreState value) storeData,
   }) {
@@ -443,7 +309,6 @@ class _$_LoadingStoreState extends _LoadingStoreState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
     TResult Function(_LoadingStoreState value)? loading,
     TResult Function(_StoreDataStoreState value)? storeData,
   }) {
@@ -454,7 +319,6 @@ class _$_LoadingStoreState extends _LoadingStoreState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
     TResult Function(_LoadingStoreState value)? loading,
     TResult Function(_StoreDataStoreState value)? storeData,
     required TResult orElse(),
@@ -547,7 +411,6 @@ class _$_StoreDataStoreState extends _StoreDataStoreState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
-    required TResult Function() successful,
     required TResult Function() loading,
     required TResult Function(StoreItems items) storeData,
   }) {
@@ -558,7 +421,6 @@ class _$_StoreDataStoreState extends _StoreDataStoreState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
-    TResult Function()? successful,
     TResult Function()? loading,
     TResult Function(StoreItems items)? storeData,
   }) {
@@ -569,7 +431,6 @@ class _$_StoreDataStoreState extends _StoreDataStoreState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
-    TResult Function()? successful,
     TResult Function()? loading,
     TResult Function(StoreItems items)? storeData,
     required TResult orElse(),
@@ -584,7 +445,6 @@ class _$_StoreDataStoreState extends _StoreDataStoreState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FailureStoreState value) failure,
-    required TResult Function(_SuccessfulStoreState value) successful,
     required TResult Function(_LoadingStoreState value) loading,
     required TResult Function(_StoreDataStoreState value) storeData,
   }) {
@@ -595,7 +455,6 @@ class _$_StoreDataStoreState extends _StoreDataStoreState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
     TResult Function(_LoadingStoreState value)? loading,
     TResult Function(_StoreDataStoreState value)? storeData,
   }) {
@@ -606,7 +465,6 @@ class _$_StoreDataStoreState extends _StoreDataStoreState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FailureStoreState value)? failure,
-    TResult Function(_SuccessfulStoreState value)? successful,
     TResult Function(_LoadingStoreState value)? loading,
     TResult Function(_StoreDataStoreState value)? storeData,
     required TResult orElse(),

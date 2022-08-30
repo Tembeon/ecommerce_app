@@ -17,7 +17,6 @@ class StoreState with _$StoreState {
     @Default('An error has occurred') String message,
   }) = _FailureStoreState;
 
-  const factory StoreState.successful() = _SuccessfulStoreState;
 
   const factory StoreState.loading() = _LoadingStoreState;
 
@@ -51,8 +50,6 @@ class StoreBloc extends Bloc<StoreEvent, StoreState> {
     emitter(const StoreState.loading());
     try {
       var newData = await _repository.getStoreItems();
-      // notify about successful getting new data
-      emitter(const StoreState.successful());
       // store new data
       emitter(StoreState.storeData(newData));
     } on TimeoutException {
