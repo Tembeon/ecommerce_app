@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../store/bloc/filter_options_bloc.dart';
-import '../../store/bloc/store_bloc.dart';
-import '../../store/data/store_repository.dart';
 import '../../store/widget/store_screen.dart';
 import '../bloc/navigation_bloc.dart';
 import 'placeholder_page.dart';
@@ -19,21 +16,14 @@ class NavigationPageStorage extends StatelessWidget {
         return PageView(
           physics: const NeverScrollableScrollPhysics(),
           controller: state.getController,
-          children: [
-            MultiBlocProvider(
-              providers: [
-                BlocProvider<StoreBloc>(
-                  create: (_) => StoreBloc(EcommerceApiRepository()),
-                ),
-                BlocProvider<FilterOptionsBloc>(
-                  create: (_) => FilterOptionsBloc(),
-                ),
-              ],
-              child: const StoreScreen(),
+          children: const [
+            StoreScreen(),
+            PlaceholderPage(
+              text: 'You can enter to cart via tapping on cart'
+                  ' icon in item details',
             ),
-            const PlaceholderPage(text: 'Cart'),
-            const PlaceholderPage(text: 'Favorites'),
-            const PlaceholderPage(text: 'Profile'),
+            PlaceholderPage(text: 'Favorites'),
+            PlaceholderPage(text: 'Profile'),
           ],
         );
       },
