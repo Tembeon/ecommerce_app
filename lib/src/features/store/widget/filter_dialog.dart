@@ -36,70 +36,73 @@ class FilterDialogUI extends StatelessWidget {
       color: Theme.of(context).colorScheme.primary,
     );
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8.0, top: 20),
-          child: Text('Brand', style: textStyle),
-        ),
-        DropdownButtonHideUnderline(
-          child: DropdownButtonFormField<String>(
-            borderRadius: BorderRadius.circular(5),
-            decoration: decoration,
-            isExpanded: true,
-            value: filters.brands.first,
-            style: textStyle.copyWith(fontWeight: FontWeight.w400),
-            items: filters.brands
-                .map((brand) => DropdownMenuItem<String>(
-                      value: brand,
-                      child: Text(brand),
-                    ))
-                .toList(),
-            onChanged: (item) {},
+    return Padding(
+      padding: const EdgeInsets.only(right: 12.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8.0, top: 20),
+            child: Text('Brand', style: textStyle),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text('Price', style: textStyle),
-        ),
-        DropdownButtonHideUnderline(
-          child: DropdownButtonFormField<String>(
-            borderRadius: BorderRadius.circular(5),
-            decoration: decoration,
-            isExpanded: true,
-            value: filters.prices.first,
-            style: textStyle.copyWith(fontWeight: FontWeight.w400),
-            items: filters.prices
-                .map((price) => DropdownMenuItem<String>(
-                      value: price,
-                      child: Text(price),
-                    ))
-                .toList(),
-            onChanged: (item) {},
+          DropdownButtonHideUnderline(
+            child: DropdownButtonFormField<String>(
+              borderRadius: BorderRadius.circular(5),
+              decoration: decoration,
+              isExpanded: true,
+              value: filters.brands.first,
+              style: textStyle.copyWith(fontWeight: FontWeight.w400),
+              items: filters.brands
+                  .map((brand) => DropdownMenuItem<String>(
+                        value: brand,
+                        child: Text(brand),
+                      ))
+                  .toList(),
+              onChanged: (item) {},
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text('Size', style: textStyle),
-        ),
-        DropdownButtonHideUnderline(
-          child: DropdownButtonFormField<String>(
-            borderRadius: BorderRadius.circular(5),
-            decoration: decoration,
-            isExpanded: true,
-            value: filters.sizes.first,
-            style: textStyle.copyWith(fontWeight: FontWeight.w400),
-            items: filters.sizes
-                .map((sizes) => DropdownMenuItem<String>(
-                      value: sizes,
-                      child: Text(sizes),
-                    ))
-                .toList(),
-            onChanged: (item) {},
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text('Price', style: textStyle),
           ),
-        ),
-      ],
+          DropdownButtonHideUnderline(
+            child: DropdownButtonFormField<String>(
+              borderRadius: BorderRadius.circular(5),
+              decoration: decoration,
+              isExpanded: true,
+              value: filters.prices.first,
+              style: textStyle.copyWith(fontWeight: FontWeight.w400),
+              items: filters.prices
+                  .map((price) => DropdownMenuItem<String>(
+                        value: price,
+                        child: Text(price),
+                      ))
+                  .toList(),
+              onChanged: (item) {},
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text('Size', style: textStyle),
+          ),
+          DropdownButtonHideUnderline(
+            child: DropdownButtonFormField<String>(
+              borderRadius: BorderRadius.circular(5),
+              decoration: decoration,
+              isExpanded: true,
+              value: filters.sizes.first,
+              style: textStyle.copyWith(fontWeight: FontWeight.w400),
+              items: filters.sizes
+                  .map((sizes) => DropdownMenuItem<String>(
+                        value: sizes,
+                        child: Text(sizes),
+                      ))
+                  .toList(),
+              onChanged: (item) {},
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
