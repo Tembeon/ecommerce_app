@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/generated/resources/fonts.gen.dart';
@@ -99,8 +100,9 @@ class _CarouselViewState extends State<_CarouselView> {
         pageSnapping: true,
         itemBuilder: (context, index) {
           return FractionallySizedBox(
-              widthFactor: 1 / _pageController.viewportFraction,
-              child: _HotSalesItem(homeStore: items[index]),);
+            widthFactor: 1 / _pageController.viewportFraction,
+            child: _HotSalesItem(homeStore: items[index]),
+          );
         },
       ),
     );
@@ -129,19 +131,22 @@ class _HotSalesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Stack(
-        children: [
-          Align(
-            alignment: Alignment.centerRight,
-            child: _BigImageView(imageUrl: homeStore.picture),
-          ),
-          _ModelInfo(homeStore: homeStore),
-        ],
+    return InkWell(
+      onTap: () => context.navigateNamedTo('/details'),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: _BigImageView(imageUrl: homeStore.picture),
+            ),
+            _ModelInfo(homeStore: homeStore),
+          ],
+        ),
       ),
     );
   }
@@ -245,17 +250,17 @@ class NewMark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (!shouldShow) return const SizedBox.square(dimension: 26.0);
+    if (!shouldShow) return const SizedBox.square(dimension: 27.0);
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(120.0),
       child: Material(
         color: Theme.of(context).colorScheme.secondary,
         child: SizedBox.square(
-          dimension: 26,
+          dimension: 27,
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.all(3),
+              padding: const EdgeInsets.all(2),
               child: Text(
                 'New',
                 style: TextStyle(
