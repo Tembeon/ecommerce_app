@@ -1,17 +1,39 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
+import '../../cart/bloc/cart_bloc.dart';
 import '../bloc/navigation_bloc.dart';
 
-class RoundedBottomNavigation extends StatelessWidget {
+class RoundedBottomNavigation extends StatefulWidget {
   const RoundedBottomNavigation({Key? key}) : super(key: key);
 
   @override
+  State<RoundedBottomNavigation> createState() =>
+      _RoundedBottomNavigationState();
+}
+
+class _RoundedBottomNavigationState extends State<RoundedBottomNavigation> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<CartBloc>().add(const CartEvent.loadData());
+  }
+
+  @override
   Widget build(BuildContext context) {
+    int? badgeCount;
+
     return BlocBuilder<NavigationBloc, NavigationState>(
       builder: (context, state) {
         final theme = Theme.of(context);
+        context.watch<CartBloc>().state.when(
+              loading: () => badgeCount = null,
+              failure: (_) => badgeCount = null,
+              showingCartWith: (data) => badgeCount = data.cartItems.length,
+            );
 
         return DecoratedBox(
           decoration: BoxDecoration(
@@ -33,16 +55,25 @@ class RoundedBottomNavigation extends StatelessWidget {
             selectedItemColor: theme.colorScheme.onPrimary,
             unselectedItemColor: theme.colorScheme.onSurface,
             currentIndex: state.getIndex,
-            onTap: (index) => context
-                .read<NavigationBloc>()
-                .add(NavigationEvent.setIndex(index)),
+            onTap: (index) {
+              if (index == 1) return context.navigateNamedTo('/cart');
+
+              context
+                  .read<NavigationBloc>()
+                  .add(NavigationEvent.setIndex(index));
+            },
             items: [
               SalomonBottomBarItem(
                 icon: const Icon(Icons.fiber_manual_record_rounded),
                 title: const Text('Explorer'),
               ),
               SalomonBottomBarItem(
-                icon: const Icon(Icons.shopping_bag_outlined),
+                icon: Badge(
+                  showBadge: badgeCount != null,
+                  toAnimate: false,
+                  badgeContent: Text('$badgeCount'),
+                  child: const Icon(Icons.shopping_bag_outlined),
+                ),
                 title: const Text('Cart'),
               ),
               SalomonBottomBarItem(
