@@ -3,5 +3,44 @@
   "locale_code": "en",
   "@locale_code": {
     "description": "Code of this locale"
-  }
+  },
+  "explorer": "Explorer",
+  "cart": "Cart",
+  "favorites": "Favorites",
+  "profile": "Profile",
+  "total": "Total",
+  "delivery": "Delivery",
+  "checkout": "Checkout",
+  "totalPay": "${total} us",
+  "@totalPay": {
+    "placeholders": {
+      "total": {
+        "type": "double",
+        "example": "20.0"
+      }
+    }
+  },
+  "myCart": "My Cart",
+  "addAddress": "Add address",
+  "shop": "Shop",
+  "details": "Details",
+  "features": "Features",
+  "selectColor": "Select color:",
+  "selectCapacity": "Select capacity:",
+  "addToCart": "Add to cart",
+  "productDetails": "Product Details",
+  "bestSales": "Best sales",
+  "seeMore": "see more",
+  "selectCategory": "Select category",
+  "viewAll": "view all",
+  "brand": "Brand",
+  "price": "Price",
+  "size": "Size",
+  "done": "Done",
+  "hotSales": "Hot sales",
+  "buyNow": "Buy now!",
+  "newMark": "New",
+  "search": "Search",
+  "scanQrCode": "Scan QR code",
+  "filter": "Filter"
 }
