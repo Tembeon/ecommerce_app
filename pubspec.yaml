@@ -40,6 +40,7 @@ dependencies:
   breakpoint: ^1.2.0
   salomon_bottom_bar: ^3.3.1
   flutter_rating_bar: ^4.0.1
+  badges: ^2.0.3
 
   # Network
   http: ^0.13.5
