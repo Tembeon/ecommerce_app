@@ -17,11 +17,13 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$CategoriesState {
   int get index => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int index) selected,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int index)? selected,
@@ -33,11 +35,13 @@ mixin _$CategoriesState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SelectedCategoriesState value) selected,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SelectedCategoriesState value)? selected,
@@ -60,6 +64,7 @@ abstract class $CategoriesStateCopyWith<$Res> {
   factory $CategoriesStateCopyWith(
           CategoriesState value, $Res Function(CategoriesState) then) =
       _$CategoriesStateCopyWithImpl<$Res>;
+
   $Res call({int index});
 }
 
@@ -69,6 +74,7 @@ class _$CategoriesStateCopyWithImpl<$Res>
   _$CategoriesStateCopyWithImpl(this._value, this._then);
 
   final CategoriesState _value;
+
   // ignore: unused_field
   final $Res Function(CategoriesState) _then;
 
@@ -91,6 +97,7 @@ abstract class _$$_SelectedCategoriesStateCopyWith<$Res>
   factory _$$_SelectedCategoriesStateCopyWith(_$_SelectedCategoriesState value,
           $Res Function(_$_SelectedCategoriesState) then) =
       __$$_SelectedCategoriesStateCopyWithImpl<$Res>;
+
   @override
   $Res call({int index});
 }
@@ -212,10 +219,12 @@ class _$_SelectedCategoriesState extends _SelectedCategoriesState {
 abstract class _SelectedCategoriesState extends CategoriesState {
   const factory _SelectedCategoriesState(final int index) =
       _$_SelectedCategoriesState;
+
   const _SelectedCategoriesState._() : super._();
 
   @override
   int get index;
+
   @override
   @JsonKey(ignore: true)
   _$$_SelectedCategoriesStateCopyWith<_$_SelectedCategoriesState>
@@ -225,11 +234,13 @@ abstract class _SelectedCategoriesState extends CategoriesState {
 /// @nodoc
 mixin _$CategoriesEvent {
   int get newIndex => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int newIndex) selectItem,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int newIndex)? selectItem,
@@ -241,11 +252,13 @@ mixin _$CategoriesEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SelectItemCategoriesEvent value) selectItem,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SelectItemCategoriesEvent value)? selectItem,
@@ -268,6 +281,7 @@ abstract class $CategoriesEventCopyWith<$Res> {
   factory $CategoriesEventCopyWith(
           CategoriesEvent value, $Res Function(CategoriesEvent) then) =
       _$CategoriesEventCopyWithImpl<$Res>;
+
   $Res call({int newIndex});
 }
 
@@ -277,6 +291,7 @@ class _$CategoriesEventCopyWithImpl<$Res>
   _$CategoriesEventCopyWithImpl(this._value, this._then);
 
   final CategoriesEvent _value;
+
   // ignore: unused_field
   final $Res Function(CategoriesEvent) _then;
 
@@ -300,6 +315,7 @@ abstract class _$$_SelectItemCategoriesEventCopyWith<$Res>
           _$_SelectItemCategoriesEvent value,
           $Res Function(_$_SelectItemCategoriesEvent) then) =
       __$$_SelectItemCategoriesEventCopyWithImpl<$Res>;
+
   @override
   $Res call({int newIndex});
 }
@@ -421,10 +437,12 @@ class _$_SelectItemCategoriesEvent extends _SelectItemCategoriesEvent {
 abstract class _SelectItemCategoriesEvent extends CategoriesEvent {
   const factory _SelectItemCategoriesEvent(final int newIndex) =
       _$_SelectItemCategoriesEvent;
+
   const _SelectItemCategoriesEvent._() : super._();
 
   @override
   int get newIndex;
+
   @override
   @JsonKey(ignore: true)
   _$$_SelectItemCategoriesEventCopyWith<_$_SelectItemCategoriesEvent>

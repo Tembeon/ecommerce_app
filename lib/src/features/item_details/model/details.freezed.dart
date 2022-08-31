@@ -22,30 +22,42 @@ DetailsModel _$DetailsModelFromJson(Map<String, dynamic> json) {
 mixin _$DetailsModel {
   @JsonKey(name: 'CPU')
   String get cpu => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'camera')
   String get camera => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'capacity')
   List<String> get capacity => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'color')
   List<String> get color => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'id')
   String get id => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'images')
   List<String> get images => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'isFavorites')
   bool get isFavorites => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'price')
   int get price => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'rating')
   double get rating => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'sd')
   String get sd => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'ssd')
   String get ssd => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'title')
   String get title => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $DetailsModelCopyWith<DetailsModel> get copyWith =>
       throw _privateConstructorUsedError;
@@ -56,6 +68,7 @@ abstract class $DetailsModelCopyWith<$Res> {
   factory $DetailsModelCopyWith(
           DetailsModel value, $Res Function(DetailsModel) then) =
       _$DetailsModelCopyWithImpl<$Res>;
+
   $Res call(
       {@JsonKey(name: 'CPU') String cpu,
       @JsonKey(name: 'camera') String camera,
@@ -76,6 +89,7 @@ class _$DetailsModelCopyWithImpl<$Res> implements $DetailsModelCopyWith<$Res> {
   _$DetailsModelCopyWithImpl(this._value, this._then);
 
   final DetailsModel _value;
+
   // ignore: unused_field
   final $Res Function(DetailsModel) _then;
 
@@ -153,6 +167,7 @@ abstract class _$$_DetailsModelCopyWith<$Res>
   factory _$$_DetailsModelCopyWith(
           _$_DetailsModel value, $Res Function(_$_DetailsModel) then) =
       __$$_DetailsModelCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {@JsonKey(name: 'CPU') String cpu,
@@ -278,6 +293,7 @@ class _$_DetailsModel implements _DetailsModel {
   @JsonKey(name: 'camera')
   final String camera;
   final List<String> _capacity;
+
   @override
   @JsonKey(name: 'capacity')
   List<String> get capacity {
@@ -286,6 +302,7 @@ class _$_DetailsModel implements _DetailsModel {
   }
 
   final List<String> _color;
+
   @override
   @JsonKey(name: 'color')
   List<String> get color {
@@ -297,6 +314,7 @@ class _$_DetailsModel implements _DetailsModel {
   @JsonKey(name: 'id')
   final String id;
   final List<String> _images;
+
   @override
   @JsonKey(name: 'images')
   List<String> get images {
@@ -399,39 +417,51 @@ abstract class _DetailsModel implements DetailsModel {
   @override
   @JsonKey(name: 'CPU')
   String get cpu;
+
   @override
   @JsonKey(name: 'camera')
   String get camera;
+
   @override
   @JsonKey(name: 'capacity')
   List<String> get capacity;
+
   @override
   @JsonKey(name: 'color')
   List<String> get color;
+
   @override
   @JsonKey(name: 'id')
   String get id;
+
   @override
   @JsonKey(name: 'images')
   List<String> get images;
+
   @override
   @JsonKey(name: 'isFavorites')
   bool get isFavorites;
+
   @override
   @JsonKey(name: 'price')
   int get price;
+
   @override
   @JsonKey(name: 'rating')
   double get rating;
+
   @override
   @JsonKey(name: 'sd')
   String get sd;
+
   @override
   @JsonKey(name: 'ssd')
   String get ssd;
+
   @override
   @JsonKey(name: 'title')
   String get title;
+
   @override
   @JsonKey(ignore: true)
   _$$_DetailsModelCopyWith<_$_DetailsModel> get copyWith =>

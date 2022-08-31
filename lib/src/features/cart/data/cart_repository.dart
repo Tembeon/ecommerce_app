@@ -10,7 +10,6 @@ abstract class ICartRepository {
 }
 
 class CommerceCartRepository implements ICartRepository {
-
   /// Returns cart content.
   ///
   /// Can throw network errors. If status code is not 200, then

@@ -8,26 +8,23 @@ part 'cart_content.g.dart';
 @freezed
 class CartContent with _$CartContent {
   const factory CartContent({
-      @JsonKey(name: 'basket') required List<CartItem> cartItems,
-      required String delivery,
-      required String id,
-      required double total,
-
+    @JsonKey(name: 'basket') required List<CartItem> cartItems,
+    required String delivery,
+    required String id,
+    required double total,
   }) = _CartContent;
 
   factory CartContent.fromJson(Map<String, dynamic> json) =>
       _$CartContentFromJson(json);
 }
 
-
 @freezed
 class CartItem with _$CartItem {
   const factory CartItem({
-      required int id,
-      required String images,
-      required double price,
-      required String title,
-
+    required int id,
+    required String images,
+    required double price,
+    required String title,
   }) = _CartItem;
 
   factory CartItem.fromJson(Map<String, dynamic> json) =>

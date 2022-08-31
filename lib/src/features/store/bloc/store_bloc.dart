@@ -12,11 +12,9 @@ part 'store_bloc.freezed.dart';
 class StoreState with _$StoreState {
   const StoreState._();
 
-
   const factory StoreState.failure({
     @Default('An error has occurred') String message,
   }) = _FailureStoreState;
-
 
   const factory StoreState.loading() = _LoadingStoreState;
 

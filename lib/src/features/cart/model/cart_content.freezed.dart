@@ -22,11 +22,15 @@ CartContent _$CartContentFromJson(Map<String, dynamic> json) {
 mixin _$CartContent {
   @JsonKey(name: 'basket')
   List<CartItem> get cartItems => throw _privateConstructorUsedError;
+
   String get delivery => throw _privateConstructorUsedError;
+
   String get id => throw _privateConstructorUsedError;
+
   double get total => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $CartContentCopyWith<CartContent> get copyWith =>
       throw _privateConstructorUsedError;
@@ -37,6 +41,7 @@ abstract class $CartContentCopyWith<$Res> {
   factory $CartContentCopyWith(
           CartContent value, $Res Function(CartContent) then) =
       _$CartContentCopyWithImpl<$Res>;
+
   $Res call(
       {@JsonKey(name: 'basket') List<CartItem> cartItems,
       String delivery,
@@ -49,6 +54,7 @@ class _$CartContentCopyWithImpl<$Res> implements $CartContentCopyWith<$Res> {
   _$CartContentCopyWithImpl(this._value, this._then);
 
   final CartContent _value;
+
   // ignore: unused_field
   final $Res Function(CartContent) _then;
 
@@ -86,6 +92,7 @@ abstract class _$$_CartContentCopyWith<$Res>
   factory _$$_CartContentCopyWith(
           _$_CartContent value, $Res Function(_$_CartContent) then) =
       __$$_CartContentCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {@JsonKey(name: 'basket') List<CartItem> cartItems,
@@ -146,6 +153,7 @@ class _$_CartContent implements _CartContent {
       _$$_CartContentFromJson(json);
 
   final List<CartItem> _cartItems;
+
   @override
   @JsonKey(name: 'basket')
   List<CartItem> get cartItems {
@@ -212,12 +220,16 @@ abstract class _CartContent implements CartContent {
   @override
   @JsonKey(name: 'basket')
   List<CartItem> get cartItems;
+
   @override
   String get delivery;
+
   @override
   String get id;
+
   @override
   double get total;
+
   @override
   @JsonKey(ignore: true)
   _$$_CartContentCopyWith<_$_CartContent> get copyWith =>
@@ -231,11 +243,15 @@ CartItem _$CartItemFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CartItem {
   int get id => throw _privateConstructorUsedError;
+
   String get images => throw _privateConstructorUsedError;
+
   double get price => throw _privateConstructorUsedError;
+
   String get title => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $CartItemCopyWith<CartItem> get copyWith =>
       throw _privateConstructorUsedError;
@@ -245,6 +261,7 @@ mixin _$CartItem {
 abstract class $CartItemCopyWith<$Res> {
   factory $CartItemCopyWith(CartItem value, $Res Function(CartItem) then) =
       _$CartItemCopyWithImpl<$Res>;
+
   $Res call({int id, String images, double price, String title});
 }
 
@@ -253,6 +270,7 @@ class _$CartItemCopyWithImpl<$Res> implements $CartItemCopyWith<$Res> {
   _$CartItemCopyWithImpl(this._value, this._then);
 
   final CartItem _value;
+
   // ignore: unused_field
   final $Res Function(CartItem) _then;
 
@@ -289,6 +307,7 @@ abstract class _$$_CartItemCopyWith<$Res> implements $CartItemCopyWith<$Res> {
   factory _$$_CartItemCopyWith(
           _$_CartItem value, $Res Function(_$_CartItem) then) =
       __$$_CartItemCopyWithImpl<$Res>;
+
   @override
   $Res call({int id, String images, double price, String title});
 }
@@ -401,12 +420,16 @@ abstract class _CartItem implements CartItem {
 
   @override
   int get id;
+
   @override
   String get images;
+
   @override
   double get price;
+
   @override
   String get title;
+
   @override
   @JsonKey(ignore: true)
   _$$_CartItemCopyWith<_$_CartItem> get copyWith =>

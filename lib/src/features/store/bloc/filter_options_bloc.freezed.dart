@@ -24,6 +24,7 @@ mixin _$FilterOptionsState {
     required TResult Function() openFiltersDialog,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadFilters,
@@ -41,6 +42,7 @@ mixin _$FilterOptionsState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadFiltersFilterOptionsState value) loadFilters,
@@ -51,6 +53,7 @@ mixin _$FilterOptionsState {
         openFiltersDialog,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_LoadFiltersFilterOptionsState value)? loadFilters,
@@ -85,6 +88,7 @@ class _$FilterOptionsStateCopyWithImpl<$Res>
   _$FilterOptionsStateCopyWithImpl(this._value, this._then);
 
   final FilterOptionsState _value;
+
   // ignore: unused_field
   final $Res Function(FilterOptionsState) _then;
 }
@@ -213,6 +217,7 @@ class _$_LoadFiltersFilterOptionsState extends _LoadFiltersFilterOptionsState {
 abstract class _LoadFiltersFilterOptionsState extends FilterOptionsState {
   const factory _LoadFiltersFilterOptionsState() =
       _$_LoadFiltersFilterOptionsState;
+
   const _LoadFiltersFilterOptionsState._() : super._();
 }
 
@@ -341,6 +346,7 @@ class _$_LoadedFiltersFilterOptionsState
 abstract class _LoadedFiltersFilterOptionsState extends FilterOptionsState {
   const factory _LoadedFiltersFilterOptionsState() =
       _$_LoadedFiltersFilterOptionsState;
+
   const _LoadedFiltersFilterOptionsState._() : super._();
 }
 
@@ -468,6 +474,7 @@ class _$_SaveFiltersFilterOptionsState extends _SaveFiltersFilterOptionsState {
 abstract class _SaveFiltersFilterOptionsState extends FilterOptionsState {
   const factory _SaveFiltersFilterOptionsState() =
       _$_SaveFiltersFilterOptionsState;
+
   const _SaveFiltersFilterOptionsState._() : super._();
 }
 
@@ -597,6 +604,7 @@ class _$_OpenFiltersDialogFilterOptionsState
 abstract class _OpenFiltersDialogFilterOptionsState extends FilterOptionsState {
   const factory _OpenFiltersDialogFilterOptionsState() =
       _$_OpenFiltersDialogFilterOptionsState;
+
   const _OpenFiltersDialogFilterOptionsState._() : super._();
 }
 
@@ -609,6 +617,7 @@ mixin _$FilterOptionsEvent {
     required TResult Function() openFilters,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadFilters,
@@ -624,6 +633,7 @@ mixin _$FilterOptionsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadFiltersFilterOptionsEvent value) loadFilters,
@@ -631,6 +641,7 @@ mixin _$FilterOptionsEvent {
     required TResult Function(_OpenFiltersFilterOptionsEvent value) openFilters,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_LoadFiltersFilterOptionsEvent value)? loadFilters,
@@ -661,6 +672,7 @@ class _$FilterOptionsEventCopyWithImpl<$Res>
   _$FilterOptionsEventCopyWithImpl(this._value, this._then);
 
   final FilterOptionsEvent _value;
+
   // ignore: unused_field
   final $Res Function(FilterOptionsEvent) _then;
 }
@@ -779,6 +791,7 @@ class _$_LoadFiltersFilterOptionsEvent extends _LoadFiltersFilterOptionsEvent {
 abstract class _LoadFiltersFilterOptionsEvent extends FilterOptionsEvent {
   const factory _LoadFiltersFilterOptionsEvent() =
       _$_LoadFiltersFilterOptionsEvent;
+
   const _LoadFiltersFilterOptionsEvent._() : super._();
 }
 
@@ -896,6 +909,7 @@ class _$_SaveFiltersFilterOptionsEvent extends _SaveFiltersFilterOptionsEvent {
 abstract class _SaveFiltersFilterOptionsEvent extends FilterOptionsEvent {
   const factory _SaveFiltersFilterOptionsEvent() =
       _$_SaveFiltersFilterOptionsEvent;
+
   const _SaveFiltersFilterOptionsEvent._() : super._();
 }
 
@@ -1013,5 +1027,6 @@ class _$_OpenFiltersFilterOptionsEvent extends _OpenFiltersFilterOptionsEvent {
 abstract class _OpenFiltersFilterOptionsEvent extends FilterOptionsEvent {
   const factory _OpenFiltersFilterOptionsEvent() =
       _$_OpenFiltersFilterOptionsEvent;
+
   const _OpenFiltersFilterOptionsEvent._() : super._();
 }

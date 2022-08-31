@@ -34,7 +34,8 @@ class _CarouselViewState extends State<CarouselView> {
   Widget build(BuildContext context) {
     return FutureBuilder<bool>(
       initialData: false, // delay for awaiting pagecontroller to be used
-      future: Future<bool>.delayed(const Duration(microseconds: 200), () => true),
+      future:
+          Future<bool>.delayed(const Duration(microseconds: 200), () => true),
       builder: (context, loading) {
         if (!loading.data!) {
           return const Center(child: CircularProgressIndicator());

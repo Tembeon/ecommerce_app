@@ -22,10 +22,12 @@ StoreItems _$StoreItemsFromJson(Map<String, dynamic> json) {
 mixin _$StoreItems {
   @JsonKey(name: 'home_store')
   List<HomeStore> get homeStore => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'best_seller')
   List<BestSeller> get bestSeller => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $StoreItemsCopyWith<StoreItems> get copyWith =>
       throw _privateConstructorUsedError;
@@ -36,6 +38,7 @@ abstract class $StoreItemsCopyWith<$Res> {
   factory $StoreItemsCopyWith(
           StoreItems value, $Res Function(StoreItems) then) =
       _$StoreItemsCopyWithImpl<$Res>;
+
   $Res call(
       {@JsonKey(name: 'home_store') List<HomeStore> homeStore,
       @JsonKey(name: 'best_seller') List<BestSeller> bestSeller});
@@ -46,6 +49,7 @@ class _$StoreItemsCopyWithImpl<$Res> implements $StoreItemsCopyWith<$Res> {
   _$StoreItemsCopyWithImpl(this._value, this._then);
 
   final StoreItems _value;
+
   // ignore: unused_field
   final $Res Function(StoreItems) _then;
 
@@ -73,6 +77,7 @@ abstract class _$$_StoreItemsCopyWith<$Res>
   factory _$$_StoreItemsCopyWith(
           _$_StoreItems value, $Res Function(_$_StoreItems) then) =
       __$$_StoreItemsCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {@JsonKey(name: 'home_store') List<HomeStore> homeStore,
@@ -120,6 +125,7 @@ class _$_StoreItems implements _StoreItems {
       _$$_StoreItemsFromJson(json);
 
   final List<HomeStore> _homeStore;
+
   @override
   @JsonKey(name: 'home_store')
   List<HomeStore> get homeStore {
@@ -128,6 +134,7 @@ class _$_StoreItems implements _StoreItems {
   }
 
   final List<BestSeller> _bestSeller;
+
   @override
   @JsonKey(name: 'best_seller')
   List<BestSeller> get bestSeller {
@@ -184,9 +191,11 @@ abstract class _StoreItems implements StoreItems {
   @override
   @JsonKey(name: 'home_store')
   List<HomeStore> get homeStore;
+
   @override
   @JsonKey(name: 'best_seller')
   List<BestSeller> get bestSeller;
+
   @override
   @JsonKey(ignore: true)
   _$$_StoreItemsCopyWith<_$_StoreItems> get copyWith =>
@@ -201,18 +210,24 @@ HomeStore _$HomeStoreFromJson(Map<String, dynamic> json) {
 mixin _$HomeStore {
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'is_new')
   bool? get isNew => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'title')
   String get title => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'subtitle')
   String get subtitle => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'picture')
   String get picture => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'is_buy')
   bool? get isBuy => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $HomeStoreCopyWith<HomeStore> get copyWith =>
       throw _privateConstructorUsedError;
@@ -222,6 +237,7 @@ mixin _$HomeStore {
 abstract class $HomeStoreCopyWith<$Res> {
   factory $HomeStoreCopyWith(HomeStore value, $Res Function(HomeStore) then) =
       _$HomeStoreCopyWithImpl<$Res>;
+
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'is_new') bool? isNew,
@@ -236,6 +252,7 @@ class _$HomeStoreCopyWithImpl<$Res> implements $HomeStoreCopyWith<$Res> {
   _$HomeStoreCopyWithImpl(this._value, this._then);
 
   final HomeStore _value;
+
   // ignore: unused_field
   final $Res Function(HomeStore) _then;
 
@@ -282,6 +299,7 @@ abstract class _$$_HomeStoreCopyWith<$Res> implements $HomeStoreCopyWith<$Res> {
   factory _$$_HomeStoreCopyWith(
           _$_HomeStore value, $Res Function(_$_HomeStore) then) =
       __$$_HomeStoreCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {@JsonKey(name: 'id') int id,
@@ -430,21 +448,27 @@ abstract class _HomeStore implements HomeStore {
   @override
   @JsonKey(name: 'id')
   int get id;
+
   @override
   @JsonKey(name: 'is_new')
   bool? get isNew;
+
   @override
   @JsonKey(name: 'title')
   String get title;
+
   @override
   @JsonKey(name: 'subtitle')
   String get subtitle;
+
   @override
   @JsonKey(name: 'picture')
   String get picture;
+
   @override
   @JsonKey(name: 'is_buy')
   bool? get isBuy;
+
   @override
   @JsonKey(ignore: true)
   _$$_HomeStoreCopyWith<_$_HomeStore> get copyWith =>
@@ -459,18 +483,24 @@ BestSeller _$BestSellerFromJson(Map<String, dynamic> json) {
 mixin _$BestSeller {
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'is_favorites')
   bool? get isFavorites => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'title')
   String get title => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'price_without_discount')
   int get priceWithoutDiscount => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'discount_price')
   int get discountPrice => throw _privateConstructorUsedError;
+
   @JsonKey(name: 'picture')
   String get picture => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $BestSellerCopyWith<BestSeller> get copyWith =>
       throw _privateConstructorUsedError;
@@ -481,6 +511,7 @@ abstract class $BestSellerCopyWith<$Res> {
   factory $BestSellerCopyWith(
           BestSeller value, $Res Function(BestSeller) then) =
       _$BestSellerCopyWithImpl<$Res>;
+
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'is_favorites') bool? isFavorites,
@@ -495,6 +526,7 @@ class _$BestSellerCopyWithImpl<$Res> implements $BestSellerCopyWith<$Res> {
   _$BestSellerCopyWithImpl(this._value, this._then);
 
   final BestSeller _value;
+
   // ignore: unused_field
   final $Res Function(BestSeller) _then;
 
@@ -542,6 +574,7 @@ abstract class _$$_BestSellerCopyWith<$Res>
   factory _$$_BestSellerCopyWith(
           _$_BestSeller value, $Res Function(_$_BestSeller) then) =
       __$$_BestSellerCopyWithImpl<$Res>;
+
   @override
   $Res call(
       {@JsonKey(name: 'id') int id,
@@ -705,21 +738,27 @@ abstract class _BestSeller implements BestSeller {
   @override
   @JsonKey(name: 'id')
   int get id;
+
   @override
   @JsonKey(name: 'is_favorites')
   bool? get isFavorites;
+
   @override
   @JsonKey(name: 'title')
   String get title;
+
   @override
   @JsonKey(name: 'price_without_discount')
   int get priceWithoutDiscount;
+
   @override
   @JsonKey(name: 'discount_price')
   int get discountPrice;
+
   @override
   @JsonKey(name: 'picture')
   String get picture;
+
   @override
   @JsonKey(ignore: true)
   _$$_BestSellerCopyWith<_$_BestSeller> get copyWith =>

@@ -396,5 +396,3 @@ class _SpecsSelectorState extends State<_SpecsSelector> {
     );
   }
 }
-
-

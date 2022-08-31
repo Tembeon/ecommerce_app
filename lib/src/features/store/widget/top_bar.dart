@@ -56,7 +56,10 @@ class _TopBarState extends State<TopBar> {
             IconButton(
               tooltip: 'Filter',
               padding: EdgeInsets.zero,
-              icon: const Icon(Icons.filter_alt_outlined, color: Color(0xFF010035),),
+              icon: const Icon(
+                Icons.filter_alt_outlined,
+                color: Color(0xFF010035),
+              ),
               onPressed: () => context
                   .read<FilterOptionsBloc>()
                   .add(const FilterOptionsEvent.openFilters()),

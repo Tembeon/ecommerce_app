@@ -23,6 +23,7 @@ mixin _$ItemDetailsState {
     required TResult Function(String message) failure,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(List<DetailsModel> details)? showDetailsWith,
@@ -38,6 +39,7 @@ mixin _$ItemDetailsState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialItemDetailsState value) showDetailsWith,
@@ -45,6 +47,7 @@ mixin _$ItemDetailsState {
     required TResult Function(_FailureItemDetailsState value) failure,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_InitialItemDetailsState value)? showDetailsWith,
@@ -75,6 +78,7 @@ class _$ItemDetailsStateCopyWithImpl<$Res>
   _$ItemDetailsStateCopyWithImpl(this._value, this._then);
 
   final ItemDetailsState _value;
+
   // ignore: unused_field
   final $Res Function(ItemDetailsState) _then;
 }
@@ -84,6 +88,7 @@ abstract class _$$_InitialItemDetailsStateCopyWith<$Res> {
   factory _$$_InitialItemDetailsStateCopyWith(_$_InitialItemDetailsState value,
           $Res Function(_$_InitialItemDetailsState) then) =
       __$$_InitialItemDetailsStateCopyWithImpl<$Res>;
+
   $Res call({List<DetailsModel> details});
 }
 
@@ -120,6 +125,7 @@ class _$_InitialItemDetailsState extends _InitialItemDetailsState {
         super._();
 
   final List<DetailsModel> _details;
+
   @override
   List<DetailsModel> get details {
     // ignore: implicit_dynamic_type
@@ -222,9 +228,11 @@ class _$_InitialItemDetailsState extends _InitialItemDetailsState {
 abstract class _InitialItemDetailsState extends ItemDetailsState {
   const factory _InitialItemDetailsState(final List<DetailsModel> details) =
       _$_InitialItemDetailsState;
+
   const _InitialItemDetailsState._() : super._();
 
   List<DetailsModel> get details;
+
   @JsonKey(ignore: true)
   _$$_InitialItemDetailsStateCopyWith<_$_InitialItemDetailsState>
       get copyWith => throw _privateConstructorUsedError;
@@ -341,6 +349,7 @@ class _$_LoadingItemDetailsState extends _LoadingItemDetailsState {
 
 abstract class _LoadingItemDetailsState extends ItemDetailsState {
   const factory _LoadingItemDetailsState() = _$_LoadingItemDetailsState;
+
   const _LoadingItemDetailsState._() : super._();
 }
 
@@ -349,6 +358,7 @@ abstract class _$$_FailureItemDetailsStateCopyWith<$Res> {
   factory _$$_FailureItemDetailsStateCopyWith(_$_FailureItemDetailsState value,
           $Res Function(_$_FailureItemDetailsState) then) =
       __$$_FailureItemDetailsStateCopyWithImpl<$Res>;
+
   $Res call({String message});
 }
 
@@ -483,9 +493,11 @@ class _$_FailureItemDetailsState extends _FailureItemDetailsState {
 abstract class _FailureItemDetailsState extends ItemDetailsState {
   const factory _FailureItemDetailsState({final String message}) =
       _$_FailureItemDetailsState;
+
   const _FailureItemDetailsState._() : super._();
 
   String get message;
+
   @JsonKey(ignore: true)
   _$$_FailureItemDetailsStateCopyWith<_$_FailureItemDetailsState>
       get copyWith => throw _privateConstructorUsedError;
@@ -498,6 +510,7 @@ mixin _$ItemDetailsEvent {
     required TResult Function() loadData,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadData,
@@ -509,11 +522,13 @@ mixin _$ItemDetailsEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadDataItemDetailsEvent value) loadData,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_LoadDataItemDetailsEvent value)? loadData,
@@ -540,6 +555,7 @@ class _$ItemDetailsEventCopyWithImpl<$Res>
   _$ItemDetailsEventCopyWithImpl(this._value, this._then);
 
   final ItemDetailsEvent _value;
+
   // ignore: unused_field
   final $Res Function(ItemDetailsEvent) _then;
 }
@@ -644,5 +660,6 @@ class _$_LoadDataItemDetailsEvent extends _LoadDataItemDetailsEvent {
 
 abstract class _LoadDataItemDetailsEvent extends ItemDetailsEvent {
   const factory _LoadDataItemDetailsEvent() = _$_LoadDataItemDetailsEvent;
+
   const _LoadDataItemDetailsEvent._() : super._();
 }

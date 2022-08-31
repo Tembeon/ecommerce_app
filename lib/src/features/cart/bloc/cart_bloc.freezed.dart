@@ -23,6 +23,7 @@ mixin _$CartState {
     required TResult Function(CartContent cart) showingCartWith,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
@@ -38,6 +39,7 @@ mixin _$CartState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadingCartState value) loading,
@@ -45,6 +47,7 @@ mixin _$CartState {
     required TResult Function(_ShowingCartWithCartState value) showingCartWith,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_LoadingCartState value)? loading,
@@ -73,6 +76,7 @@ class _$CartStateCopyWithImpl<$Res> implements $CartStateCopyWith<$Res> {
   _$CartStateCopyWithImpl(this._value, this._then);
 
   final CartState _value;
+
   // ignore: unused_field
   final $Res Function(CartState) _then;
 }
@@ -186,6 +190,7 @@ class _$_LoadingCartState extends _LoadingCartState {
 
 abstract class _LoadingCartState extends CartState {
   const factory _LoadingCartState() = _$_LoadingCartState;
+
   const _LoadingCartState._() : super._();
 }
 
@@ -194,6 +199,7 @@ abstract class _$$_FailureCartStateCopyWith<$Res> {
   factory _$$_FailureCartStateCopyWith(
           _$_FailureCartState value, $Res Function(_$_FailureCartState) then) =
       __$$_FailureCartStateCopyWithImpl<$Res>;
+
   $Res call({String message});
 }
 
@@ -324,9 +330,11 @@ class _$_FailureCartState extends _FailureCartState {
 
 abstract class _FailureCartState extends CartState {
   const factory _FailureCartState({final String message}) = _$_FailureCartState;
+
   const _FailureCartState._() : super._();
 
   String get message;
+
   @JsonKey(ignore: true)
   _$$_FailureCartStateCopyWith<_$_FailureCartState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -338,6 +346,7 @@ abstract class _$$_ShowingCartWithCartStateCopyWith<$Res> {
           _$_ShowingCartWithCartState value,
           $Res Function(_$_ShowingCartWithCartState) then) =
       __$$_ShowingCartWithCartStateCopyWithImpl<$Res>;
+
   $Res call({CartContent cart});
 
   $CartContentCopyWith<$Res> get cart;
@@ -478,9 +487,11 @@ class _$_ShowingCartWithCartState extends _ShowingCartWithCartState {
 abstract class _ShowingCartWithCartState extends CartState {
   const factory _ShowingCartWithCartState(final CartContent cart) =
       _$_ShowingCartWithCartState;
+
   const _ShowingCartWithCartState._() : super._();
 
   CartContent get cart;
+
   @JsonKey(ignore: true)
   _$$_ShowingCartWithCartStateCopyWith<_$_ShowingCartWithCartState>
       get copyWith => throw _privateConstructorUsedError;
@@ -493,6 +504,7 @@ mixin _$CartEvent {
     required TResult Function() loadData,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadData,
@@ -504,11 +516,13 @@ mixin _$CartEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadDataCartEvent value) loadData,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_LoadDataCartEvent value)? loadData,
@@ -533,6 +547,7 @@ class _$CartEventCopyWithImpl<$Res> implements $CartEventCopyWith<$Res> {
   _$CartEventCopyWithImpl(this._value, this._then);
 
   final CartEvent _value;
+
   // ignore: unused_field
   final $Res Function(CartEvent) _then;
 }
@@ -634,5 +649,6 @@ class _$_LoadDataCartEvent extends _LoadDataCartEvent {
 
 abstract class _LoadDataCartEvent extends CartEvent {
   const factory _LoadDataCartEvent() = _$_LoadDataCartEvent;
+
   const _LoadDataCartEvent._() : super._();
 }

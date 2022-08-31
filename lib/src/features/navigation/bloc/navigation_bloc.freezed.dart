@@ -17,12 +17,15 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$NavigationState {
   int get index => throw _privateConstructorUsedError;
+
   PageController get pageController => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int index, PageController pageController) showing,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int index, PageController pageController)? showing,
@@ -34,11 +37,13 @@ mixin _$NavigationState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ShowingNavigationState value) showing,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_ShowingNavigationState value)? showing,
@@ -61,6 +66,7 @@ abstract class $NavigationStateCopyWith<$Res> {
   factory $NavigationStateCopyWith(
           NavigationState value, $Res Function(NavigationState) then) =
       _$NavigationStateCopyWithImpl<$Res>;
+
   $Res call({int index, PageController pageController});
 }
 
@@ -70,6 +76,7 @@ class _$NavigationStateCopyWithImpl<$Res>
   _$NavigationStateCopyWithImpl(this._value, this._then);
 
   final NavigationState _value;
+
   // ignore: unused_field
   final $Res Function(NavigationState) _then;
 
@@ -97,6 +104,7 @@ abstract class _$$_ShowingNavigationStateCopyWith<$Res>
   factory _$$_ShowingNavigationStateCopyWith(_$_ShowingNavigationState value,
           $Res Function(_$_ShowingNavigationState) then) =
       __$$_ShowingNavigationStateCopyWithImpl<$Res>;
+
   @override
   $Res call({int index, PageController pageController});
 }
@@ -232,12 +240,15 @@ abstract class _ShowingNavigationState extends NavigationState {
           {required final int index,
           required final PageController pageController}) =
       _$_ShowingNavigationState;
+
   const _ShowingNavigationState._() : super._();
 
   @override
   int get index;
+
   @override
   PageController get pageController;
+
   @override
   @JsonKey(ignore: true)
   _$$_ShowingNavigationStateCopyWith<_$_ShowingNavigationState> get copyWith =>
@@ -247,11 +258,13 @@ abstract class _ShowingNavigationState extends NavigationState {
 /// @nodoc
 mixin _$NavigationEvent {
   int get newIndex => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int newIndex) setIndex,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int newIndex)? setIndex,
@@ -263,11 +276,13 @@ mixin _$NavigationEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetIndexNavigationEvent value) setIndex,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SetIndexNavigationEvent value)? setIndex,
@@ -290,6 +305,7 @@ abstract class $NavigationEventCopyWith<$Res> {
   factory $NavigationEventCopyWith(
           NavigationEvent value, $Res Function(NavigationEvent) then) =
       _$NavigationEventCopyWithImpl<$Res>;
+
   $Res call({int newIndex});
 }
 
@@ -299,6 +315,7 @@ class _$NavigationEventCopyWithImpl<$Res>
   _$NavigationEventCopyWithImpl(this._value, this._then);
 
   final NavigationEvent _value;
+
   // ignore: unused_field
   final $Res Function(NavigationEvent) _then;
 
@@ -321,6 +338,7 @@ abstract class _$$_SetIndexNavigationEventCopyWith<$Res>
   factory _$$_SetIndexNavigationEventCopyWith(_$_SetIndexNavigationEvent value,
           $Res Function(_$_SetIndexNavigationEvent) then) =
       __$$_SetIndexNavigationEventCopyWithImpl<$Res>;
+
   @override
   $Res call({int newIndex});
 }
@@ -442,10 +460,12 @@ class _$_SetIndexNavigationEvent extends _SetIndexNavigationEvent {
 abstract class _SetIndexNavigationEvent extends NavigationEvent {
   const factory _SetIndexNavigationEvent(final int newIndex) =
       _$_SetIndexNavigationEvent;
+
   const _SetIndexNavigationEvent._() : super._();
 
   @override
   int get newIndex;
+
   @override
   @JsonKey(ignore: true)
   _$$_SetIndexNavigationEventCopyWith<_$_SetIndexNavigationEvent>

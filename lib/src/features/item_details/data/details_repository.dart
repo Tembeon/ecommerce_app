@@ -10,7 +10,6 @@ abstract class IDetailsRepository {
 }
 
 class DetailsRepository implements IDetailsRepository {
-
   /// Returns DetailsModel for one item.
   ///
   /// Will throw [Exception] if status code is not 200.
