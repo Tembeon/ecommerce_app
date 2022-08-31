@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../bloc/filter_options_bloc.dart';
 import '../utils/filter_dialog.dart';
 
@@ -54,7 +55,7 @@ class _TopBarState extends State<TopBar> {
               ],
             ),
             IconButton(
-              tooltip: 'Filter',
+              tooltip: S.of(context).filter,
               padding: EdgeInsets.zero,
               icon: const Icon(
                 Icons.filter_alt_outlined,

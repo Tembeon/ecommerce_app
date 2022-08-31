@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../../../core/generated/resources/fonts.gen.dart';
 
 class ToolBar extends StatelessWidget {
@@ -31,9 +32,9 @@ class ToolBar extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            const Text(
-              'Add address',
-              style: TextStyle(
+            Text(
+              S.of(context).addAddress,
+              style: const TextStyle(
                 fontFamily: FontFamily.markPro,
                 fontWeight: FontWeight.w500,
                 fontSize: 18.0,

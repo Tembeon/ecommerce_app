@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../../../core/generated/resources/fonts.gen.dart';
 import '../bloc/categories_bloc.dart';
 
@@ -25,7 +26,7 @@ class CategoriesSection extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                'Select category',
+                S.of(context).selectCategory,
                 style: theme.textTheme.headline1,
               ),
               const Spacer(),
@@ -34,7 +35,7 @@ class CategoriesSection extends StatelessWidget {
                 onPressed: () {
                   // open categories list here
                 },
-                child: const Text('view all'),
+                child: Text(S.of(context).viewAll),
               ),
             ],
           ),

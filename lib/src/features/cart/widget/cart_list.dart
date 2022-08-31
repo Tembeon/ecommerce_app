@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../../../core/generated/resources/fonts.gen.dart';
 import '../model/cart_content.dart';
 import 'cart_view.dart';
@@ -45,9 +46,9 @@ class CartList extends StatelessWidget {
             ),
             Row(
               children: [
-                const Text(
-                  'Total',
-                  style: TextStyle(
+                Text(
+                  S.of(context).total,
+                  style: const TextStyle(
                     fontFamily: FontFamily.markPro,
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
@@ -56,7 +57,7 @@ class CartList extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '\$${CartDataStore.of(context).total} us',
+                  S.of(context).totalPay(CartDataStore.of(context).total),
                   style: const TextStyle(
                     fontFamily: FontFamily.markPro,
                     fontSize: 15,
@@ -68,9 +69,9 @@ class CartList extends StatelessWidget {
             ),
             Row(
               children: [
-                const Text(
-                  'Delivery',
-                  style: TextStyle(
+                Text(
+                  S.of(context).delivery,
+                  style: const TextStyle(
                     fontFamily: FontFamily.markPro,
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
@@ -100,12 +101,15 @@ class CartList extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 style: ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all<Color>(
+                    Theme.of(context).colorScheme.onSecondary,
+                  ),
                   backgroundColor: MaterialStateProperty.all<Color>(
                     Theme.of(context).colorScheme.secondary,
                   ),
                 ),
                 onPressed: () {},
-                child: const Text('Checkout'),
+                child: Text(S.of(context).checkout),
               ),
             ),
           ],

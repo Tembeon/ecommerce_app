@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../../../core/generated/resources/fonts.gen.dart';
 
 class SearchBar extends StatelessWidget {
@@ -45,8 +46,8 @@ class _SearchBar extends StatelessWidget {
                 color: theme.colorScheme.secondary,
               ),
             ),
-            const Text(
-              'Search',
+            Text(
+              S.of(context).search,
               style: TextStyle(
                 fontSize: 16.0,
                 fontFamily: FontFamily.markPro,
@@ -70,7 +71,7 @@ class _QRCodeButton extends StatelessWidget {
       child: Material(
         color: Theme.of(context).colorScheme.secondary,
         child: IconButton(
-          tooltip: 'Scan QR code',
+          tooltip: S.of(context).scanQrCode,
           icon: Icon(
             Icons.qr_code_outlined,
             color: Theme.of(context).colorScheme.onSecondary,

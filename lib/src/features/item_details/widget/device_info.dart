@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../../../core/generated/resources/fonts.gen.dart';
 import '../model/details.dart';
 import '../utils/hex_extension.dart';
@@ -155,10 +156,10 @@ class _TabView extends StatelessWidget {
                 fontFamily: FontFamily.markPro,
                 fontWeight: FontWeight.w700,
               ),
-              tabs: const <Tab>[
-                Tab(text: 'Shop'),
-                Tab(text: 'Details'),
-                Tab(text: 'Features'),
+              tabs: <Tab>[
+                Tab(text: S.of(context).shop),
+                Tab(text: S.of(context).details),
+                Tab(text: S.of(context).features),
               ],
             ),
           ),
@@ -173,13 +174,13 @@ class _TabView extends StatelessWidget {
                   ],
                 ),
                 Column(
-                  children: const [
-                    Expanded(child: Text('Details')),
+                  children: [
+                    Expanded(child: Text(S.of(context).details)),
                   ],
                 ),
                 Column(
-                  children: const [
-                    Expanded(child: Text('Features')),
+                  children: [
+                    Expanded(child: Text(S.of(context).features)),
                   ],
                 ),
               ],
@@ -277,11 +278,11 @@ class _SpecsSelectorState extends State<_SpecsSelector> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.only(top: 12.0, bottom: 8.0),
+        Padding(
+          padding: const EdgeInsets.only(top: 12.0, bottom: 8.0),
           child: Text(
-            'Select color:',
-            style: TextStyle(
+            S.of(context).selectColor,
+            style: const TextStyle(
               fontFamily: FontFamily.markPro,
               fontSize: 16,
               fontWeight: FontWeight.w500,
@@ -312,11 +313,11 @@ class _SpecsSelectorState extends State<_SpecsSelector> {
               )
               .toList(),
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 12.0, bottom: 8.0),
+        Padding(
+          padding: const EdgeInsets.only(top: 12.0, bottom: 8.0),
           child: Text(
-            'Select capacity:',
-            style: TextStyle(
+            S.of(context).selectCapacity,
+            style: const TextStyle(
               fontFamily: FontFamily.markPro,
               fontSize: 16,
               fontWeight: FontWeight.w500,
@@ -368,10 +369,10 @@ class _SpecsSelectorState extends State<_SpecsSelector> {
               child: Wrap(
                 runAlignment: WrapAlignment.center,
                 alignment: WrapAlignment.spaceAround,
-                children: const [
+                children: [
                   Text(
-                    'Add to cart',
-                    style: TextStyle(
+                    S.of(context).addToCart,
+                    style: const TextStyle(
                       fontFamily: FontFamily.markPro,
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
@@ -379,8 +380,8 @@ class _SpecsSelectorState extends State<_SpecsSelector> {
                     ),
                   ),
                   Text(
-                    '\$1,500.00',
-                    style: TextStyle(
+                    '\$${item.price}',
+                    style: const TextStyle(
                       fontFamily: FontFamily.markPro,
                       fontSize: 20,
                       fontWeight: FontWeight.w600,

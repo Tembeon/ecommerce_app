@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../../../core/generated/resources/fonts.gen.dart';
 import '../model/cart_content.dart';
 import 'cart_list.dart';
@@ -31,19 +32,20 @@ class ShowingCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       bottom: false,
       child: CustomScrollView(
+        physics: const NeverScrollableScrollPhysics(),
         slivers: [
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: ToolBar(),
           ),
           SliverPadding(
-            padding: EdgeInsets.symmetric(vertical: 36, horizontal: 42),
+            padding: const EdgeInsets.symmetric(vertical: 36, horizontal: 42),
             sliver: SliverToBoxAdapter(
               child: Text(
-                'My Cart',
-                style: TextStyle(
+                S.of(context).myCart,
+                style: const TextStyle(
                   fontFamily: FontFamily.markPro,
                   fontSize: 35,
                   fontWeight: FontWeight.w700,
@@ -51,7 +53,7 @@ class ShowingCart extends StatelessWidget {
               ),
             ),
           ),
-          SliverFillRemaining(child: CartList()),
+          const SliverFillRemaining(child: CartList()),
         ],
       ),
     );

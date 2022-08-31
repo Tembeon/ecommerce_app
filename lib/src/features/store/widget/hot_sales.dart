@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../../../core/generated/resources/fonts.gen.dart';
 import '../model/store_items.dart';
 import 'store_view.dart';
@@ -47,7 +48,7 @@ class _HotSalesHeader extends StatelessWidget {
     return Row(
       children: [
         Text(
-          'Hot sales',
+          S.of(context).hotSales,
           style: Theme.of(context).textTheme.headline1,
         ),
         const Spacer(),
@@ -56,7 +57,7 @@ class _HotSalesHeader extends StatelessWidget {
           onPressed: () {
             // open categories list here
           },
-          child: const Text('see more'),
+          child: Text(S.of(context).seeMore),
         ),
       ],
     );
@@ -221,9 +222,9 @@ class _ModelInfo extends StatelessWidget {
                   ),
                 ),
               ),
-              child: const Text(
-                'Buy now!',
-                style: TextStyle(
+              child: Text(
+                S.of(context).buyNow,
+                style: const TextStyle(
                   color: Colors.black,
                 ),
               ),
@@ -262,7 +263,7 @@ class NewMark extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(2),
               child: Text(
-                'New',
+                S.of(context).newMark,
                 style: TextStyle(
                   fontSize: 10,
                   fontWeight: FontWeight.w700,

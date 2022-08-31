@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../../../core/generated/resources/fonts.gen.dart';
 import '../model/filters.dart';
 
@@ -43,7 +44,7 @@ class FilterDialogUI extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0, top: 20),
-            child: Text('Brand', style: textStyle),
+            child: Text(S.of(context).brand, style: textStyle),
           ),
           DropdownButtonHideUnderline(
             child: DropdownButtonFormField<String>(
@@ -63,7 +64,7 @@ class FilterDialogUI extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text('Price', style: textStyle),
+            child: Text(S.of(context).price, style: textStyle),
           ),
           DropdownButtonHideUnderline(
             child: DropdownButtonFormField<String>(
@@ -83,7 +84,7 @@ class FilterDialogUI extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text('Size', style: textStyle),
+            child: Text(S.of(context).size, style: textStyle),
           ),
           DropdownButtonHideUnderline(
             child: DropdownButtonFormField<String>(
@@ -208,9 +209,9 @@ Future<T?> showRoundedModalSheet<T>({
                             ),
                           ),
                         ),
-                        child: const Text(
-                          'Done',
-                          style: TextStyle(
+                        child: Text(
+                          S.of(context).done,
+                          style: const TextStyle(
                             fontFamily: FontFamily.markPro,
                             fontSize: 18.0,
                             fontWeight: FontWeight.w500,

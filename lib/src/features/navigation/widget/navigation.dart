@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
+import '../../../core/generated/localization/l10n.dart';
 import '../../cart/bloc/cart_bloc.dart';
 import '../bloc/navigation_bloc.dart';
 
@@ -65,7 +66,7 @@ class _RoundedBottomNavigationState extends State<RoundedBottomNavigation> {
             items: [
               SalomonBottomBarItem(
                 icon: const Icon(Icons.fiber_manual_record_rounded),
-                title: const Text('Explorer'),
+                title: Text(S.of(context).explorer),
               ),
               SalomonBottomBarItem(
                 icon: Badge(
@@ -74,15 +75,15 @@ class _RoundedBottomNavigationState extends State<RoundedBottomNavigation> {
                   badgeContent: Text('$badgeCount'),
                   child: const Icon(Icons.shopping_bag_outlined),
                 ),
-                title: const Text('Cart'),
+                title: Text(S.of(context).cart),
               ),
               SalomonBottomBarItem(
                 icon: const Icon(Icons.favorite_border_outlined),
-                title: const Text('Favorites'),
+                title: Text(S.of(context).favorites),
               ),
               SalomonBottomBarItem(
                 icon: const Icon(Icons.person_outline),
-                title: const Text('Profile'),
+                title: Text(S.of(context).profile),
               ),
             ],
           ),
