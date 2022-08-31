@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../constants/theme.dart';
+import '../generated/localization/l10n.dart';
 import '../router/router.gr.dart';
 
 class EcommerceApp extends StatefulWidget {
@@ -31,6 +32,11 @@ class _EcommerceAppState extends State<EcommerceApp> {
         navigatorObservers: () => [AutoRouteObserver()],
       ),
       routeInformationParser: _rootRouter.defaultRouteParser(),
+      supportedLocales: const AppLocalizationDelegate().supportedLocales,
+      localizationsDelegates: const [
+        DefaultMaterialLocalizations.delegate,
+        AppLocalizationDelegate(),
+      ],
     );
   }
 }
