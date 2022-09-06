@@ -7,6 +7,7 @@ import '../bloc/cart_bloc.dart';
 import '../data/cart_repository.dart';
 import 'cart_view.dart';
 
+/// Creates cart screen with BlocProvider<CartBloc> as parent.
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
 
@@ -19,6 +20,7 @@ class CartScreen extends StatelessWidget {
   }
 }
 
+/// Cart screen that depends on the CartBloc state.
 class _CartScreenStates extends StatefulWidget {
   const _CartScreenStates({Key? key}) : super(key: key);
 
