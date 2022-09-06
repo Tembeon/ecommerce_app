@@ -8,6 +8,7 @@ import '../model/cart_content.dart';
 
 part 'cart_bloc.freezed.dart';
 
+/// States for UI used in [CartBloc].
 @freezed
 class CartState with _$CartState {
   const CartState._();
@@ -26,6 +27,7 @@ class CartState with _$CartState {
   ) = _ShowingCartWithCartState;
 }
 
+/// Events emitted to [CartBloc].
 @freezed
 class CartEvent with _$CartEvent {
   const CartEvent._();
@@ -34,6 +36,7 @@ class CartEvent with _$CartEvent {
   const factory CartEvent.loadData() = _LoadDataCartEvent;
 }
 
+/// Bloc for [CartScreen].
 class CartBloc extends Bloc<CartEvent, CartState> {
   // repository for getting data.
   final ICartRepository _repository;
@@ -48,19 +51,22 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     );
   }
 
+  // load new data from server
   Future<void> _loadData(
     _LoadDataCartEvent event,
     Emitter<CartState> emitter,
   ) async {
+    // show loading state
     emitter(const CartState.loading());
     try {
       CartContent result =
           await _repository.getCart().timeout(const Duration(seconds: 70));
-
+      // successful request, show data
       emitter(CartState.showingCartWith(result));
     } on TimeoutException {
       emitter(const CartState.failure(message: 'Request timeout'));
     } on Object {
+      // something went wrong while loading
       emitter(const CartState.failure());
       rethrow;
     }
