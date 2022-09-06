@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'cart_content.freezed.dart';
 part 'cart_content.g.dart';
 
+/// Contains information about cart items, delivery price, total price is USD.
 @freezed
 class CartContent with _$CartContent {
   const factory CartContent({
@@ -18,6 +19,7 @@ class CartContent with _$CartContent {
       _$CartContentFromJson(json);
 }
 
+/// Contains information about one cart item: device image, price and name
 @freezed
 class CartItem with _$CartItem {
   const factory CartItem({
