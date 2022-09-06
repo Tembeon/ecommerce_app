@@ -5,8 +5,21 @@ import '../../../core/generated/resources/fonts.gen.dart';
 import '../model/cart_content.dart';
 import 'cart_view.dart';
 
-class CartList extends StatelessWidget {
-  const CartList({Key? key}) : super(key: key);
+/// Shows user's cart.
+///
+/// Design:
+/// ```
+///  (-----------------------------)
+///  | [List of CartItem]          |
+///  |                             |
+///  | Delivery         free       |
+///  | Total            $3300.0 us |
+///  |                             |
+///  | (       Checkout         )  |
+///  -------------------------------
+/// ```
+class CartView extends StatelessWidget {
+  const CartView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -53,7 +53,7 @@ class ShowingCart extends StatelessWidget {
               ),
             ),
           ),
-          const SliverFillRemaining(child: CartList()),
+          const SliverFillRemaining(child: CartView()),
         ],
       ),
     );
