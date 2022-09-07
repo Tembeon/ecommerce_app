@@ -8,6 +8,7 @@ import '../model/details.dart';
 
 part 'item_details_bloc.freezed.dart';
 
+/// States for UI used in [ItemDetailsBloc].
 @freezed
 class ItemDetailsState with _$ItemDetailsState {
   const ItemDetailsState._();
@@ -25,6 +26,7 @@ class ItemDetailsState with _$ItemDetailsState {
   }) = _FailureItemDetailsState;
 }
 
+/// Events emitted to [ItemDetailsBloc].
 @freezed
 class ItemDetailsEvent with _$ItemDetailsEvent {
   const ItemDetailsEvent._();
@@ -33,6 +35,7 @@ class ItemDetailsEvent with _$ItemDetailsEvent {
   const factory ItemDetailsEvent.loadData() = _LoadDataItemDetailsEvent;
 }
 
+/// Bloc for [ItemDetailsScreen].
 class ItemDetailsBloc extends Bloc<ItemDetailsEvent, ItemDetailsState> {
   /// Repository for getting data.
   final IDetailsRepository _repository;
