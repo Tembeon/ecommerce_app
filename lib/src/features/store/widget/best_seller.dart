@@ -128,77 +128,127 @@ class _BestSalesGridItem extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(21.0, 8.0, 8.0, 8.0),
             child: Stack(
-              children: [
+              children: const [
                 Align(
                   alignment: Alignment.topRight,
-                  child: Material(
-                    clipBehavior: Clip.antiAlias,
-                    borderRadius: BorderRadius.circular(120),
-                    elevation: 4,
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        item.isFavorites ?? false
-                            ? Icons.favorite_outlined
-                            : Icons.favorite_border_outlined,
-                        color: Theme.of(context).colorScheme.secondary,
-                      ),
-                    ),
-                  ),
+                  child: _FavoriteIcon(),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 160,
-                      width: double.infinity,
-                      child: Ink.image(
-                        image: NetworkImage(item.picture),
-                      ),
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          '\$${item.priceWithoutDiscount}',
-                          style: const TextStyle(
-                            fontFamily: FontFamily.markPro,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 7,
-                        ),
-                        Text(
-                          '\$${item.discountPrice}',
-                          style: const TextStyle(
-                            decoration: TextDecoration.lineThrough,
-                            fontFamily: FontFamily.markPro,
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFFCCCCCC),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: Text(
-                        item.title,
-                        style: const TextStyle(
-                          fontFamily: FontFamily.markPro,
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                _DeviceInfo(),
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  /// Returns current value of [item].
+  static BestSeller of(BuildContext context) {
+    assert(
+      context.findAncestorWidgetOfExactType<_BestSalesGridItem>() != null,
+      'No _BestSalesGridItem in context found',
+    );
+
+    return context.findAncestorWidgetOfExactType<_BestSalesGridItem>()!.item;
+  }
+}
+
+/// Shows device image, prices and title in a column.
+class _DeviceInfo extends StatelessWidget {
+  const _DeviceInfo({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var item = _BestSalesGridItem.of(context);
+
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: 160,
+          width: double.infinity,
+          child: Ink.image(
+            image: NetworkImage(item.picture),
+          ),
+        ),
+        const _DevicePrices(),
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Text(
+            item.title,
+            style: const TextStyle(
+              fontFamily: FontFamily.markPro,
+              fontSize: 12.0,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Shows price with discount and without in a row.
+class _DevicePrices extends StatelessWidget {
+  const _DevicePrices({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var item = _BestSalesGridItem.of(context);
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Text(
+          '\$${item.priceWithoutDiscount}',
+          style: const TextStyle(
+            fontFamily: FontFamily.markPro,
+            fontSize: 16.0,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        const SizedBox(width: 7),
+        Text(
+          '\$${item.discountPrice}',
+          style: const TextStyle(
+            decoration: TextDecoration.lineThrough,
+            fontFamily: FontFamily.markPro,
+            fontSize: 12.0,
+            fontWeight: FontWeight.w500,
+            color: Color(0xFFCCCCCC),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Icon for indicates whether item has been added to favorites or not.
+class _FavoriteIcon extends StatelessWidget {
+  const _FavoriteIcon({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var item = _BestSalesGridItem.of(context);
+
+    return Material(
+      clipBehavior: Clip.antiAlias,
+      borderRadius: BorderRadius.circular(120),
+      elevation: 4,
+      child: IconButton(
+        onPressed: () {},
+        icon: Icon(
+          item.isFavorites ?? false
+              ? Icons.favorite_outlined
+              : Icons.favorite_border_outlined,
+          color: Theme.of(context).colorScheme.secondary,
         ),
       ),
     );

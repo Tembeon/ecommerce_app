@@ -31,7 +31,6 @@ class CategoriesSection extends StatelessWidget {
               ),
               const Spacer(),
               TextButton(
-                // ignore: no-empty-block
                 onPressed: () {
                   // open categories list here
                 },
@@ -56,16 +55,11 @@ class CategoriesSection extends StatelessWidget {
 /// ```
 /// [CategoryItem, CategoryItem, CategoryItem]
 /// ```
-class _CategoriesList extends StatefulWidget {
+class _CategoriesList extends StatelessWidget {
   const _CategoriesList({Key? key}) : super(key: key);
 
-  @override
-  State<_CategoriesList> createState() => _CategoriesListState();
-}
-
-class _CategoriesListState extends State<_CategoriesList> {
   // dummy list with categories
-  final List<String> items = [
+  final List<String> _items = const <String>[
     'Phones',
     'Computer',
     'Health',
@@ -85,7 +79,7 @@ class _CategoriesListState extends State<_CategoriesList> {
           return state.when<Widget>(
             selected: (selected) => ListView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              itemCount: items.length,
+              itemCount: _items.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return Padding(
@@ -93,7 +87,7 @@ class _CategoriesListState extends State<_CategoriesList> {
                   child: _CategoryItem(
                     key: ValueKey('cat_item_$index'),
                     itemId: index,
-                    label: items[index],
+                    label: _items[index],
                     isSelected: selected == index,
                     iconData: Icons.add_outlined,
                   ),
@@ -140,34 +134,8 @@ class _CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(120),
-          child: Material(
-            child: Ink(
-              width: 70,
-              height: 70,
-              color: isSelected ? const Color(0xFFFF6E4E) : Colors.white,
-              child: InkWell(
-                onTap: () => context
-                    .read<CategoriesBloc>()
-                    .add(CategoriesEvent.selectItem(itemId)),
-                child: Align(
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Icon(
-                      iconData,
-                      color: isSelected ? Colors.white : Colors.black,
-                      size: 34.0,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
+        const _CategoryItemRoundedIcon(),
+        const SizedBox(height: 8),
         Text(
           label,
           style: TextStyle(
@@ -178,6 +146,53 @@ class _CategoryItem extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  static _CategoryItem of(BuildContext context) {
+    assert(
+      context.findAncestorWidgetOfExactType<_CategoryItem>() != null,
+      'No _CategoryItem founded in context',
+    );
+
+    return context.findAncestorWidgetOfExactType<_CategoryItem>()!;
+  }
+}
+
+/// Icon in a white circle.
+class _CategoryItemRoundedIcon extends StatelessWidget {
+  const _CategoryItemRoundedIcon({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var item = _CategoryItem.of(context);
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(120),
+      child: Material(
+        child: Ink(
+          width: 70,
+          height: 70,
+          color: item.isSelected ? const Color(0xFFFF6E4E) : Colors.white,
+          child: InkWell(
+            onTap: () => context
+                .read<CategoriesBloc>()
+                .add(CategoriesEvent.selectItem(item.itemId)),
+            child: Align(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Icon(
+                  item.iconData,
+                  color: item.isSelected ? Colors.white : Colors.black,
+                  size: 34.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

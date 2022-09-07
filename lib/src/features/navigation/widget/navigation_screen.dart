@@ -7,6 +7,7 @@ import '../bloc/navigation_bloc.dart';
 import 'navigation.dart';
 import 'navigation_page_storage.dart';
 
+/// Creates screen with rounded bottom navigation and page storage.
 class NavigationScreen extends StatelessWidget {
   const NavigationScreen({Key? key}) : super(key: key);
 

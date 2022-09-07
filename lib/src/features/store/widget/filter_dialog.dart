@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/generated/localization/l10n.dart';
@@ -14,22 +15,6 @@ class FilterDialogUI extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final decoration = InputDecoration(
-      fillColor: Theme.of(context).colorScheme.primary,
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5),
-        borderSide: BorderSide(
-          color: Theme.of(context).colorScheme.primary,
-        ),
-      ),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5),
-        borderSide: BorderSide(
-          color: Theme.of(context).colorScheme.primary,
-        ),
-      ),
-    );
-
     final textStyle = TextStyle(
       fontFamily: FontFamily.markPro,
       fontSize: 18.0,
@@ -46,63 +31,74 @@ class FilterDialogUI extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 8.0, top: 20),
             child: Text(S.of(context).brand, style: textStyle),
           ),
-          DropdownButtonHideUnderline(
-            child: DropdownButtonFormField<String>(
-              borderRadius: BorderRadius.circular(5),
-              decoration: decoration,
-              isExpanded: true,
-              value: filters.brands.first,
-              style: textStyle.copyWith(fontWeight: FontWeight.w400),
-              items: filters.brands
-                  .map((brand) => DropdownMenuItem<String>(
-                        value: brand,
-                        child: Text(brand),
-                      ))
-                  .toList(),
-              onChanged: (item) {},
-            ),
+          _FilterDropdownButton(
+            textStyle: textStyle,
+            items: filters.brands,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(S.of(context).price, style: textStyle),
           ),
-          DropdownButtonHideUnderline(
-            child: DropdownButtonFormField<String>(
-              borderRadius: BorderRadius.circular(5),
-              decoration: decoration,
-              isExpanded: true,
-              value: filters.prices.first,
-              style: textStyle.copyWith(fontWeight: FontWeight.w400),
-              items: filters.prices
-                  .map((price) => DropdownMenuItem<String>(
-                        value: price,
-                        child: Text(price),
-                      ))
-                  .toList(),
-              onChanged: (item) {},
-            ),
+          _FilterDropdownButton(
+            textStyle: textStyle,
+            items: filters.prices,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(S.of(context).size, style: textStyle),
           ),
-          DropdownButtonHideUnderline(
-            child: DropdownButtonFormField<String>(
-              borderRadius: BorderRadius.circular(5),
-              decoration: decoration,
-              isExpanded: true,
-              value: filters.sizes.first,
-              style: textStyle.copyWith(fontWeight: FontWeight.w400),
-              items: filters.sizes
-                  .map((sizes) => DropdownMenuItem<String>(
-                        value: sizes,
-                        child: Text(sizes),
-                      ))
-                  .toList(),
-              onChanged: (item) {},
-            ),
+          _FilterDropdownButton(
+            textStyle: textStyle,
+            items: filters.sizes,
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// Creates styled dropdown button with given [items].
+class _FilterDropdownButton extends StatelessWidget {
+  const _FilterDropdownButton({
+    Key? key,
+    required this.textStyle,
+    required this.items,
+  }) : super(key: key);
+
+  final TextStyle textStyle;
+
+  final List<String> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButtonHideUnderline(
+      child: DropdownButtonFormField<String>(
+        borderRadius: BorderRadius.circular(5),
+        decoration: InputDecoration(
+          fillColor: Theme.of(context).colorScheme.primary,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+        ),
+        isExpanded: true,
+        value: items.first,
+        style: textStyle.copyWith(fontWeight: FontWeight.w400),
+        items: items
+            .map((item) => DropdownMenuItem<String>(
+                  value: item,
+                  child: Text(item),
+                ))
+            .toList(),
+        onChanged: (item) {},
       ),
     );
   }
@@ -147,81 +143,14 @@ Future<T?> showRoundedModalSheet<T>({
     ),
     builder: (context) =>
         customLayout ??
-        Container(
-          margin: const EdgeInsets.only(
-            top: 24,
-            left: 44,
-            right: 20,
-            bottom: 40,
-          ),
+        _FilterDialogStyledLayout(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Material(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Theme.of(context).colorScheme.primary,
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(10),
-                        onTap: () {},
-                        child: SizedBox.square(
-                          dimension: 35,
-                          child: Icon(
-                            Icons.close_outlined,
-                            color: Theme.of(context).colorScheme.onPrimary,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const Spacer(),
-                    title != null
-                        ? Text(
-                            title,
-                            style: const TextStyle(
-                              fontFamily: FontFamily.markPro,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18.0,
-                            ),
-                            textAlign: TextAlign.center,
-                          )
-                        : ErrorWidget('You need implement [title] if you want '
-                            'use styled layout, or [customLayout] if you need'
-                            ' your own layout'),
-                    const Spacer(),
-                    SizedBox(
-                      height: 35,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                            Theme.of(context).colorScheme.secondary,
-                          ),
-                          foregroundColor: MaterialStateProperty.all<Color>(
-                            Theme.of(context).colorScheme.onSecondary,
-                          ),
-                          shape: MaterialStateProperty.all<OutlinedBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                        child: Text(
-                          S.of(context).done,
-                          style: const TextStyle(
-                            fontFamily: FontFamily.markPro,
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        onPressed: () => Navigator.of(context).pop(),
-                      ),
-                    ),
-                  ],
-                ),
+                child: _FilterDialogTitle(title: title),
               ),
               child ??
                   ErrorWidget('You need implement [child] if you want '
@@ -231,4 +160,127 @@ Future<T?> showRoundedModalSheet<T>({
           ),
         ),
   );
+}
+
+/// Add margin inside layout.
+class _FilterDialogStyledLayout extends StatelessWidget {
+  const _FilterDialogStyledLayout({
+    Key? key,
+    this.child,
+  }) : super(key: key);
+
+  final Widget? child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 24,
+        left: 44,
+        right: 20,
+        bottom: 40,
+      ),
+      child: child,
+    );
+  }
+}
+
+/// Title, close and done buttons for dialog.
+class _FilterDialogTitle extends StatelessWidget {
+  const _FilterDialogTitle({
+    Key? key,
+    this.title,
+  }) : super(key: key);
+
+  final String? title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const _CloseButton(),
+        const Spacer(),
+        title != null
+            ? Text(
+                title!,
+                style: const TextStyle(
+                  fontFamily: FontFamily.markPro,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18.0,
+                ),
+                textAlign: TextAlign.center,
+              )
+            : ErrorWidget('You need implement [title] if you want '
+                'use styled layout, or [customLayout] if you need'
+                ' your own layout'),
+        const Spacer(),
+        const _DoneButton(),
+      ],
+    );
+  }
+}
+
+/// Used for done action
+class _DoneButton extends StatelessWidget {
+  const _DoneButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 35,
+      child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(
+            Theme.of(context).colorScheme.secondary,
+          ),
+          foregroundColor: MaterialStateProperty.all<Color>(
+            Theme.of(context).colorScheme.onSecondary,
+          ),
+          shape: MaterialStateProperty.all<OutlinedBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+        ),
+        child: Text(
+          S.of(context).done,
+          style: const TextStyle(
+            fontFamily: FontFamily.markPro,
+            fontSize: 18.0,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
+    );
+  }
+}
+
+/// Used for closing dialog.
+class _CloseButton extends StatelessWidget {
+  const _CloseButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      borderRadius: BorderRadius.circular(10),
+      color: Theme.of(context).colorScheme.primary,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(10),
+        onTap: context.popRoute,
+        child: SizedBox.square(
+          dimension: 35,
+          child: Icon(
+            Icons.close_outlined,
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
+        ),
+      ),
+    );
+  }
 }

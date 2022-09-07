@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Placeholder with a text.
 class PlaceholderPage extends StatelessWidget {
   const PlaceholderPage({
     Key? key,

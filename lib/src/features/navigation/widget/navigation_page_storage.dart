@@ -6,6 +6,9 @@ import '../../store/widget/store_screen.dart';
 import '../bloc/navigation_bloc.dart';
 import 'placeholder_page.dart';
 
+/// Shows content inside itself. Uses NavigationBloc.
+///
+/// All pages want to live
 class NavigationPageStorage extends StatelessWidget {
   const NavigationPageStorage({Key? key}) : super(key: key);
 

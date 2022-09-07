@@ -5,34 +5,14 @@ import '../../../core/generated/localization/l10n.dart';
 import '../bloc/filter_options_bloc.dart';
 import '../utils/filter_dialog.dart';
 
-class TopBar extends StatefulWidget implements PreferredSizeWidget {
+class TopBar extends StatelessWidget implements PreferredSizeWidget {
   const TopBar({Key? key}) : super(key: key);
 
-  @override
-  State<TopBar> createState() => _TopBarState();
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-}
-
-class _TopBarState extends State<TopBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      title: BlocListener<FilterOptionsBloc, FilterOptionsState>(
-        listener: (context, state) {
-          state.mapOrNull(
-            openFiltersDialog: (state) async {
-              await openFilterDialog(context);
-
-              if (!mounted) return; // drop result if screen is not mounted
-              context
-                  .read<FilterOptionsBloc>()
-                  .add(const FilterOptionsEvent.saveFilters());
-            },
-          );
-        },
+      title: _BlocListenerForFilterDialog(
         child: Stack(
           alignment: Alignment.centerRight,
           children: [
@@ -54,20 +34,69 @@ class _TopBarState extends State<TopBar> {
                 ),
               ],
             ),
-            IconButton(
-              tooltip: S.of(context).filter,
-              padding: EdgeInsets.zero,
-              icon: const Icon(
-                Icons.filter_alt_outlined,
-                color: Color(0xFF010035),
-              ),
-              onPressed: () => context
-                  .read<FilterOptionsBloc>()
-                  .add(const FilterOptionsEvent.openFilters()),
-            ),
+            const _OpenFilterButton(),
           ],
         ),
       ),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+class _OpenFilterButton extends StatelessWidget {
+  const _OpenFilterButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      tooltip: S.of(context).filter,
+      padding: EdgeInsets.zero,
+      icon: const Icon(
+        Icons.filter_alt_outlined,
+        color: Color(0xFF010035),
+      ),
+      onPressed: () => context
+          .read<FilterOptionsBloc>()
+          .add(const FilterOptionsEvent.openFilters()),
+    );
+  }
+}
+
+
+/// Listens for open filter state.
+class _BlocListenerForFilterDialog extends StatefulWidget {
+  const _BlocListenerForFilterDialog({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
+
+  final Widget child;
+
+  @override
+  State<_BlocListenerForFilterDialog> createState() => _BlocListenerForFilterDialogState();
+}
+
+class _BlocListenerForFilterDialogState extends State<_BlocListenerForFilterDialog> {
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<FilterOptionsBloc, FilterOptionsState>(
+      listener: (context, state) {
+        state.mapOrNull(
+          openFiltersDialog: (state) async {
+            await openFilterDialog(context);
+
+            if (!mounted) return; // drop result if screen is not mounted
+            context
+                .read<FilterOptionsBloc>()
+                .add(const FilterOptionsEvent.saveFilters());
+          },
+        );
+      },
+      child: widget.child,
     );
   }
 }

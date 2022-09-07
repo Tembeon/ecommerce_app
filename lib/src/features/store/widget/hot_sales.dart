@@ -183,9 +183,7 @@ class _ModelInfo extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 14.0),
-            child: NewMark(
-              shouldShow: homeStore.isNew ?? false,
-            ),
+            child: NewMark(shouldShow: homeStore.isNew ?? false),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 18.0),

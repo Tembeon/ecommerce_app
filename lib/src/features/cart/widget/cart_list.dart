@@ -231,7 +231,7 @@ class _CartListItem extends StatelessWidget {
   /// Returns CartItem for this item.
   static CartItem of(BuildContext context) {
     assert(
-      context.findAncestorWidgetOfExactType<_CartListItem>() == null,
+      context.findAncestorWidgetOfExactType<_CartListItem>() != null,
       'No _CartListItem in context found',
     );
 

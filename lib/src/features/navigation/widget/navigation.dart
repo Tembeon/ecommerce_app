@@ -8,6 +8,8 @@ import '../../../core/generated/localization/l10n.dart';
 import '../../cart/bloc/cart_bloc.dart';
 import '../bloc/navigation_bloc.dart';
 
+/// Creates bottom navigation with rounded angles.
+/// Uses CartBloc and NavigationBloc.
 class RoundedBottomNavigation extends StatefulWidget {
   const RoundedBottomNavigation({Key? key}) : super(key: key);
 
@@ -20,6 +22,7 @@ class _RoundedBottomNavigationState extends State<RoundedBottomNavigation> {
   @override
   void initState() {
     super.initState();
+    // load data to show badge count
     context.read<CartBloc>().add(const CartEvent.loadData());
   }
 
@@ -36,17 +39,7 @@ class _RoundedBottomNavigationState extends State<RoundedBottomNavigation> {
               showingCartWith: (data) => badgeCount = data.cartItems.length,
             );
 
-        return DecoratedBox(
-          decoration: BoxDecoration(
-            // set background color
-            color: theme.colorScheme.primary,
-            // I add top radius only because many of phones has already
-            // rounded corners. We can get device rounds and use it below
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(24),
-              topRight: Radius.circular(24),
-            ),
-          ),
+        return _RoundedDecoration(
           child: SalomonBottomBar(
             itemPadding: const EdgeInsets.symmetric(
               horizontal: 24,
@@ -89,6 +82,35 @@ class _RoundedBottomNavigationState extends State<RoundedBottomNavigation> {
           ),
         );
       },
+    );
+  }
+}
+
+/// Creates rounded decoration for a child.
+class _RoundedDecoration extends StatelessWidget {
+  const _RoundedDecoration({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        // set background color
+        color: theme.colorScheme.primary,
+        // I add top radius only because many of phones has already
+        // rounded corners. We can get device rounds and use it below
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(24),
+          topRight: Radius.circular(24),
+        ),
+      ),
+      child: child,
     );
   }
 }
