@@ -48,7 +48,7 @@ class _SearchBar extends StatelessWidget {
             ),
             Text(
               S.of(context).search,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 fontFamily: FontFamily.markPro,
                 fontWeight: FontWeight.w400,
