@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/widget/loading_indicator.dart';
 import '../model/details.dart';
 import 'device_info.dart';
 
@@ -37,9 +38,7 @@ class _CarouselViewState extends State<CarouselView> {
       future:
           Future<bool>.delayed(const Duration(microseconds: 200), () => true),
       builder: (context, loading) {
-        if (!loading.data!) {
-          return const Center(child: CircularProgressIndicator());
-        }
+        if (!loading.data!) return const LoadingIndicator();
 
         return ActiveInfoStore(
           detailsModel: currentItem,
@@ -70,7 +69,7 @@ class _CarouselViewState extends State<CarouselView> {
   }
 }
 
-/// Show device image in card. Uses [ActiveInfoStore]
+/// Show device image in card. Uses [ActiveInfoStore].
 class DeviceBigPicture extends StatelessWidget {
   const DeviceBigPicture({Key? key}) : super(key: key);
 

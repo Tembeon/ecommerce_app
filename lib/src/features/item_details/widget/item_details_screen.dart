@@ -7,6 +7,7 @@ import '../bloc/item_details_bloc.dart';
 import '../data/details_repository.dart';
 import 'item_details_view.dart';
 
+/// Creates item details screen with BlocProvider<ItemDetailsBloc> as parent.
 class ItemDetailsScreen extends StatelessWidget {
   const ItemDetailsScreen({Key? key}) : super(key: key);
 
@@ -19,6 +20,7 @@ class ItemDetailsScreen extends StatelessWidget {
   }
 }
 
+/// Item details screen that depends on the ItemDetailsBloc state.
 class _ItemDetailsStates extends StatefulWidget {
   const _ItemDetailsStates({
     Key? key,

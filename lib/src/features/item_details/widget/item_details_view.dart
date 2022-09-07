@@ -4,6 +4,7 @@ import '../model/details.dart';
 import 'carousel.dart';
 import 'top_bar.dart';
 
+/// Creates scaffold with items in a carousel.
 class DetailsWithCarousel extends StatelessWidget {
   const DetailsWithCarousel({
     Key? key,
