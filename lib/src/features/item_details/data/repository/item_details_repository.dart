@@ -9,8 +9,6 @@ class ItemDetailsRepository implements IDetailsRepository {
     var response = await sl<DtoGetItemDetailsFromServer>().getDetails();
 
     return DetailsModel(
-      deviceCpu: response.cpu,
-      deviceCamera: response.camera,
       listOfCapacities: response.capacity,
       listOfColors: response.color,
       id: response.id,
@@ -18,9 +16,13 @@ class ItemDetailsRepository implements IDetailsRepository {
       isFavorites: response.isFavorites,
       price: response.price,
       rating: response.rating,
-      deviceSd: response.sd,
-      deviceRam: response.ssd,
-      deviceName: response.title,
+      device: DeviceDetails(
+        name: response.title,
+        camera: response.camera,
+        cpu: response.cpu,
+        ram: response.ssd,
+        sd: response.sd,
+      ),
     );
   }
 }

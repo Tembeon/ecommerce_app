@@ -109,10 +109,10 @@ class _TitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var item = ActiveInfoStore.of(context);
+    var device = ActiveInfoStore.of(context).device;
 
     return Text(
-      item.deviceName,
+      device.name,
       style: const TextStyle(
         fontWeight: FontWeight.w500,
         fontFamily: FontFamily.markPro,
@@ -267,6 +267,8 @@ class _DeviceSpecs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var device = ActiveInfoStore.of(context).device;
+
     return Padding(
       padding: const EdgeInsets.only(top: 24.0),
       child: SizedBox(
@@ -277,19 +279,19 @@ class _DeviceSpecs extends StatelessWidget {
           children: [
             _DeviceSpecItem(
               iconData: Icons.memory_outlined,
-              label: ActiveInfoStore.of(context).deviceCpu,
+              label: device.cpu,
             ),
             _DeviceSpecItem(
               iconData: Icons.camera_alt_outlined,
-              label: ActiveInfoStore.of(context).deviceCamera,
+              label: device.camera,
             ),
             _DeviceSpecItem(
               iconData: Icons.memory_outlined,
-              label: ActiveInfoStore.of(context).deviceSd,
+              label: device.ram,
             ),
             _DeviceSpecItem(
               iconData: Icons.storage_outlined,
-              label: ActiveInfoStore.of(context).deviceRam,
+              label: device.sd,
             ),
           ],
         ),
