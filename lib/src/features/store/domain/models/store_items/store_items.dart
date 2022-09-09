@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'store_items.freezed.dart';
 
+/// Contains info about main store page.
 @freezed
 class StoreItems with _$StoreItems {
   const factory StoreItems({
@@ -10,6 +11,7 @@ class StoreItems with _$StoreItems {
   }) = _StoreItems;
 }
 
+/// Contains info about home store.
 @freezed
 class HomeStore with _$HomeStore {
   const factory HomeStore({
@@ -22,6 +24,7 @@ class HomeStore with _$HomeStore {
   }) = _HomeStore;
 }
 
+/// Contains info about best seller.
 @freezed
 class BestSeller with _$BestSeller {
   const factory BestSeller({

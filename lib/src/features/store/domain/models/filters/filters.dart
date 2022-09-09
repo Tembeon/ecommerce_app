@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'filters.freezed.dart';
 
+/// Dummy filters model.
 @freezed
 class FiltersModel with _$FiltersModel {
   const factory FiltersModel({

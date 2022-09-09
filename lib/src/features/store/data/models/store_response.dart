@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'store_response.freezed.dart';
 part 'store_response.g.dart';
 
+/// Contains raw store info from server.
 @freezed
 class StoreResponse with _$StoreResponse {
   const factory StoreResponse({
@@ -16,6 +17,7 @@ class StoreResponse with _$StoreResponse {
       _$StoreResponseFromJson(json);
 }
 
+/// Contains raw home store info from server.
 @freezed
 class HomeResponse with _$HomeResponse {
   const factory HomeResponse({
@@ -31,6 +33,7 @@ class HomeResponse with _$HomeResponse {
       _$HomeResponseFromJson(json);
 }
 
+/// Contains raw best seller info from server.
 @freezed
 class BestSellerResponse with _$BestSellerResponse {
   const factory BestSellerResponse({
