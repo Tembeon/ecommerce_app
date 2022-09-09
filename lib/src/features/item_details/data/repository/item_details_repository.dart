@@ -4,6 +4,8 @@ import '../../domain/repository/item_details_repository.dart';
 import '../datasource/dto_get_item_details.dart';
 
 class ItemDetailsRepository implements IDetailsRepository {
+
+  /// Performs server request and converts it to [DetailsModel].
   @override
   Future<DetailsModel> getDetails() async {
     var response = await sl<DtoGetItemDetailsFromServer>().getDetails();

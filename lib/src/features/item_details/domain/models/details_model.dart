@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'details_model.freezed.dart';
 
+/// Main info about item in a store. Contains price, rating, device info.
 @freezed
 class DetailsModel with _$DetailsModel {
   const factory DetailsModel({
@@ -18,6 +19,7 @@ class DetailsModel with _$DetailsModel {
   }) = _DetailsModel;
 }
 
+/// Tech info about device: cpu, camera, sd, ram and name.
 @freezed
 class DeviceDetails with _$DeviceDetails {
   const factory DeviceDetails({

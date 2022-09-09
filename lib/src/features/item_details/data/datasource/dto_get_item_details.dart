@@ -5,10 +5,13 @@ import 'package:http/http.dart' as http;
 import '../models/item_details_response.dart';
 
 abstract class IDtoGetItemDetailsFromServer {
+  /// Returns [DetailsResponse] from server.
   Future<DetailsResponse> getDetails();
 }
 
 class DtoGetItemDetailsFromServer implements IDtoGetItemDetailsFromServer {
+
+  /// Performs server request and returns raw value [DetailsResponse].
   @override
   Future<DetailsResponse> getDetails() async {
     Uri url = Uri.parse(
