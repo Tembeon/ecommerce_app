@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/service_locator/service_locator.dart';
 import '../../../../core/widget/failure_widget.dart';
 import '../../../../core/widget/loading_indicator.dart';
+import '../../domain/usecases/get_cart.dart';
 import '../bloc/cart_bloc.dart';
 import 'cart_view.dart';
 
@@ -13,7 +15,7 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CartBloc>(
-      create: (_) => CartBloc(),
+      create: (_) => CartBloc(sl<GetCartFromServer>()),
       child: const _CartScreenStates(),
     );
   }

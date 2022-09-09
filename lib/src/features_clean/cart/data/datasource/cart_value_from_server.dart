@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import '../models/cart_value/cart_value.dart';
 import 'package:http/http.dart' as http;
+
+import '../models/cart_value/cart_value.dart';
 
 abstract class ICartValueFromServer {
   Future<RawCartValue> getCartValue();

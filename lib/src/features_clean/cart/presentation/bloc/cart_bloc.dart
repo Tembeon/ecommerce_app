@@ -2,11 +2,9 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../data/repository/cart_repository.dart';
-
-import '../../../../core/service_locator/service_locator.dart';
 
 import '../../domain/models/cart_content/cart_content.dart';
+import '../../domain/usecases/get_cart.dart';
 
 part 'cart_bloc.freezed.dart';
 
@@ -40,7 +38,12 @@ class CartEvent with _$CartEvent {
 
 /// Bloc for [CartScreen].
 class CartBloc extends Bloc<CartEvent, CartState> {
-  CartBloc() : super(const CartState.loading()) {
+  final GetCartFromServer _data;
+
+  CartBloc(
+    GetCartFromServer data,
+  )   : _data = data,
+        super(const CartState.loading()) {
     on<CartEvent>(
       (event, emit) => event.map<Future<void>>(
         loadData: (event) => _loadData(event, emit),
@@ -56,9 +59,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     // show loading state
     emitter(const CartState.loading());
     try {
-      CartContent result = await sl<CommerceCartRepository>()
-          .getCart()
-          .timeout(const Duration(seconds: 70));
+      CartContent result =
+          await _data.getCart().timeout(const Duration(seconds: 70));
       // successful request, show data
       emitter(CartState.showingCartWith(result));
     } on TimeoutException {

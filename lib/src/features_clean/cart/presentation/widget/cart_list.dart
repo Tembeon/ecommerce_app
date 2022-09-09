@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../../../core/generated/localization/l10n.dart';
 import '../../../../core/generated/resources/fonts.gen.dart';
 import '../../domain/models/cart_content/cart_content.dart';
