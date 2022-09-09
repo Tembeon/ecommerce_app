@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/widget/loading_indicator.dart';
-import '../model/details.dart';
+import '../../../../core/widget/loading_indicator.dart';
+import '../../domain/models/details_model.dart';
 import 'device_info.dart';
 
 class CarouselView extends StatefulWidget {
@@ -82,7 +82,7 @@ class DeviceBigPicture extends StatelessWidget {
       margin: const EdgeInsets.all(12.0),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Image.network(ActiveInfoStore.of(context).images.first),
+        child: Image.network(ActiveInfoStore.of(context).listOfImages.first),
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/details.dart';
+import '../../domain/models/details_model.dart';
 import 'carousel.dart';
 import 'top_bar.dart';
 

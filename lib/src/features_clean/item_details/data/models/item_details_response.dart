@@ -2,12 +2,12 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'details.freezed.dart';
-part 'details.g.dart';
+part 'item_details_response.freezed.dart';
+part 'item_details_response.g.dart';
 
 @freezed
-class DetailsModel with _$DetailsModel {
-  const factory DetailsModel({
+class DetailsResponse with _$DetailsResponse {
+  const factory DetailsResponse({
     @JsonKey(name: 'CPU') required String cpu,
     @JsonKey(name: 'camera') required String camera,
     @JsonKey(name: 'capacity') required List<String> capacity,
@@ -20,8 +20,8 @@ class DetailsModel with _$DetailsModel {
     @JsonKey(name: 'sd') required String sd,
     @JsonKey(name: 'ssd') required String ssd,
     @JsonKey(name: 'title') required String title,
-  }) = _DetailsModel;
+  }) = _DetailsResponse;
 
-  factory DetailsModel.fromJson(Map<String, dynamic> json) =>
-      _$DetailsModelFromJson(json);
+  factory DetailsResponse.fromJson(Map<String, dynamic> json) =>
+      _$DetailsResponseFromJson(json);
 }

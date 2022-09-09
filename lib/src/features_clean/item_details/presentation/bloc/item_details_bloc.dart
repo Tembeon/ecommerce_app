@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../data/details_repository.dart';
-import '../model/details.dart';
+import '../../domain/models/details_model.dart';
+import '../../domain/usecases/get_item_details_from_server.dart';
 
 part 'item_details_bloc.freezed.dart';
 
@@ -38,10 +38,10 @@ class ItemDetailsEvent with _$ItemDetailsEvent {
 /// Bloc for [ItemDetailsScreen].
 class ItemDetailsBloc extends Bloc<ItemDetailsEvent, ItemDetailsState> {
   /// Repository for getting data.
-  final IDetailsRepository _repository;
+  final GetItemDetailsFromServer _data;
 
-  ItemDetailsBloc(IDetailsRepository repository)
-      : _repository = repository,
+  ItemDetailsBloc(GetItemDetailsFromServer repository)
+      : _data = repository,
         super(const ItemDetailsState.loading()) {
     on<ItemDetailsEvent>(
       (event, emit) => event.map<Future<void>>(
@@ -57,7 +57,7 @@ class ItemDetailsBloc extends Bloc<ItemDetailsEvent, ItemDetailsState> {
     emitter(const ItemDetailsState.loading());
     try {
       DetailsModel result =
-          await _repository.getDetails().timeout(const Duration(seconds: 70));
+          await _data.getDetails().timeout(const Duration(seconds: 70));
       List<DetailsModel> details =
           List<DetailsModel>.generate(3, (index) => result);
 

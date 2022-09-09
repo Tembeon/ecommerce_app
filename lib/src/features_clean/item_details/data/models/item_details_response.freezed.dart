@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'details.dart';
+part of 'item_details_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,61 +14,48 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-DetailsModel _$DetailsModelFromJson(Map<String, dynamic> json) {
-  return _DetailsModel.fromJson(json);
+DetailsResponse _$DetailsResponseFromJson(Map<String, dynamic> json) {
+  return _DetailsResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$DetailsModel {
+mixin _$DetailsResponse {
   @JsonKey(name: 'CPU')
   String get cpu => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'camera')
   String get camera => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'capacity')
   List<String> get capacity => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'color')
   List<String> get color => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'id')
   String get id => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'images')
   List<String> get images => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'isFavorites')
   bool get isFavorites => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'price')
   int get price => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'rating')
   double get rating => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'sd')
   String get sd => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'ssd')
   String get ssd => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'title')
   String get title => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $DetailsModelCopyWith<DetailsModel> get copyWith =>
+  $DetailsResponseCopyWith<DetailsResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DetailsModelCopyWith<$Res> {
-  factory $DetailsModelCopyWith(
-          DetailsModel value, $Res Function(DetailsModel) then) =
-      _$DetailsModelCopyWithImpl<$Res>;
-
+abstract class $DetailsResponseCopyWith<$Res> {
+  factory $DetailsResponseCopyWith(
+          DetailsResponse value, $Res Function(DetailsResponse) then) =
+      _$DetailsResponseCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'CPU') String cpu,
       @JsonKey(name: 'camera') String camera,
@@ -85,13 +72,13 @@ abstract class $DetailsModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DetailsModelCopyWithImpl<$Res> implements $DetailsModelCopyWith<$Res> {
-  _$DetailsModelCopyWithImpl(this._value, this._then);
+class _$DetailsResponseCopyWithImpl<$Res>
+    implements $DetailsResponseCopyWith<$Res> {
+  _$DetailsResponseCopyWithImpl(this._value, this._then);
 
-  final DetailsModel _value;
-
+  final DetailsResponse _value;
   // ignore: unused_field
-  final $Res Function(DetailsModel) _then;
+  final $Res Function(DetailsResponse) _then;
 
   @override
   $Res call({
@@ -162,12 +149,11 @@ class _$DetailsModelCopyWithImpl<$Res> implements $DetailsModelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_DetailsModelCopyWith<$Res>
-    implements $DetailsModelCopyWith<$Res> {
-  factory _$$_DetailsModelCopyWith(
-          _$_DetailsModel value, $Res Function(_$_DetailsModel) then) =
-      __$$_DetailsModelCopyWithImpl<$Res>;
-
+abstract class _$$_DetailsResponseCopyWith<$Res>
+    implements $DetailsResponseCopyWith<$Res> {
+  factory _$$_DetailsResponseCopyWith(
+          _$_DetailsResponse value, $Res Function(_$_DetailsResponse) then) =
+      __$$_DetailsResponseCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'CPU') String cpu,
@@ -185,15 +171,15 @@ abstract class _$$_DetailsModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DetailsModelCopyWithImpl<$Res>
-    extends _$DetailsModelCopyWithImpl<$Res>
-    implements _$$_DetailsModelCopyWith<$Res> {
-  __$$_DetailsModelCopyWithImpl(
-      _$_DetailsModel _value, $Res Function(_$_DetailsModel) _then)
-      : super(_value, (v) => _then(v as _$_DetailsModel));
+class __$$_DetailsResponseCopyWithImpl<$Res>
+    extends _$DetailsResponseCopyWithImpl<$Res>
+    implements _$$_DetailsResponseCopyWith<$Res> {
+  __$$_DetailsResponseCopyWithImpl(
+      _$_DetailsResponse _value, $Res Function(_$_DetailsResponse) _then)
+      : super(_value, (v) => _then(v as _$_DetailsResponse));
 
   @override
-  _$_DetailsModel get _value => super._value as _$_DetailsModel;
+  _$_DetailsResponse get _value => super._value as _$_DetailsResponse;
 
   @override
   $Res call({
@@ -210,7 +196,7 @@ class __$$_DetailsModelCopyWithImpl<$Res>
     Object? ssd = freezed,
     Object? title = freezed,
   }) {
-    return _then(_$_DetailsModel(
+    return _then(_$_DetailsResponse(
       cpu: cpu == freezed
           ? _value.cpu
           : cpu // ignore: cast_nullable_to_non_nullable
@@ -265,8 +251,8 @@ class __$$_DetailsModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DetailsModel implements _DetailsModel {
-  const _$_DetailsModel(
+class _$_DetailsResponse implements _DetailsResponse {
+  const _$_DetailsResponse(
       {@JsonKey(name: 'CPU') required this.cpu,
       @JsonKey(name: 'camera') required this.camera,
       @JsonKey(name: 'capacity') required final List<String> capacity,
@@ -283,8 +269,8 @@ class _$_DetailsModel implements _DetailsModel {
         _color = color,
         _images = images;
 
-  factory _$_DetailsModel.fromJson(Map<String, dynamic> json) =>
-      _$$_DetailsModelFromJson(json);
+  factory _$_DetailsResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_DetailsResponseFromJson(json);
 
   @override
   @JsonKey(name: 'CPU')
@@ -293,7 +279,6 @@ class _$_DetailsModel implements _DetailsModel {
   @JsonKey(name: 'camera')
   final String camera;
   final List<String> _capacity;
-
   @override
   @JsonKey(name: 'capacity')
   List<String> get capacity {
@@ -302,7 +287,6 @@ class _$_DetailsModel implements _DetailsModel {
   }
 
   final List<String> _color;
-
   @override
   @JsonKey(name: 'color')
   List<String> get color {
@@ -314,7 +298,6 @@ class _$_DetailsModel implements _DetailsModel {
   @JsonKey(name: 'id')
   final String id;
   final List<String> _images;
-
   @override
   @JsonKey(name: 'images')
   List<String> get images {
@@ -343,14 +326,14 @@ class _$_DetailsModel implements _DetailsModel {
 
   @override
   String toString() {
-    return 'DetailsModel(cpu: $cpu, camera: $camera, capacity: $capacity, color: $color, id: $id, images: $images, isFavorites: $isFavorites, price: $price, rating: $rating, sd: $sd, ssd: $ssd, title: $title)';
+    return 'DetailsResponse(cpu: $cpu, camera: $camera, capacity: $capacity, color: $color, id: $id, images: $images, isFavorites: $isFavorites, price: $price, rating: $rating, sd: $sd, ssd: $ssd, title: $title)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DetailsModel &&
+            other is _$_DetailsResponse &&
             const DeepCollectionEquality().equals(other.cpu, cpu) &&
             const DeepCollectionEquality().equals(other.camera, camera) &&
             const DeepCollectionEquality().equals(other._capacity, _capacity) &&
@@ -385,85 +368,74 @@ class _$_DetailsModel implements _DetailsModel {
 
   @JsonKey(ignore: true)
   @override
-  _$$_DetailsModelCopyWith<_$_DetailsModel> get copyWith =>
-      __$$_DetailsModelCopyWithImpl<_$_DetailsModel>(this, _$identity);
+  _$$_DetailsResponseCopyWith<_$_DetailsResponse> get copyWith =>
+      __$$_DetailsResponseCopyWithImpl<_$_DetailsResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DetailsModelToJson(
+    return _$$_DetailsResponseToJson(
       this,
     );
   }
 }
 
-abstract class _DetailsModel implements DetailsModel {
-  const factory _DetailsModel(
-      {@JsonKey(name: 'CPU') required final String cpu,
-      @JsonKey(name: 'camera') required final String camera,
-      @JsonKey(name: 'capacity') required final List<String> capacity,
-      @JsonKey(name: 'color') required final List<String> color,
-      @JsonKey(name: 'id') required final String id,
-      @JsonKey(name: 'images') required final List<String> images,
-      @JsonKey(name: 'isFavorites') required final bool isFavorites,
-      @JsonKey(name: 'price') required final int price,
-      @JsonKey(name: 'rating') required final double rating,
-      @JsonKey(name: 'sd') required final String sd,
-      @JsonKey(name: 'ssd') required final String ssd,
-      @JsonKey(name: 'title') required final String title}) = _$_DetailsModel;
+abstract class _DetailsResponse implements DetailsResponse {
+  const factory _DetailsResponse(
+          {@JsonKey(name: 'CPU') required final String cpu,
+          @JsonKey(name: 'camera') required final String camera,
+          @JsonKey(name: 'capacity') required final List<String> capacity,
+          @JsonKey(name: 'color') required final List<String> color,
+          @JsonKey(name: 'id') required final String id,
+          @JsonKey(name: 'images') required final List<String> images,
+          @JsonKey(name: 'isFavorites') required final bool isFavorites,
+          @JsonKey(name: 'price') required final int price,
+          @JsonKey(name: 'rating') required final double rating,
+          @JsonKey(name: 'sd') required final String sd,
+          @JsonKey(name: 'ssd') required final String ssd,
+          @JsonKey(name: 'title') required final String title}) =
+      _$_DetailsResponse;
 
-  factory _DetailsModel.fromJson(Map<String, dynamic> json) =
-      _$_DetailsModel.fromJson;
+  factory _DetailsResponse.fromJson(Map<String, dynamic> json) =
+      _$_DetailsResponse.fromJson;
 
   @override
   @JsonKey(name: 'CPU')
   String get cpu;
-
   @override
   @JsonKey(name: 'camera')
   String get camera;
-
   @override
   @JsonKey(name: 'capacity')
   List<String> get capacity;
-
   @override
   @JsonKey(name: 'color')
   List<String> get color;
-
   @override
   @JsonKey(name: 'id')
   String get id;
-
   @override
   @JsonKey(name: 'images')
   List<String> get images;
-
   @override
   @JsonKey(name: 'isFavorites')
   bool get isFavorites;
-
   @override
   @JsonKey(name: 'price')
   int get price;
-
   @override
   @JsonKey(name: 'rating')
   double get rating;
-
   @override
   @JsonKey(name: 'sd')
   String get sd;
-
   @override
   @JsonKey(name: 'ssd')
   String get ssd;
-
   @override
   @JsonKey(name: 'title')
   String get title;
-
   @override
   @JsonKey(ignore: true)
-  _$$_DetailsModelCopyWith<_$_DetailsModel> get copyWith =>
+  _$$_DetailsResponseCopyWith<_$_DetailsResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }

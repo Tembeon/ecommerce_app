@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/widget/failure_widget.dart';
-import '../../../core/widget/loading_indicator.dart';
+import '../../../../core/service_locator/service_locator.dart';
+import '../../../../core/widget/failure_widget.dart';
+import '../../../../core/widget/loading_indicator.dart';
+import '../../domain/usecases/get_item_details_from_server.dart';
 import '../bloc/item_details_bloc.dart';
-import '../data/details_repository.dart';
 import 'item_details_view.dart';
 
 /// Creates item details screen with BlocProvider<ItemDetailsBloc> as parent.
@@ -14,7 +15,7 @@ class ItemDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ItemDetailsBloc>(
-      create: (context) => ItemDetailsBloc(DetailsRepository()),
+      create: (context) => ItemDetailsBloc(sl<GetItemDetailsFromServer>()),
       child: const _ItemDetailsStates(),
     );
   }

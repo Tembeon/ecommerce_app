@@ -2,10 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-import '../../../core/generated/localization/l10n.dart';
-import '../../../core/generated/resources/fonts.gen.dart';
-import '../model/details.dart';
-import '../utils/hex_extension.dart';
+import '../../../../core/generated/localization/l10n.dart';
+import '../../../../core/generated/resources/fonts.gen.dart';
+import '../../../../core/utils/string_extensions.dart';
+import '../../domain/models/details_model.dart';
 
 /// Used to store current active [DetailsModel].
 class ActiveInfoStore extends InheritedWidget {
@@ -112,7 +112,7 @@ class _TitleText extends StatelessWidget {
     var item = ActiveInfoStore.of(context);
 
     return Text(
-      item.title,
+      item.deviceName,
       style: const TextStyle(
         fontWeight: FontWeight.w500,
         fontFamily: FontFamily.markPro,
@@ -277,19 +277,19 @@ class _DeviceSpecs extends StatelessWidget {
           children: [
             _DeviceSpecItem(
               iconData: Icons.memory_outlined,
-              label: ActiveInfoStore.of(context).cpu,
+              label: ActiveInfoStore.of(context).deviceCpu,
             ),
             _DeviceSpecItem(
               iconData: Icons.camera_alt_outlined,
-              label: ActiveInfoStore.of(context).camera,
+              label: ActiveInfoStore.of(context).deviceCamera,
             ),
             _DeviceSpecItem(
               iconData: Icons.memory_outlined,
-              label: ActiveInfoStore.of(context).ssd,
+              label: ActiveInfoStore.of(context).deviceSd,
             ),
             _DeviceSpecItem(
               iconData: Icons.storage_outlined,
-              label: ActiveInfoStore.of(context).sd,
+              label: ActiveInfoStore.of(context).deviceRam,
             ),
           ],
         ),
@@ -441,13 +441,14 @@ class _CapacityPicker extends StatelessWidget {
 
     return Wrap(
       spacing: 8.0,
-      children: item.capacity
+      children: item.listOfCapacities
           .map<Widget>(
             (capacity) => Material(
               borderRadius: BorderRadius.circular(10),
-              color: _selectedCapacity == item.capacity.indexOf(capacity)
-                  ? Theme.of(context).colorScheme.secondary
-                  : Colors.transparent,
+              color:
+                  _selectedCapacity == item.listOfCapacities.indexOf(capacity)
+                      ? Theme.of(context).colorScheme.secondary
+                      : Colors.transparent,
               child: InkWell(
                 borderRadius: BorderRadius.circular(10),
                 onTap: () {},
@@ -480,7 +481,7 @@ class _ColorsPicker extends StatelessWidget {
 
     return Wrap(
       spacing: 8.0,
-      children: item.color
+      children: item.listOfColors
           .map<Widget>(
             (color) => Material(
               borderRadius: BorderRadius.circular(120),
@@ -490,7 +491,7 @@ class _ColorsPicker extends StatelessWidget {
                 onTap: () {},
                 child: SizedBox.square(
                   dimension: 46,
-                  child: _selectedColor == item.color.indexOf(color)
+                  child: _selectedColor == item.listOfColors.indexOf(color)
                       ? const Icon(
                           Icons.check_outlined,
                           color: Colors.white,

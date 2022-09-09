@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'details.dart';
+part of 'item_details_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DetailsModel _$$_DetailsModelFromJson(Map<String, dynamic> json) =>
-    _$_DetailsModel(
+_$_DetailsResponse _$$_DetailsResponseFromJson(Map<String, dynamic> json) =>
+    _$_DetailsResponse(
       cpu: json['CPU'] as String,
       camera: json['camera'] as String,
       capacity:
@@ -24,7 +24,7 @@ _$_DetailsModel _$$_DetailsModelFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String,
     );
 
-Map<String, dynamic> _$$_DetailsModelToJson(_$_DetailsModel instance) =>
+Map<String, dynamic> _$$_DetailsResponseToJson(_$_DetailsResponse instance) =>
     <String, dynamic>{
       'CPU': instance.cpu,
       'camera': instance.camera,
