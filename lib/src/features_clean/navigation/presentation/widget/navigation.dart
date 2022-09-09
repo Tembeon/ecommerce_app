@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-
 import '../../../../core/generated/localization/l10n.dart';
 import '../../../cart/presentation/bloc/cart_bloc.dart';
 import '../bloc/navigation_bloc.dart';

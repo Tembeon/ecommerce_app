@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import '../../../../core/generated/localization/l10n.dart';
+import '../../../store/presentation/widget/store_screen.dart';
 import '../bloc/navigation_bloc.dart';
 import 'placeholder_page.dart';
 
@@ -21,7 +21,7 @@ class NavigationPageStorage extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           controller: state.getController,
           children: [
-            // const StoreScreen(), TODO
+            const StoreScreen(),
             const PlaceholderPage(
               text: 'You can enter to cart via tapping on cart'
                   ' icon in item details',
