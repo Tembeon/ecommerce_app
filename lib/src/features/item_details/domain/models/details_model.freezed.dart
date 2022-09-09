@@ -16,8 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$DetailsModel {
-  String get deviceCpu => throw _privateConstructorUsedError;
-  String get deviceCamera => throw _privateConstructorUsedError;
   List<String> get listOfCapacities => throw _privateConstructorUsedError;
   List<String> get listOfColors => throw _privateConstructorUsedError;
   String get id => throw _privateConstructorUsedError;
@@ -25,9 +23,7 @@ mixin _$DetailsModel {
   bool get isFavorites => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
   double get rating => throw _privateConstructorUsedError;
-  String get deviceSd => throw _privateConstructorUsedError;
-  String get deviceRam => throw _privateConstructorUsedError;
-  String get deviceName => throw _privateConstructorUsedError;
+  DeviceDetails get device => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DetailsModelCopyWith<DetailsModel> get copyWith =>
@@ -40,18 +36,16 @@ abstract class $DetailsModelCopyWith<$Res> {
           DetailsModel value, $Res Function(DetailsModel) then) =
       _$DetailsModelCopyWithImpl<$Res>;
   $Res call(
-      {String deviceCpu,
-      String deviceCamera,
-      List<String> listOfCapacities,
+      {List<String> listOfCapacities,
       List<String> listOfColors,
       String id,
       List<String> listOfImages,
       bool isFavorites,
       int price,
       double rating,
-      String deviceSd,
-      String deviceRam,
-      String deviceName});
+      DeviceDetails device});
+
+  $DeviceDetailsCopyWith<$Res> get device;
 }
 
 /// @nodoc
@@ -64,8 +58,6 @@ class _$DetailsModelCopyWithImpl<$Res> implements $DetailsModelCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? deviceCpu = freezed,
-    Object? deviceCamera = freezed,
     Object? listOfCapacities = freezed,
     Object? listOfColors = freezed,
     Object? id = freezed,
@@ -73,19 +65,9 @@ class _$DetailsModelCopyWithImpl<$Res> implements $DetailsModelCopyWith<$Res> {
     Object? isFavorites = freezed,
     Object? price = freezed,
     Object? rating = freezed,
-    Object? deviceSd = freezed,
-    Object? deviceRam = freezed,
-    Object? deviceName = freezed,
+    Object? device = freezed,
   }) {
     return _then(_value.copyWith(
-      deviceCpu: deviceCpu == freezed
-          ? _value.deviceCpu
-          : deviceCpu // ignore: cast_nullable_to_non_nullable
-              as String,
-      deviceCamera: deviceCamera == freezed
-          ? _value.deviceCamera
-          : deviceCamera // ignore: cast_nullable_to_non_nullable
-              as String,
       listOfCapacities: listOfCapacities == freezed
           ? _value.listOfCapacities
           : listOfCapacities // ignore: cast_nullable_to_non_nullable
@@ -114,19 +96,18 @@ class _$DetailsModelCopyWithImpl<$Res> implements $DetailsModelCopyWith<$Res> {
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
-      deviceSd: deviceSd == freezed
-          ? _value.deviceSd
-          : deviceSd // ignore: cast_nullable_to_non_nullable
-              as String,
-      deviceRam: deviceRam == freezed
-          ? _value.deviceRam
-          : deviceRam // ignore: cast_nullable_to_non_nullable
-              as String,
-      deviceName: deviceName == freezed
-          ? _value.deviceName
-          : deviceName // ignore: cast_nullable_to_non_nullable
-              as String,
+      device: device == freezed
+          ? _value.device
+          : device // ignore: cast_nullable_to_non_nullable
+              as DeviceDetails,
     ));
+  }
+
+  @override
+  $DeviceDetailsCopyWith<$Res> get device {
+    return $DeviceDetailsCopyWith<$Res>(_value.device, (value) {
+      return _then(_value.copyWith(device: value));
+    });
   }
 }
 
@@ -138,18 +119,17 @@ abstract class _$$_DetailsModelCopyWith<$Res>
       __$$_DetailsModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String deviceCpu,
-      String deviceCamera,
-      List<String> listOfCapacities,
+      {List<String> listOfCapacities,
       List<String> listOfColors,
       String id,
       List<String> listOfImages,
       bool isFavorites,
       int price,
       double rating,
-      String deviceSd,
-      String deviceRam,
-      String deviceName});
+      DeviceDetails device});
+
+  @override
+  $DeviceDetailsCopyWith<$Res> get device;
 }
 
 /// @nodoc
@@ -165,8 +145,6 @@ class __$$_DetailsModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? deviceCpu = freezed,
-    Object? deviceCamera = freezed,
     Object? listOfCapacities = freezed,
     Object? listOfColors = freezed,
     Object? id = freezed,
@@ -174,19 +152,9 @@ class __$$_DetailsModelCopyWithImpl<$Res>
     Object? isFavorites = freezed,
     Object? price = freezed,
     Object? rating = freezed,
-    Object? deviceSd = freezed,
-    Object? deviceRam = freezed,
-    Object? deviceName = freezed,
+    Object? device = freezed,
   }) {
     return _then(_$_DetailsModel(
-      deviceCpu: deviceCpu == freezed
-          ? _value.deviceCpu
-          : deviceCpu // ignore: cast_nullable_to_non_nullable
-              as String,
-      deviceCamera: deviceCamera == freezed
-          ? _value.deviceCamera
-          : deviceCamera // ignore: cast_nullable_to_non_nullable
-              as String,
       listOfCapacities: listOfCapacities == freezed
           ? _value._listOfCapacities
           : listOfCapacities // ignore: cast_nullable_to_non_nullable
@@ -215,18 +183,10 @@ class __$$_DetailsModelCopyWithImpl<$Res>
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as double,
-      deviceSd: deviceSd == freezed
-          ? _value.deviceSd
-          : deviceSd // ignore: cast_nullable_to_non_nullable
-              as String,
-      deviceRam: deviceRam == freezed
-          ? _value.deviceRam
-          : deviceRam // ignore: cast_nullable_to_non_nullable
-              as String,
-      deviceName: deviceName == freezed
-          ? _value.deviceName
-          : deviceName // ignore: cast_nullable_to_non_nullable
-              as String,
+      device: device == freezed
+          ? _value.device
+          : device // ignore: cast_nullable_to_non_nullable
+              as DeviceDetails,
     ));
   }
 }
@@ -235,26 +195,18 @@ class __$$_DetailsModelCopyWithImpl<$Res>
 
 class _$_DetailsModel implements _DetailsModel {
   const _$_DetailsModel(
-      {required this.deviceCpu,
-      required this.deviceCamera,
-      required final List<String> listOfCapacities,
+      {required final List<String> listOfCapacities,
       required final List<String> listOfColors,
       required this.id,
       required final List<String> listOfImages,
       required this.isFavorites,
       required this.price,
       required this.rating,
-      required this.deviceSd,
-      required this.deviceRam,
-      required this.deviceName})
+      required this.device})
       : _listOfCapacities = listOfCapacities,
         _listOfColors = listOfColors,
         _listOfImages = listOfImages;
 
-  @override
-  final String deviceCpu;
-  @override
-  final String deviceCamera;
   final List<String> _listOfCapacities;
   @override
   List<String> get listOfCapacities {
@@ -285,15 +237,11 @@ class _$_DetailsModel implements _DetailsModel {
   @override
   final double rating;
   @override
-  final String deviceSd;
-  @override
-  final String deviceRam;
-  @override
-  final String deviceName;
+  final DeviceDetails device;
 
   @override
   String toString() {
-    return 'DetailsModel(deviceCpu: $deviceCpu, deviceCamera: $deviceCamera, listOfCapacities: $listOfCapacities, listOfColors: $listOfColors, id: $id, listOfImages: $listOfImages, isFavorites: $isFavorites, price: $price, rating: $rating, deviceSd: $deviceSd, deviceRam: $deviceRam, deviceName: $deviceName)';
+    return 'DetailsModel(listOfCapacities: $listOfCapacities, listOfColors: $listOfColors, id: $id, listOfImages: $listOfImages, isFavorites: $isFavorites, price: $price, rating: $rating, device: $device)';
   }
 
   @override
@@ -301,9 +249,6 @@ class _$_DetailsModel implements _DetailsModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DetailsModel &&
-            const DeepCollectionEquality().equals(other.deviceCpu, deviceCpu) &&
-            const DeepCollectionEquality()
-                .equals(other.deviceCamera, deviceCamera) &&
             const DeepCollectionEquality()
                 .equals(other._listOfCapacities, _listOfCapacities) &&
             const DeepCollectionEquality()
@@ -315,17 +260,12 @@ class _$_DetailsModel implements _DetailsModel {
                 .equals(other.isFavorites, isFavorites) &&
             const DeepCollectionEquality().equals(other.price, price) &&
             const DeepCollectionEquality().equals(other.rating, rating) &&
-            const DeepCollectionEquality().equals(other.deviceSd, deviceSd) &&
-            const DeepCollectionEquality().equals(other.deviceRam, deviceRam) &&
-            const DeepCollectionEquality()
-                .equals(other.deviceName, deviceName));
+            const DeepCollectionEquality().equals(other.device, device));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(deviceCpu),
-      const DeepCollectionEquality().hash(deviceCamera),
       const DeepCollectionEquality().hash(_listOfCapacities),
       const DeepCollectionEquality().hash(_listOfColors),
       const DeepCollectionEquality().hash(id),
@@ -333,9 +273,7 @@ class _$_DetailsModel implements _DetailsModel {
       const DeepCollectionEquality().hash(isFavorites),
       const DeepCollectionEquality().hash(price),
       const DeepCollectionEquality().hash(rating),
-      const DeepCollectionEquality().hash(deviceSd),
-      const DeepCollectionEquality().hash(deviceRam),
-      const DeepCollectionEquality().hash(deviceName));
+      const DeepCollectionEquality().hash(device));
 
   @JsonKey(ignore: true)
   @override
@@ -345,23 +283,15 @@ class _$_DetailsModel implements _DetailsModel {
 
 abstract class _DetailsModel implements DetailsModel {
   const factory _DetailsModel(
-      {required final String deviceCpu,
-      required final String deviceCamera,
-      required final List<String> listOfCapacities,
+      {required final List<String> listOfCapacities,
       required final List<String> listOfColors,
       required final String id,
       required final List<String> listOfImages,
       required final bool isFavorites,
       required final int price,
       required final double rating,
-      required final String deviceSd,
-      required final String deviceRam,
-      required final String deviceName}) = _$_DetailsModel;
+      required final DeviceDetails device}) = _$_DetailsModel;
 
-  @override
-  String get deviceCpu;
-  @override
-  String get deviceCamera;
   @override
   List<String> get listOfCapacities;
   @override
@@ -377,13 +307,203 @@ abstract class _DetailsModel implements DetailsModel {
   @override
   double get rating;
   @override
-  String get deviceSd;
-  @override
-  String get deviceRam;
-  @override
-  String get deviceName;
+  DeviceDetails get device;
   @override
   @JsonKey(ignore: true)
   _$$_DetailsModelCopyWith<_$_DetailsModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$DeviceDetails {
+  String get cpu => throw _privateConstructorUsedError;
+  String get camera => throw _privateConstructorUsedError;
+  String get sd => throw _privateConstructorUsedError;
+  String get ram => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DeviceDetailsCopyWith<DeviceDetails> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeviceDetailsCopyWith<$Res> {
+  factory $DeviceDetailsCopyWith(
+          DeviceDetails value, $Res Function(DeviceDetails) then) =
+      _$DeviceDetailsCopyWithImpl<$Res>;
+  $Res call({String cpu, String camera, String sd, String ram, String name});
+}
+
+/// @nodoc
+class _$DeviceDetailsCopyWithImpl<$Res>
+    implements $DeviceDetailsCopyWith<$Res> {
+  _$DeviceDetailsCopyWithImpl(this._value, this._then);
+
+  final DeviceDetails _value;
+  // ignore: unused_field
+  final $Res Function(DeviceDetails) _then;
+
+  @override
+  $Res call({
+    Object? cpu = freezed,
+    Object? camera = freezed,
+    Object? sd = freezed,
+    Object? ram = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      cpu: cpu == freezed
+          ? _value.cpu
+          : cpu // ignore: cast_nullable_to_non_nullable
+              as String,
+      camera: camera == freezed
+          ? _value.camera
+          : camera // ignore: cast_nullable_to_non_nullable
+              as String,
+      sd: sd == freezed
+          ? _value.sd
+          : sd // ignore: cast_nullable_to_non_nullable
+              as String,
+      ram: ram == freezed
+          ? _value.ram
+          : ram // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_DeviceDetailsCopyWith<$Res>
+    implements $DeviceDetailsCopyWith<$Res> {
+  factory _$$_DeviceDetailsCopyWith(
+          _$_DeviceDetails value, $Res Function(_$_DeviceDetails) then) =
+      __$$_DeviceDetailsCopyWithImpl<$Res>;
+  @override
+  $Res call({String cpu, String camera, String sd, String ram, String name});
+}
+
+/// @nodoc
+class __$$_DeviceDetailsCopyWithImpl<$Res>
+    extends _$DeviceDetailsCopyWithImpl<$Res>
+    implements _$$_DeviceDetailsCopyWith<$Res> {
+  __$$_DeviceDetailsCopyWithImpl(
+      _$_DeviceDetails _value, $Res Function(_$_DeviceDetails) _then)
+      : super(_value, (v) => _then(v as _$_DeviceDetails));
+
+  @override
+  _$_DeviceDetails get _value => super._value as _$_DeviceDetails;
+
+  @override
+  $Res call({
+    Object? cpu = freezed,
+    Object? camera = freezed,
+    Object? sd = freezed,
+    Object? ram = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_$_DeviceDetails(
+      cpu: cpu == freezed
+          ? _value.cpu
+          : cpu // ignore: cast_nullable_to_non_nullable
+              as String,
+      camera: camera == freezed
+          ? _value.camera
+          : camera // ignore: cast_nullable_to_non_nullable
+              as String,
+      sd: sd == freezed
+          ? _value.sd
+          : sd // ignore: cast_nullable_to_non_nullable
+              as String,
+      ram: ram == freezed
+          ? _value.ram
+          : ram // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_DeviceDetails implements _DeviceDetails {
+  const _$_DeviceDetails(
+      {required this.cpu,
+      required this.camera,
+      required this.sd,
+      required this.ram,
+      required this.name});
+
+  @override
+  final String cpu;
+  @override
+  final String camera;
+  @override
+  final String sd;
+  @override
+  final String ram;
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'DeviceDetails(cpu: $cpu, camera: $camera, sd: $sd, ram: $ram, name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_DeviceDetails &&
+            const DeepCollectionEquality().equals(other.cpu, cpu) &&
+            const DeepCollectionEquality().equals(other.camera, camera) &&
+            const DeepCollectionEquality().equals(other.sd, sd) &&
+            const DeepCollectionEquality().equals(other.ram, ram) &&
+            const DeepCollectionEquality().equals(other.name, name));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(cpu),
+      const DeepCollectionEquality().hash(camera),
+      const DeepCollectionEquality().hash(sd),
+      const DeepCollectionEquality().hash(ram),
+      const DeepCollectionEquality().hash(name));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DeviceDetailsCopyWith<_$_DeviceDetails> get copyWith =>
+      __$$_DeviceDetailsCopyWithImpl<_$_DeviceDetails>(this, _$identity);
+}
+
+abstract class _DeviceDetails implements DeviceDetails {
+  const factory _DeviceDetails(
+      {required final String cpu,
+      required final String camera,
+      required final String sd,
+      required final String ram,
+      required final String name}) = _$_DeviceDetails;
+
+  @override
+  String get cpu;
+  @override
+  String get camera;
+  @override
+  String get sd;
+  @override
+  String get ram;
+  @override
+  String get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$_DeviceDetailsCopyWith<_$_DeviceDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
