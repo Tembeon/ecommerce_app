@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../generated/resources/fonts.gen.dart';
+import '../../generated/resources/fonts.gen.dart';
 
 class AppThemes {
   static ThemeData get lightTheme => ThemeData(

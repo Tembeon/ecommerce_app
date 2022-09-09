@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/service_locator/service_locator.dart';
+import '../../../../core/utils/service_locator.dart';
 import '../../../cart/domain/usecases/get_cart.dart';
 import '../../../cart/presentation/bloc/cart_bloc.dart';
 import '../bloc/navigation_bloc.dart';

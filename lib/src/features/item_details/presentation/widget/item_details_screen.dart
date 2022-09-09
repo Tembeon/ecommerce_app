@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/service_locator/service_locator.dart';
+import '../../../../core/utils/service_locator.dart';
 import '../../../../core/widget/failure_widget.dart';
 import '../../../../core/widget/loading_indicator.dart';
 import '../../domain/usecases/get_item_details_from_server.dart';

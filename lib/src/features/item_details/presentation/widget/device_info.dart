@@ -4,7 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../../../../core/generated/localization/l10n.dart';
 import '../../../../core/generated/resources/fonts.gen.dart';
-import '../../../../core/utils/string_extensions.dart';
+import '../../../../core/utils/extensions/string_extensions.dart';
 import '../../domain/models/details_model.dart';
 
 /// Used to store current active [DetailsModel].

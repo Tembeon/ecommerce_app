@@ -1,4 +1,4 @@
-import '../../../../core/service_locator/service_locator.dart';
+import '../../../../core/utils/service_locator.dart';
 import '../../domain/models/cart_content/cart_content.dart';
 import '../../domain/repository/cart_repository.dart';
 import '../datasource/cart_value_from_server.dart';
