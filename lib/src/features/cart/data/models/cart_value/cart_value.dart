@@ -5,7 +5,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'cart_value.freezed.dart';
 part 'cart_value.g.dart';
 
-/// Contains information about cart items, delivery price, total price is USD.
+/// Contains raw information from server
+/// about cart items, delivery price, total price is USD.
 @freezed
 class RawCartValue with _$RawCartValue {
   const factory RawCartValue({
@@ -19,7 +20,8 @@ class RawCartValue with _$RawCartValue {
       _$RawCartValueFromJson(json);
 }
 
-/// Contains information about one cart item: device image, price and name
+/// Contains raw information from server
+/// about one cart item: device image, price and name.
 @freezed
 class RawCartItemValue with _$RawCartItemValue {
   const factory RawCartItemValue({
