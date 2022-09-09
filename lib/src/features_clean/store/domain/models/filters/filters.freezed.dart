@@ -33,7 +33,6 @@ abstract class $FiltersModelCopyWith<$Res> {
   factory $FiltersModelCopyWith(
           FiltersModel value, $Res Function(FiltersModel) then) =
       _$FiltersModelCopyWithImpl<$Res>;
-
   $Res call({List<String> brands, List<String> prices, List<String> sizes});
 }
 
@@ -42,7 +41,6 @@ class _$FiltersModelCopyWithImpl<$Res> implements $FiltersModelCopyWith<$Res> {
   _$FiltersModelCopyWithImpl(this._value, this._then);
 
   final FiltersModel _value;
-
   // ignore: unused_field
   final $Res Function(FiltersModel) _then;
 
@@ -75,7 +73,6 @@ abstract class _$$_FiltersModelCopyWith<$Res>
   factory _$$_FiltersModelCopyWith(
           _$_FiltersModel value, $Res Function(_$_FiltersModel) then) =
       __$$_FiltersModelCopyWithImpl<$Res>;
-
   @override
   $Res call({List<String> brands, List<String> prices, List<String> sizes});
 }
@@ -127,7 +124,6 @@ class _$_FiltersModel implements _FiltersModel {
 
 // e.x.: ['Samsung', 'Iphone']
   final List<String> _brands;
-
 // e.x.: ['Samsung', 'Iphone']
   @override
   List<String> get brands {
@@ -137,7 +133,6 @@ class _$_FiltersModel implements _FiltersModel {
 
 // e.x.: ['$300 - $500', '$500 - $1000']
   final List<String> _prices;
-
 // e.x.: ['$300 - $500', '$500 - $1000']
   @override
   List<String> get prices {
@@ -147,7 +142,6 @@ class _$_FiltersModel implements _FiltersModel {
 
 //e.x.: ['4.5 to 5.5 inches', '5.5 to 6.5 inches']
   final List<String> _sizes;
-
 //e.x.: ['4.5 to 5.5 inches', '5.5 to 6.5 inches']
   @override
   List<String> get sizes {
@@ -191,13 +185,10 @@ abstract class _FiltersModel implements FiltersModel {
 
   @override // e.x.: ['Samsung', 'Iphone']
   List<String> get brands;
-
   @override // e.x.: ['$300 - $500', '$500 - $1000']
   List<String> get prices;
-
   @override //e.x.: ['4.5 to 5.5 inches', '5.5 to 6.5 inches']
   List<String> get sizes;
-
   @override
   @JsonKey(ignore: true)
   _$$_FiltersModelCopyWith<_$_FiltersModel> get copyWith =>

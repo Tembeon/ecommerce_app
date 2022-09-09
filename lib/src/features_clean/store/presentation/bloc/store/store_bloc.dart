@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../data/store_repository.dart';
-import '../model/store_items.dart';
+import '../../../domain/models/store_items/store_items.dart';
+import '../../../domain/usecases/get_store_items.dart';
 
 part 'store_bloc.freezed.dart';
 
@@ -29,10 +29,10 @@ class StoreEvent with _$StoreEvent {
 }
 
 class StoreBloc extends Bloc<StoreEvent, StoreState> {
-  final IStoreRepository _repository;
+  final GetStoreItems _data;
 
-  StoreBloc(IStoreRepository repository)
-      : _repository = repository,
+  StoreBloc(GetStoreItems data)
+      : _data = data,
         super(const StoreState.loading()) {
     on<StoreEvent>(
       (event, emit) => event.map<Future<void>>(
@@ -47,7 +47,7 @@ class StoreBloc extends Bloc<StoreEvent, StoreState> {
   ) async {
     emitter(const StoreState.loading());
     try {
-      var newData = await _repository.getStoreItems();
+      var newData = await _data.getStoreItems();
       // store new data
       emitter(StoreState.storeData(newData));
     } on TimeoutException {

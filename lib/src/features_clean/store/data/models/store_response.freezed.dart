@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'store_items.dart';
+part of 'store_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,44 +14,41 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-StoreItems _$StoreItemsFromJson(Map<String, dynamic> json) {
-  return _StoreItems.fromJson(json);
+StoreResponse _$StoreResponseFromJson(Map<String, dynamic> json) {
+  return _StoreResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$StoreItems {
+mixin _$StoreResponse {
   @JsonKey(name: 'home_store')
-  List<HomeStore> get homeStore => throw _privateConstructorUsedError;
-
+  List<HomeResponse> get homeStore => throw _privateConstructorUsedError;
   @JsonKey(name: 'best_seller')
-  List<BestSeller> get bestSeller => throw _privateConstructorUsedError;
+  List<BestSellerResponse> get bestSeller => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $StoreItemsCopyWith<StoreItems> get copyWith =>
+  $StoreResponseCopyWith<StoreResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StoreItemsCopyWith<$Res> {
-  factory $StoreItemsCopyWith(
-          StoreItems value, $Res Function(StoreItems) then) =
-      _$StoreItemsCopyWithImpl<$Res>;
-
+abstract class $StoreResponseCopyWith<$Res> {
+  factory $StoreResponseCopyWith(
+          StoreResponse value, $Res Function(StoreResponse) then) =
+      _$StoreResponseCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'home_store') List<HomeStore> homeStore,
-      @JsonKey(name: 'best_seller') List<BestSeller> bestSeller});
+      {@JsonKey(name: 'home_store') List<HomeResponse> homeStore,
+      @JsonKey(name: 'best_seller') List<BestSellerResponse> bestSeller});
 }
 
 /// @nodoc
-class _$StoreItemsCopyWithImpl<$Res> implements $StoreItemsCopyWith<$Res> {
-  _$StoreItemsCopyWithImpl(this._value, this._then);
+class _$StoreResponseCopyWithImpl<$Res>
+    implements $StoreResponseCopyWith<$Res> {
+  _$StoreResponseCopyWithImpl(this._value, this._then);
 
-  final StoreItems _value;
-
+  final StoreResponse _value;
   // ignore: unused_field
-  final $Res Function(StoreItems) _then;
+  final $Res Function(StoreResponse) _then;
 
   @override
   $Res call({
@@ -62,96 +59,96 @@ class _$StoreItemsCopyWithImpl<$Res> implements $StoreItemsCopyWith<$Res> {
       homeStore: homeStore == freezed
           ? _value.homeStore
           : homeStore // ignore: cast_nullable_to_non_nullable
-              as List<HomeStore>,
+              as List<HomeResponse>,
       bestSeller: bestSeller == freezed
           ? _value.bestSeller
           : bestSeller // ignore: cast_nullable_to_non_nullable
-              as List<BestSeller>,
+              as List<BestSellerResponse>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_StoreItemsCopyWith<$Res>
-    implements $StoreItemsCopyWith<$Res> {
-  factory _$$_StoreItemsCopyWith(
-          _$_StoreItems value, $Res Function(_$_StoreItems) then) =
-      __$$_StoreItemsCopyWithImpl<$Res>;
-
+abstract class _$$_StoreResponseCopyWith<$Res>
+    implements $StoreResponseCopyWith<$Res> {
+  factory _$$_StoreResponseCopyWith(
+          _$_StoreResponse value, $Res Function(_$_StoreResponse) then) =
+      __$$_StoreResponseCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'home_store') List<HomeStore> homeStore,
-      @JsonKey(name: 'best_seller') List<BestSeller> bestSeller});
+      {@JsonKey(name: 'home_store') List<HomeResponse> homeStore,
+      @JsonKey(name: 'best_seller') List<BestSellerResponse> bestSeller});
 }
 
 /// @nodoc
-class __$$_StoreItemsCopyWithImpl<$Res> extends _$StoreItemsCopyWithImpl<$Res>
-    implements _$$_StoreItemsCopyWith<$Res> {
-  __$$_StoreItemsCopyWithImpl(
-      _$_StoreItems _value, $Res Function(_$_StoreItems) _then)
-      : super(_value, (v) => _then(v as _$_StoreItems));
+class __$$_StoreResponseCopyWithImpl<$Res>
+    extends _$StoreResponseCopyWithImpl<$Res>
+    implements _$$_StoreResponseCopyWith<$Res> {
+  __$$_StoreResponseCopyWithImpl(
+      _$_StoreResponse _value, $Res Function(_$_StoreResponse) _then)
+      : super(_value, (v) => _then(v as _$_StoreResponse));
 
   @override
-  _$_StoreItems get _value => super._value as _$_StoreItems;
+  _$_StoreResponse get _value => super._value as _$_StoreResponse;
 
   @override
   $Res call({
     Object? homeStore = freezed,
     Object? bestSeller = freezed,
   }) {
-    return _then(_$_StoreItems(
+    return _then(_$_StoreResponse(
       homeStore: homeStore == freezed
           ? _value._homeStore
           : homeStore // ignore: cast_nullable_to_non_nullable
-              as List<HomeStore>,
+              as List<HomeResponse>,
       bestSeller: bestSeller == freezed
           ? _value._bestSeller
           : bestSeller // ignore: cast_nullable_to_non_nullable
-              as List<BestSeller>,
+              as List<BestSellerResponse>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_StoreItems implements _StoreItems {
-  const _$_StoreItems(
-      {@JsonKey(name: 'home_store') required final List<HomeStore> homeStore,
-      @JsonKey(name: 'best_seller') required final List<BestSeller> bestSeller})
+class _$_StoreResponse implements _StoreResponse {
+  const _$_StoreResponse(
+      {@JsonKey(name: 'home_store')
+          required final List<HomeResponse> homeStore,
+      @JsonKey(name: 'best_seller')
+          required final List<BestSellerResponse> bestSeller})
       : _homeStore = homeStore,
         _bestSeller = bestSeller;
 
-  factory _$_StoreItems.fromJson(Map<String, dynamic> json) =>
-      _$$_StoreItemsFromJson(json);
+  factory _$_StoreResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_StoreResponseFromJson(json);
 
-  final List<HomeStore> _homeStore;
-
+  final List<HomeResponse> _homeStore;
   @override
   @JsonKey(name: 'home_store')
-  List<HomeStore> get homeStore {
+  List<HomeResponse> get homeStore {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_homeStore);
   }
 
-  final List<BestSeller> _bestSeller;
-
+  final List<BestSellerResponse> _bestSeller;
   @override
   @JsonKey(name: 'best_seller')
-  List<BestSeller> get bestSeller {
+  List<BestSellerResponse> get bestSeller {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_bestSeller);
   }
 
   @override
   String toString() {
-    return 'StoreItems(homeStore: $homeStore, bestSeller: $bestSeller)';
+    return 'StoreResponse(homeStore: $homeStore, bestSeller: $bestSeller)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StoreItems &&
+            other is _$_StoreResponse &&
             const DeepCollectionEquality()
                 .equals(other._homeStore, _homeStore) &&
             const DeepCollectionEquality()
@@ -167,77 +164,70 @@ class _$_StoreItems implements _StoreItems {
 
   @JsonKey(ignore: true)
   @override
-  _$$_StoreItemsCopyWith<_$_StoreItems> get copyWith =>
-      __$$_StoreItemsCopyWithImpl<_$_StoreItems>(this, _$identity);
+  _$$_StoreResponseCopyWith<_$_StoreResponse> get copyWith =>
+      __$$_StoreResponseCopyWithImpl<_$_StoreResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StoreItemsToJson(
+    return _$$_StoreResponseToJson(
       this,
     );
   }
 }
 
-abstract class _StoreItems implements StoreItems {
-  const factory _StoreItems(
-      {@JsonKey(name: 'home_store')
-          required final List<HomeStore> homeStore,
-      @JsonKey(name: 'best_seller')
-          required final List<BestSeller> bestSeller}) = _$_StoreItems;
+abstract class _StoreResponse implements StoreResponse {
+  const factory _StoreResponse(
+          {@JsonKey(name: 'home_store')
+              required final List<HomeResponse> homeStore,
+          @JsonKey(name: 'best_seller')
+              required final List<BestSellerResponse> bestSeller}) =
+      _$_StoreResponse;
 
-  factory _StoreItems.fromJson(Map<String, dynamic> json) =
-      _$_StoreItems.fromJson;
+  factory _StoreResponse.fromJson(Map<String, dynamic> json) =
+      _$_StoreResponse.fromJson;
 
   @override
   @JsonKey(name: 'home_store')
-  List<HomeStore> get homeStore;
-
+  List<HomeResponse> get homeStore;
   @override
   @JsonKey(name: 'best_seller')
-  List<BestSeller> get bestSeller;
-
+  List<BestSellerResponse> get bestSeller;
   @override
   @JsonKey(ignore: true)
-  _$$_StoreItemsCopyWith<_$_StoreItems> get copyWith =>
+  _$$_StoreResponseCopyWith<_$_StoreResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-HomeStore _$HomeStoreFromJson(Map<String, dynamic> json) {
-  return _HomeStore.fromJson(json);
+HomeResponse _$HomeResponseFromJson(Map<String, dynamic> json) {
+  return _HomeResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$HomeStore {
+mixin _$HomeResponse {
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'is_new')
   bool? get isNew => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'title')
   String get title => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'subtitle')
   String get subtitle => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'picture')
   String get picture => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'is_buy')
   bool? get isBuy => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $HomeStoreCopyWith<HomeStore> get copyWith =>
+  $HomeResponseCopyWith<HomeResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeStoreCopyWith<$Res> {
-  factory $HomeStoreCopyWith(HomeStore value, $Res Function(HomeStore) then) =
-      _$HomeStoreCopyWithImpl<$Res>;
-
+abstract class $HomeResponseCopyWith<$Res> {
+  factory $HomeResponseCopyWith(
+          HomeResponse value, $Res Function(HomeResponse) then) =
+      _$HomeResponseCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'is_new') bool? isNew,
@@ -248,13 +238,12 @@ abstract class $HomeStoreCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HomeStoreCopyWithImpl<$Res> implements $HomeStoreCopyWith<$Res> {
-  _$HomeStoreCopyWithImpl(this._value, this._then);
+class _$HomeResponseCopyWithImpl<$Res> implements $HomeResponseCopyWith<$Res> {
+  _$HomeResponseCopyWithImpl(this._value, this._then);
 
-  final HomeStore _value;
-
+  final HomeResponse _value;
   // ignore: unused_field
-  final $Res Function(HomeStore) _then;
+  final $Res Function(HomeResponse) _then;
 
   @override
   $Res call({
@@ -295,11 +284,11 @@ class _$HomeStoreCopyWithImpl<$Res> implements $HomeStoreCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_HomeStoreCopyWith<$Res> implements $HomeStoreCopyWith<$Res> {
-  factory _$$_HomeStoreCopyWith(
-          _$_HomeStore value, $Res Function(_$_HomeStore) then) =
-      __$$_HomeStoreCopyWithImpl<$Res>;
-
+abstract class _$$_HomeResponseCopyWith<$Res>
+    implements $HomeResponseCopyWith<$Res> {
+  factory _$$_HomeResponseCopyWith(
+          _$_HomeResponse value, $Res Function(_$_HomeResponse) then) =
+      __$$_HomeResponseCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'id') int id,
@@ -311,14 +300,15 @@ abstract class _$$_HomeStoreCopyWith<$Res> implements $HomeStoreCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_HomeStoreCopyWithImpl<$Res> extends _$HomeStoreCopyWithImpl<$Res>
-    implements _$$_HomeStoreCopyWith<$Res> {
-  __$$_HomeStoreCopyWithImpl(
-      _$_HomeStore _value, $Res Function(_$_HomeStore) _then)
-      : super(_value, (v) => _then(v as _$_HomeStore));
+class __$$_HomeResponseCopyWithImpl<$Res>
+    extends _$HomeResponseCopyWithImpl<$Res>
+    implements _$$_HomeResponseCopyWith<$Res> {
+  __$$_HomeResponseCopyWithImpl(
+      _$_HomeResponse _value, $Res Function(_$_HomeResponse) _then)
+      : super(_value, (v) => _then(v as _$_HomeResponse));
 
   @override
-  _$_HomeStore get _value => super._value as _$_HomeStore;
+  _$_HomeResponse get _value => super._value as _$_HomeResponse;
 
   @override
   $Res call({
@@ -329,7 +319,7 @@ class __$$_HomeStoreCopyWithImpl<$Res> extends _$HomeStoreCopyWithImpl<$Res>
     Object? picture = freezed,
     Object? isBuy = freezed,
   }) {
-    return _then(_$_HomeStore(
+    return _then(_$_HomeResponse(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -360,8 +350,8 @@ class __$$_HomeStoreCopyWithImpl<$Res> extends _$HomeStoreCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_HomeStore implements _HomeStore {
-  const _$_HomeStore(
+class _$_HomeResponse implements _HomeResponse {
+  const _$_HomeResponse(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'is_new') this.isNew,
       @JsonKey(name: 'title') required this.title,
@@ -369,8 +359,8 @@ class _$_HomeStore implements _HomeStore {
       @JsonKey(name: 'picture') required this.picture,
       @JsonKey(name: 'is_buy') this.isBuy});
 
-  factory _$_HomeStore.fromJson(Map<String, dynamic> json) =>
-      _$$_HomeStoreFromJson(json);
+  factory _$_HomeResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_HomeResponseFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -393,14 +383,14 @@ class _$_HomeStore implements _HomeStore {
 
   @override
   String toString() {
-    return 'HomeStore(id: $id, isNew: $isNew, title: $title, subtitle: $subtitle, picture: $picture, isBuy: $isBuy)';
+    return 'HomeResponse(id: $id, isNew: $isNew, title: $title, subtitle: $subtitle, picture: $picture, isBuy: $isBuy)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomeStore &&
+            other is _$_HomeResponse &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.isNew, isNew) &&
             const DeepCollectionEquality().equals(other.title, title) &&
@@ -422,96 +412,83 @@ class _$_HomeStore implements _HomeStore {
 
   @JsonKey(ignore: true)
   @override
-  _$$_HomeStoreCopyWith<_$_HomeStore> get copyWith =>
-      __$$_HomeStoreCopyWithImpl<_$_HomeStore>(this, _$identity);
+  _$$_HomeResponseCopyWith<_$_HomeResponse> get copyWith =>
+      __$$_HomeResponseCopyWithImpl<_$_HomeResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HomeStoreToJson(
+    return _$$_HomeResponseToJson(
       this,
     );
   }
 }
 
-abstract class _HomeStore implements HomeStore {
-  const factory _HomeStore(
+abstract class _HomeResponse implements HomeResponse {
+  const factory _HomeResponse(
       {@JsonKey(name: 'id') required final int id,
       @JsonKey(name: 'is_new') final bool? isNew,
       @JsonKey(name: 'title') required final String title,
       @JsonKey(name: 'subtitle') required final String subtitle,
       @JsonKey(name: 'picture') required final String picture,
-      @JsonKey(name: 'is_buy') final bool? isBuy}) = _$_HomeStore;
+      @JsonKey(name: 'is_buy') final bool? isBuy}) = _$_HomeResponse;
 
-  factory _HomeStore.fromJson(Map<String, dynamic> json) =
-      _$_HomeStore.fromJson;
+  factory _HomeResponse.fromJson(Map<String, dynamic> json) =
+      _$_HomeResponse.fromJson;
 
   @override
   @JsonKey(name: 'id')
   int get id;
-
   @override
   @JsonKey(name: 'is_new')
   bool? get isNew;
-
   @override
   @JsonKey(name: 'title')
   String get title;
-
   @override
   @JsonKey(name: 'subtitle')
   String get subtitle;
-
   @override
   @JsonKey(name: 'picture')
   String get picture;
-
   @override
   @JsonKey(name: 'is_buy')
   bool? get isBuy;
-
   @override
   @JsonKey(ignore: true)
-  _$$_HomeStoreCopyWith<_$_HomeStore> get copyWith =>
+  _$$_HomeResponseCopyWith<_$_HomeResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-BestSeller _$BestSellerFromJson(Map<String, dynamic> json) {
+BestSellerResponse _$BestSellerResponseFromJson(Map<String, dynamic> json) {
   return _BestSeller.fromJson(json);
 }
 
 /// @nodoc
-mixin _$BestSeller {
+mixin _$BestSellerResponse {
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'is_favorites')
   bool? get isFavorites => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'title')
   String get title => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'price_without_discount')
   int get priceWithoutDiscount => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'discount_price')
   int get discountPrice => throw _privateConstructorUsedError;
-
   @JsonKey(name: 'picture')
   String get picture => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $BestSellerCopyWith<BestSeller> get copyWith =>
+  $BestSellerResponseCopyWith<BestSellerResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BestSellerCopyWith<$Res> {
-  factory $BestSellerCopyWith(
-          BestSeller value, $Res Function(BestSeller) then) =
-      _$BestSellerCopyWithImpl<$Res>;
-
+abstract class $BestSellerResponseCopyWith<$Res> {
+  factory $BestSellerResponseCopyWith(
+          BestSellerResponse value, $Res Function(BestSellerResponse) then) =
+      _$BestSellerResponseCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'is_favorites') bool? isFavorites,
@@ -522,13 +499,13 @@ abstract class $BestSellerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BestSellerCopyWithImpl<$Res> implements $BestSellerCopyWith<$Res> {
-  _$BestSellerCopyWithImpl(this._value, this._then);
+class _$BestSellerResponseCopyWithImpl<$Res>
+    implements $BestSellerResponseCopyWith<$Res> {
+  _$BestSellerResponseCopyWithImpl(this._value, this._then);
 
-  final BestSeller _value;
-
+  final BestSellerResponse _value;
   // ignore: unused_field
-  final $Res Function(BestSeller) _then;
+  final $Res Function(BestSellerResponse) _then;
 
   @override
   $Res call({
@@ -570,11 +547,10 @@ class _$BestSellerCopyWithImpl<$Res> implements $BestSellerCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$_BestSellerCopyWith<$Res>
-    implements $BestSellerCopyWith<$Res> {
+    implements $BestSellerResponseCopyWith<$Res> {
   factory _$$_BestSellerCopyWith(
           _$_BestSeller value, $Res Function(_$_BestSeller) then) =
       __$$_BestSellerCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {@JsonKey(name: 'id') int id,
@@ -586,7 +562,8 @@ abstract class _$$_BestSellerCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_BestSellerCopyWithImpl<$Res> extends _$BestSellerCopyWithImpl<$Res>
+class __$$_BestSellerCopyWithImpl<$Res>
+    extends _$BestSellerResponseCopyWithImpl<$Res>
     implements _$$_BestSellerCopyWith<$Res> {
   __$$_BestSellerCopyWithImpl(
       _$_BestSeller _value, $Res Function(_$_BestSeller) _then)
@@ -674,7 +651,7 @@ class _$_BestSeller implements _BestSeller {
 
   @override
   String toString() {
-    return 'BestSeller(id: $id, isFavorites: $isFavorites, title: $title, priceWithoutDiscount: $priceWithoutDiscount, discountPrice: $discountPrice, picture: $picture)';
+    return 'BestSellerResponse(id: $id, isFavorites: $isFavorites, title: $title, priceWithoutDiscount: $priceWithoutDiscount, discountPrice: $discountPrice, picture: $picture)';
   }
 
   @override
@@ -717,7 +694,7 @@ class _$_BestSeller implements _BestSeller {
   }
 }
 
-abstract class _BestSeller implements BestSeller {
+abstract class _BestSeller implements BestSellerResponse {
   const factory _BestSeller(
       {@JsonKey(name: 'id')
           required final int id,
@@ -738,27 +715,21 @@ abstract class _BestSeller implements BestSeller {
   @override
   @JsonKey(name: 'id')
   int get id;
-
   @override
   @JsonKey(name: 'is_favorites')
   bool? get isFavorites;
-
   @override
   @JsonKey(name: 'title')
   String get title;
-
   @override
   @JsonKey(name: 'price_without_discount')
   int get priceWithoutDiscount;
-
   @override
   @JsonKey(name: 'discount_price')
   int get discountPrice;
-
   @override
   @JsonKey(name: 'picture')
   String get picture;
-
   @override
   @JsonKey(ignore: true)
   _$$_BestSellerCopyWith<_$_BestSeller> get copyWith =>

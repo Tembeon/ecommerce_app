@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/generated/localization/l10n.dart';
-import '../../../core/generated/resources/fonts.gen.dart';
-import '../model/filters.dart';
+import '../../../../core/generated/localization/l10n.dart';
+import '../../../../core/generated/resources/fonts.gen.dart';
+import '../../domain/models/filters/filters.dart';
 
 class FilterDialogUI extends StatelessWidget {
   const FilterDialogUI({

@@ -23,7 +23,6 @@ mixin _$StoreState {
     required TResult Function(StoreItems items) storeData,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
@@ -39,7 +38,6 @@ mixin _$StoreState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FailureStoreState value) failure,
@@ -47,7 +45,6 @@ mixin _$StoreState {
     required TResult Function(_StoreDataStoreState value) storeData,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_FailureStoreState value)? failure,
@@ -77,7 +74,6 @@ class _$StoreStateCopyWithImpl<$Res> implements $StoreStateCopyWith<$Res> {
   _$StoreStateCopyWithImpl(this._value, this._then);
 
   final StoreState _value;
-
   // ignore: unused_field
   final $Res Function(StoreState) _then;
 }
@@ -87,7 +83,6 @@ abstract class _$$_FailureStoreStateCopyWith<$Res> {
   factory _$$_FailureStoreStateCopyWith(_$_FailureStoreState value,
           $Res Function(_$_FailureStoreState) then) =
       __$$_FailureStoreStateCopyWithImpl<$Res>;
-
   $Res call({String message});
 }
 
@@ -220,11 +215,9 @@ class _$_FailureStoreState extends _FailureStoreState {
 abstract class _FailureStoreState extends StoreState {
   const factory _FailureStoreState({final String message}) =
       _$_FailureStoreState;
-
   const _FailureStoreState._() : super._();
 
   String get message;
-
   @JsonKey(ignore: true)
   _$$_FailureStoreStateCopyWith<_$_FailureStoreState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -339,7 +332,6 @@ class _$_LoadingStoreState extends _LoadingStoreState {
 
 abstract class _LoadingStoreState extends StoreState {
   const factory _LoadingStoreState() = _$_LoadingStoreState;
-
   const _LoadingStoreState._() : super._();
 }
 
@@ -348,7 +340,6 @@ abstract class _$$_StoreDataStoreStateCopyWith<$Res> {
   factory _$$_StoreDataStoreStateCopyWith(_$_StoreDataStoreState value,
           $Res Function(_$_StoreDataStoreState) then) =
       __$$_StoreDataStoreStateCopyWithImpl<$Res>;
-
   $Res call({StoreItems items});
 
   $StoreItemsCopyWith<$Res> get items;
@@ -488,11 +479,9 @@ class _$_StoreDataStoreState extends _StoreDataStoreState {
 abstract class _StoreDataStoreState extends StoreState {
   const factory _StoreDataStoreState(final StoreItems items) =
       _$_StoreDataStoreState;
-
   const _StoreDataStoreState._() : super._();
 
   StoreItems get items;
-
   @JsonKey(ignore: true)
   _$$_StoreDataStoreStateCopyWith<_$_StoreDataStoreState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -505,7 +494,6 @@ mixin _$StoreEvent {
     required TResult Function() loadNewData,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadNewData,
@@ -517,13 +505,11 @@ mixin _$StoreEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadNewDataStoreEvent value) loadNewData,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_LoadNewDataStoreEvent value)? loadNewData,
@@ -549,7 +535,6 @@ class _$StoreEventCopyWithImpl<$Res> implements $StoreEventCopyWith<$Res> {
   _$StoreEventCopyWithImpl(this._value, this._then);
 
   final StoreEvent _value;
-
   // ignore: unused_field
   final $Res Function(StoreEvent) _then;
 }
@@ -652,6 +637,5 @@ class _$_LoadNewDataStoreEvent extends _LoadNewDataStoreEvent {
 
 abstract class _LoadNewDataStoreEvent extends StoreEvent {
   const factory _LoadNewDataStoreEvent() = _$_LoadNewDataStoreEvent;
-
   const _LoadNewDataStoreEvent._() : super._();
 }

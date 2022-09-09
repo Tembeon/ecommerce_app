@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/generated/localization/l10n.dart';
-import '../bloc/filter_options_bloc.dart';
-import '../utils/filter_dialog.dart';
+import '../../../../core/generated/localization/l10n.dart';
+import '../../domain/models/filters/filters.dart';
+import '../bloc/filters/filter_options_bloc.dart';
+import 'filter_dialog.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
   const TopBar({Key? key}) : super(key: key);
@@ -66,7 +67,6 @@ class _OpenFilterButton extends StatelessWidget {
   }
 }
 
-
 /// Listens for open filter state.
 class _BlocListenerForFilterDialog extends StatefulWidget {
   const _BlocListenerForFilterDialog({
@@ -77,10 +77,12 @@ class _BlocListenerForFilterDialog extends StatefulWidget {
   final Widget child;
 
   @override
-  State<_BlocListenerForFilterDialog> createState() => _BlocListenerForFilterDialogState();
+  State<_BlocListenerForFilterDialog> createState() =>
+      _BlocListenerForFilterDialogState();
 }
 
-class _BlocListenerForFilterDialogState extends State<_BlocListenerForFilterDialog> {
+class _BlocListenerForFilterDialogState
+    extends State<_BlocListenerForFilterDialog> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<FilterOptionsBloc, FilterOptionsState>(
@@ -99,4 +101,18 @@ class _BlocListenerForFilterDialogState extends State<_BlocListenerForFilterDial
       child: widget.child,
     );
   }
+}
+
+Future<T?> openFilterDialog<T>(BuildContext context) async {
+  const FiltersModel filters = FiltersModel(
+    brands: <String>['Samsung', 'Apple', 'Xiaomi'],
+    prices: <String>['\$300 - \$500', '\$500 - \$1000', '\$1000 - \$1500'],
+    sizes: <String>['4.5 to 5.5 inches', '5.5 to 6.5 inches'],
+  );
+
+  return await showRoundedModalSheet<T>(
+    context: context,
+    title: 'Filter options',
+    child: const FilterDialogUI(filters: filters),
+  );
 }

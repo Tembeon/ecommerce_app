@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/widget/failure_widget.dart';
-import '../../../core/widget/loading_indicator.dart';
-import '../bloc/filter_options_bloc.dart';
-import '../bloc/store_bloc.dart';
-import '../data/store_repository.dart';
+import '../../../../core/service_locator/service_locator.dart';
+import '../../../../core/widget/failure_widget.dart';
+import '../../../../core/widget/loading_indicator.dart';
+import '../../domain/usecases/get_store_items.dart';
+import '../bloc/filters/filter_options_bloc.dart';
+import '../bloc/store/store_bloc.dart';
 import 'store_view.dart';
 
 class StoreScreen extends StatelessWidget {
@@ -16,7 +17,7 @@ class StoreScreen extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<StoreBloc>(
-          create: (_) => StoreBloc(EcommerceApiRepository()),
+          create: (_) => StoreBloc(sl<GetStoreItems>()),
         ),
         BlocProvider<FilterOptionsBloc>(
           create: (_) => FilterOptionsBloc(),

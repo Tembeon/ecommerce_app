@@ -1,28 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'store_items.dart';
+part of 'store_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_StoreItems _$$_StoreItemsFromJson(Map<String, dynamic> json) =>
-    _$_StoreItems(
+_$_StoreResponse _$$_StoreResponseFromJson(Map<String, dynamic> json) =>
+    _$_StoreResponse(
       homeStore: (json['home_store'] as List<dynamic>)
-          .map((e) => HomeStore.fromJson(e as Map<String, dynamic>))
+          .map((e) => HomeResponse.fromJson(e as Map<String, dynamic>))
           .toList(),
       bestSeller: (json['best_seller'] as List<dynamic>)
-          .map((e) => BestSeller.fromJson(e as Map<String, dynamic>))
+          .map((e) => BestSellerResponse.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_StoreItemsToJson(_$_StoreItems instance) =>
+Map<String, dynamic> _$$_StoreResponseToJson(_$_StoreResponse instance) =>
     <String, dynamic>{
       'home_store': instance.homeStore,
       'best_seller': instance.bestSeller,
     };
 
-_$_HomeStore _$$_HomeStoreFromJson(Map<String, dynamic> json) => _$_HomeStore(
+_$_HomeResponse _$$_HomeResponseFromJson(Map<String, dynamic> json) =>
+    _$_HomeResponse(
       id: json['id'] as int,
       isNew: json['is_new'] as bool?,
       title: json['title'] as String,
@@ -31,7 +32,7 @@ _$_HomeStore _$$_HomeStoreFromJson(Map<String, dynamic> json) => _$_HomeStore(
       isBuy: json['is_buy'] as bool?,
     );
 
-Map<String, dynamic> _$$_HomeStoreToJson(_$_HomeStore instance) =>
+Map<String, dynamic> _$$_HomeResponseToJson(_$_HomeResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'is_new': instance.isNew,

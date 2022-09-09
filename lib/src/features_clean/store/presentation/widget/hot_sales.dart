@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/generated/localization/l10n.dart';
-import '../../../core/generated/resources/fonts.gen.dart';
-import '../model/store_items.dart';
+import '../../../../core/generated/localization/l10n.dart';
+import '../../../../core/generated/resources/fonts.gen.dart';
+import '../../domain/models/store_items/store_items.dart';
 import 'store_view.dart';
 
 /// Hot sales section.
@@ -183,7 +183,7 @@ class _ModelInfo extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 14.0),
-            child: NewMark(shouldShow: homeStore.isNew ?? false),
+            child: NewMark(shouldShow: homeStore.isNew),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 18.0),
@@ -209,7 +209,7 @@ class _ModelInfo extends StatelessWidget {
               ),
             ),
           ),
-          if (homeStore.isBuy ?? false)
+          if (homeStore.isBuy)
             ElevatedButton(
               onPressed: null,
               style: ButtonStyle(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/generated/localization/l10n.dart';
-import '../../../core/generated/resources/fonts.gen.dart';
-import '../bloc/categories_bloc.dart';
+import '../../../../core/generated/localization/l10n.dart';
+import '../../../../core/generated/resources/fonts.gen.dart';
+import '../bloc/categories/categories_bloc.dart';
 
 /// Section with:
 ///
@@ -134,7 +134,7 @@ class _CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const _CategoryItemRoundedIcon(),
+        _CategoryItemRoundedIcon(isSelected: isSelected),
         const SizedBox(height: 8),
         Text(
           label,
@@ -163,7 +163,10 @@ class _CategoryItem extends StatelessWidget {
 class _CategoryItemRoundedIcon extends StatelessWidget {
   const _CategoryItemRoundedIcon({
     Key? key,
+    required this.isSelected,
   }) : super(key: key);
+
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -175,7 +178,7 @@ class _CategoryItemRoundedIcon extends StatelessWidget {
         child: Ink(
           width: 70,
           height: 70,
-          color: item.isSelected ? const Color(0xFFFF6E4E) : Colors.white,
+          color: isSelected ? const Color(0xFFFF6E4E) : Colors.white,
           child: InkWell(
             onTap: () => context
                 .read<CategoriesBloc>()

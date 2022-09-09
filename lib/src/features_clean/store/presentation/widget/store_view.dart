@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/store_items.dart';
+import '../../domain/models/store_items/store_items.dart';
 import 'best_seller.dart';
 import 'categories.dart';
 import 'hot_sales.dart';

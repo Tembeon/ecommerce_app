@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/generated/localization/l10n.dart';
-import '../../../core/generated/resources/fonts.gen.dart';
-import '../model/store_items.dart';
+import '../../../../core/generated/localization/l10n.dart';
+import '../../../../core/generated/resources/fonts.gen.dart';
+import '../../domain/models/store_items/store_items.dart';
 import 'store_view.dart';
 
 /// BestSeller section design. Returns a RenderBox, not sliver.
@@ -245,7 +245,7 @@ class _FavoriteIcon extends StatelessWidget {
       child: IconButton(
         onPressed: () {},
         icon: Icon(
-          item.isFavorites ?? false
+          item.isFavorites
               ? Icons.favorite_outlined
               : Icons.favorite_border_outlined,
           color: Theme.of(context).colorScheme.secondary,

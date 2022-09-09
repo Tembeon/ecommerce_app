@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/generated/localization/l10n.dart';
-import '../../../core/generated/resources/fonts.gen.dart';
+import '../../../../core/generated/localization/l10n.dart';
+import '../../../../core/generated/resources/fonts.gen.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({Key? key}) : super(key: key);
