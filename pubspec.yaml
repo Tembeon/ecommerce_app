@@ -45,6 +45,9 @@ dependencies:
   # Network
   http: ^0.13.5
 
+  # DI
+  get_it: ^7.2.0
+
 dev_dependencies:
   # code gen
   build_runner: ^2.2.0

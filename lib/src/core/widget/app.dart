@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../constants/theme.dart';
+import '../utils/constants/theme.dart';
 import '../generated/localization/l10n.dart';
-import '../router/router.gr.dart';
+import '../utils/router/router.gr.dart';
 
 class EcommerceApp extends StatefulWidget {
   const EcommerceApp({Key? key}) : super(key: key);
