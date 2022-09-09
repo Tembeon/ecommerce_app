@@ -14,9 +14,11 @@
 import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:flutter/material.dart' as _i5;
 
-import '../../features/cart/widget/cart_screen.dart' as _i3;
-import '../../features/item_details/widget/item_details_screen.dart' as _i2;
-import '../../features/navigation/widget/navigation_screen.dart' as _i1;
+import '../../features/cart/presentation/widget/cart_screen.dart' as _i3;
+import '../../features/item_details/presentation/widget/item_details_screen.dart'
+    as _i2;
+import '../../features/navigation/presentation/widget/navigation_screen.dart'
+    as _i1;
 
 class RootRouter extends _i4.RootStackRouter {
   RootRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
