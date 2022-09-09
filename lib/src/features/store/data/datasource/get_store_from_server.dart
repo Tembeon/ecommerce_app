@@ -5,11 +5,12 @@ import 'package:http/http.dart' as http;
 import '../models/store_response.dart';
 
 abstract class IDtoGetStoreFromServer {
+  /// Returns [StoreResponse] from server.
   Future<StoreResponse> getStore();
 }
 
 class DtoGetStoreFromServer implements IDtoGetStoreFromServer {
-  /// Returns StoreItems for main store page.
+  /// Returns StoreResponse for main store page.
   ///
   /// Will throw [TimeoutException] after 70s or [Exception] if status code
   /// is not 200.

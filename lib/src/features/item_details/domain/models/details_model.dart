@@ -4,11 +4,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'details_model.freezed.dart';
 
-@freezed // todo: device specs to other class
+/// Main info about item in a store. Contains price, rating, device info.
+@freezed
 class DetailsModel with _$DetailsModel {
   const factory DetailsModel({
-    required String deviceCpu,
-    required String deviceCamera,
     required List<String> listOfCapacities,
     required List<String> listOfColors,
     required String id,
@@ -16,8 +15,19 @@ class DetailsModel with _$DetailsModel {
     required bool isFavorites,
     required int price,
     required double rating,
-    required String deviceSd,
-    required String deviceRam,
-    required String deviceName,
+    required DeviceDetails device,
   }) = _DetailsModel;
+}
+
+/// Tech info about device: cpu, camera, sd, ram and name.
+@freezed
+class DeviceDetails with _$DeviceDetails {
+  const factory DeviceDetails({
+      required String cpu,
+      required String camera,
+      required String sd,
+      required String ram,
+      required String name,
+
+  }) = _DeviceDetails;
 }

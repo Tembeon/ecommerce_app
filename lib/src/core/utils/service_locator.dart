@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 
-import '../../features/cart/data/datasource/cart_value_from_server.dart';
+import '../../features/cart/data/datasource/dto_cart_value_from_server.dart';
 import '../../features/cart/data/repository/cart_repository.dart';
 import '../../features/cart/domain/usecases/get_cart.dart';
 import '../../features/item_details/data/datasource/dto_get_item_details.dart';
