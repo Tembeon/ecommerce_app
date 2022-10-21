@@ -1,6 +1,6 @@
 # Ecommerce app
 
-![](gh_assets/Ecommerce_0x5.png)
+![](gh_assets/Ecommerce_0x75.png)
 
 A simple ecommerce app with bloc and clean architecture usage.
 
